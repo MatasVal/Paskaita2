@@ -4,6 +4,7 @@
     {
         static void Main(string[] args)
         {
+            /*
             Console.WriteLine("Hello, World!");
 
             Console.Write("išvedimas ");
@@ -42,10 +43,27 @@
             //Console.WriteLine("ivestas simbolis {0}", Console.ReadKey().KeyChar);
             //Console.WriteLine("ivestas simbolis {0}", (int)Console.ReadKey().KeyChar);
 
-            Console.WriteLine("Įveskite savo vardą, o as atspesiu pirma raide:");
-            Console.WriteLine("o štai mano spejimas \"" + Console.ReadLine()[0] + "\"");
+            //Console.WriteLine("Įveskite savo vardą, o as atspesiu pirma raide:");
+            //Console.WriteLine("o štai mano spejimas \"" + Console.ReadLine()[0] + "\"");
 
-            Console.ReadKey();
+            //Console.ReadKey();
+
+
+            Console.WriteLine("eilute 1" + 
+                Environment.NewLine + " eilute 2" + 
+                Environment.NewLine + " eilute 3");
+
+            Console.WriteLine(@" ""tekstas kabutese"" \ \ \ \ \ \ \
+eilute 1
+eilute 2
+eilute 3"); */
+
+            Console.WriteLine("matas");
+            Console.WriteLine("matas" + Console.ReadLine());
+            Console.WriteLine("matas" + Console.ReadLine());
+            Console.WriteLine("matas" + Console.ReadLine());
+
+
         }
     }
 }
