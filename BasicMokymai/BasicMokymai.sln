@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P003_komentarai", "P003_kom
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P002_Console_uzduotys", "P002_Console_uzduotys\P002_Console_uzduotys.csproj", "{1CE93A3F-8FFB-4CA9-ACC1-50DF5645AB7C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P002_stringKintamieji", "P002_stringKintamieji\P002_stringKintamieji.csproj", "{3C4D72CE-9923-4665-BE7C-B36FDE129E02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P002_TowerOfHanoi", "P002_TowerOfHanoi\P002_TowerOfHanoi.csproj", "{263CEBE2-C991-491B-B563-08933E22AEDC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{1CE93A3F-8FFB-4CA9-ACC1-50DF5645AB7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CE93A3F-8FFB-4CA9-ACC1-50DF5645AB7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1CE93A3F-8FFB-4CA9-ACC1-50DF5645AB7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C4D72CE-9923-4665-BE7C-B36FDE129E02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C4D72CE-9923-4665-BE7C-B36FDE129E02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C4D72CE-9923-4665-BE7C-B36FDE129E02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C4D72CE-9923-4665-BE7C-B36FDE129E02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{263CEBE2-C991-491B-B563-08933E22AEDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{263CEBE2-C991-491B-B563-08933E22AEDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{263CEBE2-C991-491B-B563-08933E22AEDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{263CEBE2-C991-491B-B563-08933E22AEDC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
