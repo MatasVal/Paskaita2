@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicMokymai", "BasicMokyma
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P003_komentarai", "P003_komentarai\P003_komentarai.csproj", "{32467A6B-F2AC-4156-97D4-915A6F8D0B33}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P002_Console_uzduotys", "P002_Console_uzduotys\P002_Console_uzduotys.csproj", "{1CE93A3F-8FFB-4CA9-ACC1-50DF5645AB7C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{32467A6B-F2AC-4156-97D4-915A6F8D0B33}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32467A6B-F2AC-4156-97D4-915A6F8D0B33}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{32467A6B-F2AC-4156-97D4-915A6F8D0B33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CE93A3F-8FFB-4CA9-ACC1-50DF5645AB7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CE93A3F-8FFB-4CA9-ACC1-50DF5645AB7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CE93A3F-8FFB-4CA9-ACC1-50DF5645AB7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CE93A3F-8FFB-4CA9-ACC1-50DF5645AB7C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
