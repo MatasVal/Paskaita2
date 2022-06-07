@@ -31,6 +31,9 @@ paprašykite naudotojo nupiešti 1 sulpelio 1 eilutę. Išveskite visą Tower of
             Console.WriteLine("5eil.{0}{1}{2}", astuoni,tuscias,tuscias);
             Console.WriteLine("      ----1stulp-------2stulp-------3stulp----");
 
+           
+            Console.ReadLine();
+            Console.WriteLine("------testi-----");
             //kaip isvalyti pirma stulpeli ir isvesti?
 
             Console.WriteLine("1eil.{0}{1}{2}", astuoni, tuscias, tuscias);
