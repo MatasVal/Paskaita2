@@ -73,6 +73,9 @@
             Console.WriteLine("------testi------");
             Console.ReadLine();
 
+
+
+
             Console.WriteLine("1eil.{0}{1}{2}", tuscias, tuscias, tuscias);
             Console.WriteLine("2eil.{0}{1}{2}", tuscias, tuscias, tuscias);
             Console.WriteLine("3eil.{0}{1}{2}", tuscias, tuscias, tuscias);

@@ -5,13 +5,15 @@ VisualStudioVersion = 17.2.32519.379
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicMokymai", "BasicMokymai\BasicMokymai.csproj", "{E6EA2871-7257-452F-AB45-47EA273338CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P003_komentarai", "P003_komentarai\P003_komentarai.csproj", "{32467A6B-F2AC-4156-97D4-915A6F8D0B33}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P003_komentarai", "P003_komentarai\P003_komentarai.csproj", "{32467A6B-F2AC-4156-97D4-915A6F8D0B33}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P002_Console_uzduotys", "P002_Console_uzduotys\P002_Console_uzduotys.csproj", "{1CE93A3F-8FFB-4CA9-ACC1-50DF5645AB7C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P002_Console_uzduotys", "P002_Console_uzduotys\P002_Console_uzduotys.csproj", "{1CE93A3F-8FFB-4CA9-ACC1-50DF5645AB7C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P002_stringKintamieji", "P002_stringKintamieji\P002_stringKintamieji.csproj", "{3C4D72CE-9923-4665-BE7C-B36FDE129E02}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P002_stringKintamieji", "P002_stringKintamieji\P002_stringKintamieji.csproj", "{3C4D72CE-9923-4665-BE7C-B36FDE129E02}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P002_TowerOfHanoi", "P002_TowerOfHanoi\P002_TowerOfHanoi.csproj", "{263CEBE2-C991-491B-B563-08933E22AEDC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P002_TowerOfHanoi", "P002_TowerOfHanoi\P002_TowerOfHanoi.csproj", "{263CEBE2-C991-491B-B563-08933E22AEDC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P003_Kintamieji", "P003_Kintamieji\P003_Kintamieji.csproj", "{7235124F-AE5E-4B09-A744-5D03DFD17108}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{263CEBE2-C991-491B-B563-08933E22AEDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{263CEBE2-C991-491B-B563-08933E22AEDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{263CEBE2-C991-491B-B563-08933E22AEDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7235124F-AE5E-4B09-A744-5D03DFD17108}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7235124F-AE5E-4B09-A744-5D03DFD17108}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7235124F-AE5E-4B09-A744-5D03DFD17108}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7235124F-AE5E-4B09-A744-5D03DFD17108}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
