@@ -1,29 +1,28 @@
-﻿namespace P002_TowerOfHanoi
+﻿namespace TowerOfHanoi_v2
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-
             //1. Nupieškite Tower of Hanoi. Piešiniui naudokite kintamuosius.
 
             Console.WriteLine("1. Nupieškite Tower of Hanoi. Piešiniui naudokite kintamuosius.");
 
             var tuscias = "       |      ";
-            var du      = "      #|#     ";
-            var keturi  = "     ##|##    ";
-            var sesi    = "    ###|###   ";
+            var du = "      #|#     ";
+            var keturi = "     ##|##    ";
+            var sesi = "    ###|###   ";
             var astuoni = "   ####|####  ";
 
             Console.WriteLine();
 
-            Console.WriteLine("1eil.{0}{1}{2}", tuscias,tuscias,tuscias);
-            Console.WriteLine("2eil.{0}{1}{2}", du,tuscias,tuscias);
-            Console.WriteLine("3eil.{0}{1}{2}", keturi,tuscias,tuscias);
-            Console.WriteLine("4eil.{0}{1}{2}", sesi,tuscias,tuscias);
-            Console.WriteLine("5eil.{0}{1}{2}", astuoni,tuscias,tuscias);
+            Console.WriteLine("1eil.{0}{1}{2}", tuscias, tuscias, tuscias);
+            Console.WriteLine("2eil.{0}{1}{2}", du, tuscias, tuscias);
+            Console.WriteLine("3eil.{0}{1}{2}", keturi, tuscias, tuscias);
+            Console.WriteLine("4eil.{0}{1}{2}", sesi, tuscias, tuscias);
+            Console.WriteLine("5eil.{0}{1}{2}", astuoni, tuscias, tuscias);
             Console.WriteLine("      ---1stulp--------2stulp--------3stulp---");
-            
+
             Console.WriteLine();
             Console.WriteLine("------tęsti------");
             Console.ReadLine();
@@ -166,7 +165,7 @@
             Console.WriteLine("5eil.{0}{1}{2}", tuscias, tuscias, astuoni);
             Console.WriteLine("      ---1stulp--------2stulp--------3stulp---");
 
-            
+
 
             Console.WriteLine();
             Console.WriteLine("------tęsti------");
@@ -178,7 +177,7 @@
 
             Console.WriteLine();
             Console.WriteLine("Prašome nupiešti 1 stulpelio 1 eilutę:");
-            
+
             Console.WriteLine("1eil.      {0}     {1}{2}", Console.ReadLine(), tuscias, tuscias);
             Console.WriteLine("2eil.{0}{1}{2}", tuscias, tuscias, du);
             Console.WriteLine("3eil.{0}{1}{2}", tuscias, tuscias, keturi);

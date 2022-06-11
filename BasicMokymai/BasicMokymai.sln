@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P002_stringKintamieji", "P0
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P002_TowerOfHanoi", "P002_TowerOfHanoi\P002_TowerOfHanoi.csproj", "{263CEBE2-C991-491B-B563-08933E22AEDC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P003_Kintamieji", "P003_Kintamieji\P003_Kintamieji.csproj", "{7235124F-AE5E-4B09-A744-5D03DFD17108}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P003_Kintamieji", "P003_Kintamieji\P003_Kintamieji.csproj", "{7235124F-AE5E-4B09-A744-5D03DFD17108}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TowerOfHanoi_v2", "TowerOfHanoi_v2\TowerOfHanoi_v2.csproj", "{05DFA7C9-A808-448A-9E0F-EC53162FB0EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{7235124F-AE5E-4B09-A744-5D03DFD17108}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7235124F-AE5E-4B09-A744-5D03DFD17108}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7235124F-AE5E-4B09-A744-5D03DFD17108}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05DFA7C9-A808-448A-9E0F-EC53162FB0EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05DFA7C9-A808-448A-9E0F-EC53162FB0EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05DFA7C9-A808-448A-9E0F-EC53162FB0EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05DFA7C9-A808-448A-9E0F-EC53162FB0EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
