@@ -8,19 +8,32 @@
 
             Console.WriteLine("1. Nupieškite Tower of Hanoi. Piešiniui naudokite kintamuosius.");
 
-            var tuscias = "       |      ";
-            var du = "      #|#     ";
-            var keturi = "     ##|##    ";
-            var sesi = "    ###|###   ";
-            var astuoni = "   ####|####  ";
+            var stul1_eil1 = "       |      ";
+            var stul1_eil2 = "      #|#     ";
+            var stul1_eil3 = "     ##|##    ";
+            var stul1_eil4 = "    ###|###   ";
+            var stul1_eil5 = "   ####|####  ";
+
+            var stul2_eil1 = "       |      ";
+            var stul2_eil2 = "       |      ";
+            var stul2_eil3 = "       |      ";
+            var stul2_eil4 = "       |      ";
+            var stul2_eil5 = "       |      ";
+
+            var stul3_eil1 = "       |      ";
+            var stul3_eil2 = "       |      ";
+            var stul3_eil3 = "       |      ";
+            var stul3_eil4 = "       |      ";
+            var stul3_eil5 = "       |      ";
+
 
             Console.WriteLine();
 
-            Console.WriteLine("1eil.{0}{1}{2}", tuscias, tuscias, tuscias);
-            Console.WriteLine("2eil.{0}{1}{2}", du, tuscias, tuscias);
-            Console.WriteLine("3eil.{0}{1}{2}", keturi, tuscias, tuscias);
-            Console.WriteLine("4eil.{0}{1}{2}", sesi, tuscias, tuscias);
-            Console.WriteLine("5eil.{0}{1}{2}", astuoni, tuscias, tuscias);
+            Console.WriteLine($"1eil.{stul1_eil1}{stul2_eil1}{stul3_eil1}");
+            Console.WriteLine($"2eil.{stul1_eil2}{stul2_eil2}{stul3_eil2}");
+            Console.WriteLine($"3eil.{stul1_eil3}{stul2_eil3}{stul3_eil3}");
+            Console.WriteLine($"4eil.{stul1_eil4}{stul2_eil4}{stul3_eil4}");
+            Console.WriteLine($"5eil.{stul1_eil5}{stul2_eil5}{stul3_eil5}");
             Console.WriteLine("      ---1stulp--------2stulp--------3stulp---");
 
             Console.WriteLine();
@@ -34,11 +47,16 @@
 
             Console.WriteLine();
 
-            Console.WriteLine("1eil.{0}{1}{2}", astuoni, tuscias, tuscias);
-            Console.WriteLine("2eil.{0}{1}{2}", sesi, tuscias, tuscias);
-            Console.WriteLine("3eil.{0}{1}{2}", keturi, tuscias, tuscias);
-            Console.WriteLine("4eil.{0}{1}{2}", du, tuscias, tuscias);
-            Console.WriteLine("5eil.{0}{1}{2}", tuscias, tuscias, tuscias);
+            stul1_eil1 = stul1_eil5;
+            stul1_eil2 = stul1_eil4;
+            stul1_eil4 = "      #|#     ";
+            stul1_eil5 = "       |      ";
+
+            Console.WriteLine($"1eil.{stul1_eil1}{stul2_eil1}{stul3_eil1}");
+            Console.WriteLine($"2eil.{stul1_eil2}{stul2_eil2}{stul3_eil2}");
+            Console.WriteLine($"3eil.{stul1_eil3}{stul2_eil3}{stul3_eil3}");
+            Console.WriteLine($"4eil.{stul1_eil4}{stul2_eil4}{stul3_eil4}");
+            Console.WriteLine($"5eil.{stul1_eil5}{stul2_eil5}{stul3_eil5}");
             Console.WriteLine("      ---1stulp--------2stulp--------3stulp---");
 
             Console.WriteLine();
@@ -51,11 +69,13 @@
 
             Console.WriteLine();
 
-            Console.WriteLine("1eil.{0}{1}{2}", tuscias, tuscias, tuscias);
-            Console.WriteLine("2eil.{0}{1}{2}", tuscias, tuscias, tuscias);
-            Console.WriteLine("3eil.{0}{1}{2}", tuscias, tuscias, tuscias);
-            Console.WriteLine("4eil.{0}{1}{2}", tuscias, tuscias, tuscias);
-            Console.WriteLine("5eil.{0}{1}{2}", tuscias, tuscias, tuscias);
+            stul1_eil1 = stul1_eil2 = stul1_eil3 = stul1_eil4 = stul2_eil1;
+
+            Console.WriteLine($"1eil.{stul1_eil1}{stul2_eil1}{stul3_eil1}");
+            Console.WriteLine($"2eil.{stul1_eil2}{stul2_eil2}{stul3_eil2}");
+            Console.WriteLine($"3eil.{stul1_eil3}{stul2_eil3}{stul3_eil3}");
+            Console.WriteLine($"4eil.{stul1_eil4}{stul2_eil4}{stul3_eil4}");
+            Console.WriteLine($"5eil.{stul1_eil5}{stul2_eil5}{stul3_eil5}");
             Console.WriteLine("      ---1stulp--------2stulp--------3stulp---");
 
             Console.WriteLine();
@@ -68,11 +88,14 @@
 
             Console.WriteLine();
 
-            Console.WriteLine("1eil.{0}{1}{2}", tuscias, tuscias, tuscias);
-            Console.WriteLine("2eil.{0}{1}{2}", tuscias, tuscias, tuscias);
-            Console.WriteLine("3eil.{0}{1}{2}", tuscias, tuscias, tuscias);
-            Console.WriteLine("4eil.{0}{1}{2}", tuscias, tuscias, tuscias);
-            Console.WriteLine("5eil.{0}{1}{2}", astuoni, astuoni, astuoni);
+            stul1_eil1 = stul1_eil2 = stul1_eil3 = stul1_eil4 = stul2_eil1;
+            stul1_eil5 = stul2_eil5 = stul3_eil5 = "   ####|####  ";
+
+            Console.WriteLine($"1eil.{stul1_eil1}{stul2_eil1}{stul3_eil1}");
+            Console.WriteLine($"2eil.{stul1_eil2}{stul2_eil2}{stul3_eil2}");
+            Console.WriteLine($"3eil.{stul1_eil3}{stul2_eil3}{stul3_eil3}");
+            Console.WriteLine($"4eil.{stul1_eil4}{stul2_eil4}{stul3_eil4}");
+            Console.WriteLine($"5eil.{stul1_eil5}{stul2_eil5}{stul3_eil5}");
             Console.WriteLine("      ---1stulp--------2stulp--------3stulp---");
 
             Console.WriteLine();
@@ -85,11 +108,15 @@
 
             Console.WriteLine();
 
-            Console.WriteLine("1eil.{0}{1}{2}", tuscias, tuscias, tuscias);
-            Console.WriteLine("2eil.{0}{1}{2}", tuscias, tuscias, tuscias);
-            Console.WriteLine("3eil.{0}{1}{2}", tuscias, tuscias, tuscias);
-            Console.WriteLine("4eil.{0}{1}{2}", tuscias, tuscias, du);
-            Console.WriteLine("5eil.{0}{1}{2}", astuoni, sesi, keturi);
+            stul2_eil5 = "    ###|###   ";
+            stul3_eil4 = "      #|#     ";
+            stul3_eil5 = "     ##|##    ";
+
+            Console.WriteLine($"1eil.{stul1_eil1}{stul2_eil1}{stul3_eil1}");
+            Console.WriteLine($"2eil.{stul1_eil2}{stul2_eil2}{stul3_eil2}");
+            Console.WriteLine($"3eil.{stul1_eil3}{stul2_eil3}{stul3_eil3}");
+            Console.WriteLine($"4eil.{stul1_eil4}{stul2_eil4}{stul3_eil4}");
+            Console.WriteLine($"5eil.{stul1_eil5}{stul2_eil5}{stul3_eil5}");
             Console.WriteLine("      ---1stulp--------2stulp--------3stulp---");
 
             Console.WriteLine();
@@ -102,11 +129,13 @@
 
             Console.WriteLine();
 
-            Console.WriteLine("1eil.{0}{1}{2}", tuscias, tuscias, tuscias);
-            Console.WriteLine("2eil.{0}{1}{2}", tuscias, tuscias, tuscias);
-            Console.WriteLine("3eil.{0}{1}{2}", tuscias, tuscias, tuscias);
-            Console.WriteLine("4eil.{0}{1}{2}", du, tuscias, du);
-            Console.WriteLine("5eil.{0}{1}{2}", keturi, sesi, keturi);
+            stul1_eil4 = stul3_eil4;
+
+            Console.WriteLine($"1eil.{stul1_eil1}{stul2_eil1}{stul3_eil1}");
+            Console.WriteLine($"2eil.{stul1_eil2}{stul2_eil2}{stul3_eil2}");
+            Console.WriteLine($"3eil.{stul1_eil3}{stul2_eil3}{stul3_eil3}");
+            Console.WriteLine($"4eil.{stul1_eil4}{stul2_eil4}{stul3_eil4}");
+            Console.WriteLine($"5eil.{stul1_eil5}{stul2_eil5}{stul3_eil5}");
             Console.WriteLine("      ---1stulp--------2stulp--------3stulp---");
 
             Console.WriteLine();
@@ -119,11 +148,13 @@
 
             Console.WriteLine();
 
-            Console.WriteLine("1eil.{0}{1}{2}", tuscias, keturi, tuscias);
-            Console.WriteLine("2eil.{0}{1}{2}", tuscias, keturi, tuscias);
-            Console.WriteLine("3eil.{0}{1}{2}", tuscias, keturi, tuscias);
-            Console.WriteLine("4eil.{0}{1}{2}", du, keturi, du);
-            Console.WriteLine("5eil.{0}{1}{2}", keturi, keturi, keturi);
+            stul2_eil1 = stul2_eil2 = stul2_eil3 = stul2_eil4 = stul2_eil5 = stul3_eil5;
+
+            Console.WriteLine($"1eil.{stul1_eil1}{stul2_eil1}{stul3_eil1}");
+            Console.WriteLine($"2eil.{stul1_eil2}{stul2_eil2}{stul3_eil2}");
+            Console.WriteLine($"3eil.{stul1_eil3}{stul2_eil3}{stul3_eil3}");
+            Console.WriteLine($"4eil.{stul1_eil4}{stul2_eil4}{stul3_eil4}");
+            Console.WriteLine($"5eil.{stul1_eil5}{stul2_eil5}{stul3_eil5}");
             Console.WriteLine("      ---1stulp--------2stulp--------3stulp---");
 
             Console.WriteLine();
@@ -136,11 +167,18 @@
 
             Console.WriteLine();
 
-            Console.WriteLine("1eil.{0}{1}{2}", tuscias, tuscias, tuscias);
-            Console.WriteLine("2eil.{0}{1}{2}", tuscias, tuscias, du);
-            Console.WriteLine("3eil.{0}{1}{2}", tuscias, tuscias, keturi);
-            Console.WriteLine("4eil.{0}{1}{2}", tuscias, tuscias, sesi);
-            Console.WriteLine("5eil.{0}{1}{2}", tuscias, tuscias, astuoni);
+            stul2_eil1 = stul2_eil2 = stul2_eil3 = stul2_eil4 = stul2_eil5 = stul1_eil4 = stul1_eil5 = stul1_eil1;
+            stul3_eil2 = "      #|#     ";
+            stul3_eil3 = "     ##|##    ";
+            stul3_eil4 = "    ###|###   ";
+            stul3_eil5 = "   ####|####  ";
+
+
+            Console.WriteLine($"1eil.{stul1_eil1}{stul2_eil1}{stul3_eil1}");
+            Console.WriteLine($"2eil.{stul1_eil2}{stul2_eil2}{stul3_eil2}");
+            Console.WriteLine($"3eil.{stul1_eil3}{stul2_eil3}{stul3_eil3}");
+            Console.WriteLine($"4eil.{stul1_eil4}{stul2_eil4}{stul3_eil4}");
+            Console.WriteLine($"5eil.{stul1_eil5}{stul2_eil5}{stul3_eil5}");
             Console.WriteLine("      ---1stulp--------2stulp--------3stulp---");
 
             Console.WriteLine();
@@ -153,19 +191,12 @@
 
             Console.WriteLine();
 
-            du = du.Replace("#", "\"");
-            keturi = keturi.Replace("#", "\"");
-            sesi = sesi.Replace("#", "\"");
-            astuoni = astuoni.Replace("#", "\"");
-
-            Console.WriteLine("1eil.{0}{1}{2}", tuscias, tuscias, tuscias);
-            Console.WriteLine("2eil.{0}{1}{2}", tuscias, tuscias, du);
-            Console.WriteLine("3eil.{0}{1}{2}", tuscias, tuscias, keturi);
-            Console.WriteLine("4eil.{0}{1}{2}", tuscias, tuscias, sesi);
-            Console.WriteLine("5eil.{0}{1}{2}", tuscias, tuscias, astuoni);
+            Console.WriteLine($"1eil.{stul1_eil1}{stul2_eil1}{stul3_eil1}");
+            Console.WriteLine($"2eil.{stul1_eil2}{stul2_eil2}{stul3_eil2}".Replace("#", "\""));
+            Console.WriteLine($"3eil.{stul1_eil3}{stul2_eil3}{stul3_eil3}".Replace("#", "\""));
+            Console.WriteLine($"4eil.{stul1_eil4}{stul2_eil4}{stul3_eil4}".Replace("#", "\""));
+            Console.WriteLine($"5eil.{stul1_eil5}{stul2_eil5}{stul3_eil5}".Replace("#", "\""));
             Console.WriteLine("      ---1stulp--------2stulp--------3stulp---");
-
-
 
             Console.WriteLine();
             Console.WriteLine("------tęsti------");
@@ -178,11 +209,13 @@
             Console.WriteLine();
             Console.WriteLine("Prašome nupiešti 1 stulpelio 1 eilutę:");
 
-            Console.WriteLine("1eil.      {0}     {1}{2}", Console.ReadLine(), tuscias, tuscias);
-            Console.WriteLine("2eil.{0}{1}{2}", tuscias, tuscias, du);
-            Console.WriteLine("3eil.{0}{1}{2}", tuscias, tuscias, keturi);
-            Console.WriteLine("4eil.{0}{1}{2}", tuscias, tuscias, sesi);
-            Console.WriteLine("5eil.{0}{1}{2}", tuscias, tuscias, astuoni);
+            stul1_eil1 = Console.ReadLine();
+
+            Console.WriteLine($"1eil.      {stul1_eil1}     {stul2_eil1}{stul3_eil1}");
+            Console.WriteLine($"2eil.{stul1_eil2}{stul2_eil2}{stul3_eil2}".Replace("#", "\""));
+            Console.WriteLine($"3eil.{stul1_eil3}{stul2_eil3}{stul3_eil3}".Replace("#", "\""));
+            Console.WriteLine($"4eil.{stul1_eil4}{stul2_eil4}{stul3_eil4}".Replace("#", "\""));
+            Console.WriteLine($"5eil.{stul1_eil5}{stul2_eil5}{stul3_eil5}".Replace("#", "\""));
             Console.WriteLine("      ---1stulp--------2stulp--------3stulp---");
 
             Console.WriteLine();

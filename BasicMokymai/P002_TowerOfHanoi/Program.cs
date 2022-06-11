@@ -165,9 +165,7 @@
             Console.WriteLine("4eil.{0}{1}{2}", tuscias, tuscias, sesi);
             Console.WriteLine("5eil.{0}{1}{2}", tuscias, tuscias, astuoni);
             Console.WriteLine("      ---1stulp--------2stulp--------3stulp---");
-
-            
-
+                    
             Console.WriteLine();
             Console.WriteLine("------tęsti------");
             Console.ReadLine();
