@@ -24,8 +24,7 @@
             var stul3_eil2 = "       |      ";
             var stul3_eil3 = "       |      ";
             var stul3_eil4 = "       |      ";
-            var stul3_eil5 = "       |      ";
-
+            var stul3_eil5 = "       |      "; //išvedami kintamieji kiekvieno stulpelio kiekvienai eilutei
 
             Console.WriteLine();
 
@@ -33,13 +32,12 @@
             Console.WriteLine($"2eil.{stul1_eil2}{stul2_eil2}{stul3_eil2}");
             Console.WriteLine($"3eil.{stul1_eil3}{stul2_eil3}{stul3_eil3}");
             Console.WriteLine($"4eil.{stul1_eil4}{stul2_eil4}{stul3_eil4}");
-            Console.WriteLine($"5eil.{stul1_eil5}{stul2_eil5}{stul3_eil5}");
+            Console.WriteLine($"5eil.{stul1_eil5}{stul2_eil5}{stul3_eil5}"); //kintamiesiems išvesti naudojama teksto interpoliacija
             Console.WriteLine("      ---1stulp--------2stulp--------3stulp---");
 
             Console.WriteLine();
             Console.WriteLine("------tęsti------");
             Console.ReadLine();
-
 
             //2. Apverskite pirmą stulpelį ir išveskite visą Tower of Hanoi
 
@@ -48,9 +46,9 @@
             Console.WriteLine();
 
             stul1_eil1 = stul1_eil5;
-            stul1_eil2 = stul1_eil4;
+            stul1_eil2 = stul1_eil4; //vienas kintamasis prilyginamas kitam norint pakeisti jo reišmę
             stul1_eil4 = "      #|#     ";
-            stul1_eil5 = "       |      ";
+            stul1_eil5 = "       |      "; //likę kintamieji kurių reikšmes reikia pakeisti yra prilyginami konkrečioms reikšmėms
 
             Console.WriteLine($"1eil.{stul1_eil1}{stul2_eil1}{stul3_eil1}");
             Console.WriteLine($"2eil.{stul1_eil2}{stul2_eil2}{stul3_eil2}");
@@ -69,7 +67,7 @@
 
             Console.WriteLine();
 
-            stul1_eil1 = stul1_eil2 = stul1_eil3 = stul1_eil4 = stul2_eil1;
+            stul1_eil1 = stul1_eil2 = stul1_eil3 = stul1_eil4 = stul2_eil1; //kadangi kintamųjų reikšmės turi būti vienodos, jie yra prilyginami vienas kitam
 
             Console.WriteLine($"1eil.{stul1_eil1}{stul2_eil1}{stul3_eil1}");
             Console.WriteLine($"2eil.{stul1_eil2}{stul2_eil2}{stul3_eil2}");
@@ -89,7 +87,7 @@
             Console.WriteLine();
 
             stul1_eil1 = stul1_eil2 = stul1_eil3 = stul1_eil4 = stul2_eil1;
-            stul1_eil5 = stul2_eil5 = stul3_eil5 = "   ####|####  ";
+            stul1_eil5 = stul2_eil5 = stul3_eil5 = "   ####|####  "; //keletos kintamųjų reikšmės turi būti vienodos, dėl to jie prilyginami konkrečiai reikalingai reikšmei
 
             Console.WriteLine($"1eil.{stul1_eil1}{stul2_eil1}{stul3_eil1}");
             Console.WriteLine($"2eil.{stul1_eil2}{stul2_eil2}{stul3_eil2}");
@@ -195,7 +193,7 @@
             Console.WriteLine($"2eil.{stul1_eil2}{stul2_eil2}{stul3_eil2}".Replace("#", "\""));
             Console.WriteLine($"3eil.{stul1_eil3}{stul2_eil3}{stul3_eil3}".Replace("#", "\""));
             Console.WriteLine($"4eil.{stul1_eil4}{stul2_eil4}{stul3_eil4}".Replace("#", "\""));
-            Console.WriteLine($"5eil.{stul1_eil5}{stul2_eil5}{stul3_eil5}".Replace("#", "\""));
+            Console.WriteLine($"5eil.{stul1_eil5}{stul2_eil5}{stul3_eil5}".Replace("#", "\""));//vietose kur yra simbolis #, jis pakeičiamas simboliu "
             Console.WriteLine("      ---1stulp--------2stulp--------3stulp---");
 
             Console.WriteLine();
@@ -207,9 +205,9 @@
             Console.WriteLine("10. Paprašykite naudotojo nupiešti 1 stulpelio 1 eilutę. Išveskite visą Tower of Hanoi su perpiešta pirma eilute");
 
             Console.WriteLine();
-            Console.WriteLine("Prašome nupiešti 1 stulpelio 1 eilutę:");
+            Console.WriteLine("Prašome nupiešti 1 stulpelio 1 eilutę:"); //naudotojas yra paprašomas įvesti pirmojo stulpelio pirmosios eilutės reikšmę
 
-            stul1_eil1 = Console.ReadLine();
+            stul1_eil1 = Console.ReadLine(); // atitinkama eilutė prilyginama įvesčiai
 
             Console.WriteLine($"1eil.      {stul1_eil1}     {stul2_eil1}{stul3_eil1}");
             Console.WriteLine($"2eil.{stul1_eil2}{stul2_eil2}{stul3_eil2}".Replace("#", "\""));
