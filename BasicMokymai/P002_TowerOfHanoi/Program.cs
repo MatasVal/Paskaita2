@@ -26,8 +26,7 @@
             
             Console.WriteLine();
             Console.WriteLine("------tęsti------");
-            Console.ReadLine();
-
+            Console.ReadLine(); //naudotojui paspaudus "enter" bus vykdoma sekanti užduotis
 
             //2. Apverskite pirmą stulpelį ir išveskite visą Tower of Hanoi
 
@@ -39,7 +38,7 @@
             Console.WriteLine("2eil.{0}{1}{2}", sesi, tuscias, tuscias);
             Console.WriteLine("3eil.{0}{1}{2}", keturi, tuscias, tuscias);
             Console.WriteLine("4eil.{0}{1}{2}", du, tuscias, tuscias);
-            Console.WriteLine("5eil.{0}{1}{2}", tuscias, tuscias, tuscias);
+            Console.WriteLine("5eil.{0}{1}{2}", tuscias, tuscias, tuscias); //kintamieji pirmajame stulpelyje apkeičiami vietomis
             Console.WriteLine("      ---1stulp--------2stulp--------3stulp---");
 
             Console.WriteLine();
@@ -56,7 +55,7 @@
             Console.WriteLine("2eil.{0}{1}{2}", tuscias, tuscias, tuscias);
             Console.WriteLine("3eil.{0}{1}{2}", tuscias, tuscias, tuscias);
             Console.WriteLine("4eil.{0}{1}{2}", tuscias, tuscias, tuscias);
-            Console.WriteLine("5eil.{0}{1}{2}", tuscias, tuscias, tuscias);
+            Console.WriteLine("5eil.{0}{1}{2}", tuscias, tuscias, tuscias); //visur įvedamas kintamasis savyje neturintis "#" simbolio
             Console.WriteLine("      ---1stulp--------2stulp--------3stulp---");
 
             Console.WriteLine();
@@ -157,7 +156,7 @@
             du = du.Replace("#", "\"");
             keturi = keturi.Replace("#", "\"");
             sesi = sesi.Replace("#", "\"");
-            astuoni = astuoni.Replace("#", "\"");
+            astuoni = astuoni.Replace("#", "\""); // # simboliai kintamuosiuose pakeičiami į "
 
             Console.WriteLine("1eil.{0}{1}{2}", tuscias, tuscias, tuscias);
             Console.WriteLine("2eil.{0}{1}{2}", tuscias, tuscias, du);
@@ -175,9 +174,9 @@
             Console.WriteLine("10. Paprašykite naudotojo nupiešti 1 stulpelio 1 eilutę. Išveskite visą Tower of Hanoi su perpiešta pirma eilute");
 
             Console.WriteLine();
-            Console.WriteLine("Prašome nupiešti 1 stulpelio 1 eilutę:");
+            Console.WriteLine("Prašome nupiešti 1 stulpelio 1 eilutę:"); //paprašoma naudotojo įvesti 1 stulp 1 eil reikšmę
             
-            Console.WriteLine("1eil.      {0}     {1}{2}", Console.ReadLine(), tuscias, tuscias);
+            Console.WriteLine("1eil.      {0}     {1}{2}", Console.ReadLine(), tuscias, tuscias); //įvesta reikšmė nupiešiama tam skirtoje eilutėje
             Console.WriteLine("2eil.{0}{1}{2}", tuscias, tuscias, du);
             Console.WriteLine("3eil.{0}{1}{2}", tuscias, tuscias, keturi);
             Console.WriteLine("4eil.{0}{1}{2}", tuscias, tuscias, sesi);
