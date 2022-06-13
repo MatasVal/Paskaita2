@@ -56,6 +56,36 @@
             int castintasInt5 = (int)skaiciusLongDarDidesnis;
             Console.WriteLine($" castintasInt5={castintasInt5}"); //LABAI SVARBU!! didesnio i mazesni keiciant kompiuteris gali pradeti daryti klaidas skaiciuojant
 
+            //*** Type Conversion Methods
+            string konvertuotasString = Convert.ToString(skaiciusInt);//skaicius tapo tesktu
+            string konvertuotasString1 = skaiciusInt.ToString();
+
+
+            long konvertuotasLong = Convert.ToInt64(skaiciusInt);//long yra 64 integer tipas
+            double konvertuotasDouble = Convert.ToDouble(skaiciusInt);
+
+
+            //int konvertuotasInt = Convert.ToInt32(skaiciusLongDidesnis);// luzta nes netelpa
+
+
+            //darbas su null tipais
+            int? skaiciusIntNull = null; //klaustukas kad priiimtu su null
+            //long castintasLong5 = (long)skaiciusIntNull; //luzta
+            long konvertuotasLong1 = Convert.ToInt64(skaiciusIntNull);//programa neluzta, o grazinama long tipo default reiksme ty 0
+            Console.WriteLine($" konvertuotasLong1={konvertuotasLong1}");
+
+            //Parsinimas - skaitmens konvertavimas is teksto
+
+            string skaiciusString = "100";
+            string skaiciusDidelisString = "99999999999999999";
+            string tekstas = "tekstas";
+            int skaiciusIntParsintas = int.Parse(skaiciusString);
+            Console.WriteLine($" skaiciusString + 1={skaiciusString + 1}");
+            Console.WriteLine($" skaiciusIntParsintas + 1={ skaiciusIntParsintas +1}");
+
+            //int skaiciusIntParsintas = int.Parse(skaiciusDidelisString);
+            //int stekstasIntParsintas = int.Parse(tekstas);
+
 
 
 
