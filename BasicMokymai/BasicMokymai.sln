@@ -19,6 +19,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TowerOfHanoi_v2", "TowerOfH
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P_004_tipuKonversijos", "P_004_tipuKonversijos\P_004_tipuKonversijos.csproj", "{000DFEFC-FE94-40F0-BDA9-B19B0D5512C1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P004_MatematiniaiOperatoriai", "P004_MatematiniaiOperatoriai\P004_MatematiniaiOperatoriai.csproj", "{681C4AB1-5CA0-4AE8-95C8-570229EC0212}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{000DFEFC-FE94-40F0-BDA9-B19B0D5512C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{000DFEFC-FE94-40F0-BDA9-B19B0D5512C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{000DFEFC-FE94-40F0-BDA9-B19B0D5512C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{681C4AB1-5CA0-4AE8-95C8-570229EC0212}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{681C4AB1-5CA0-4AE8-95C8-570229EC0212}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{681C4AB1-5CA0-4AE8-95C8-570229EC0212}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{681C4AB1-5CA0-4AE8-95C8-570229EC0212}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
