@@ -1,4 +1,6 @@
 ﻿
+using System.Text;
+
 Console.WriteLine("Hello, Priskyrimo operatoriai = += -= *= /=");
 int skaicius;
 int kitasSkaicius = 20;
@@ -61,3 +63,16 @@ Console.WriteLine($"skaicius={skaicius}");
 
 skaicius--;
 Console.WriteLine($"skaicius={skaicius}");
+
+
+//area of trapezoid
+
+double side1 = 5.5;
+double side2 = 3.25;
+double height = 4.6;
+double area = (side1 + side2) / 2 * height;
+
+//double areKazkasKito = (());
+
+Console.OutputEncoding = Encoding.UTF8;
+
