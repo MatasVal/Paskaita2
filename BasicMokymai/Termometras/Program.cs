@@ -32,6 +32,7 @@ Console.WriteLine($"ar sutampa kelvinas su celsijumi - {vertimas1} ");
 bool vertimas2 = (farenheitas - 32) / 1.8 + 273.15 == vertimas0 == vertimas1;
 
 
+
 //-Nupieškite termometrą pagal Celsijų 
 //a) Atvaizduokite skalę, sugraduotą kas 5 laipsnius C priklausomai nuo įvestos temperatūros pridedant ir atimant 40 laipsnių 
 //(tarkime įvesta buvo 10, tuomet skalė bus nuo -30 iki +50)
