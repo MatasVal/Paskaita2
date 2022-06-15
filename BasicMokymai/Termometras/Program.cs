@@ -8,7 +8,6 @@ var celsius = Convert.ToDouble(Console.ReadLine());
 var farenheitas = (celsius * 9 / 5) + 32;
 var kelvinas = celsius + 273.15;
 
-
 Console.WriteLine($"Farenheitas ={(celsius*9/5) +32}");
 
 //- Paskaičiuokite ir išveskite į ekraną temperatūrą pagal kelviną.
@@ -26,16 +25,38 @@ Console.WriteLine($"konvertuojamas kelvinas atgal i celsiju = {kelvinas - 273.15
 bool vertimas1 = kelvinas - 273.15 == celsius;
 
 Console.WriteLine($"ar sutampa kelvinas su celsijumi - {vertimas1} ");
+
 //-Paskaičiuotą temperatūrą pagal farenheita peverskite į kelviną ir patikrinkite ar sutampa su ankstesniais skaičiavimais (išveskite true/false)
 
 
-bool vertimas2 = (farenheitas - 32) / 1.8 + 273.15 == vertimas0 == vertimas1;
 
+bool vertimas2 = (farenheitas - 32) / 1.8 + 273.15 == celsius;
 
+Console.WriteLine($"ar sutampa farenheito vertimas i kelvina su ankstesniais skaiciavimais - {vertimas2} ");
 
 //-Nupieškite termometrą pagal Celsijų 
 //a) Atvaizduokite skalę, sugraduotą kas 5 laipsnius C priklausomai nuo įvestos temperatūros pridedant ir atimant 40 laipsnių 
 //(tarkime įvesta buvo 10, tuomet skalė bus nuo -30 iki +50)
+
+Console.WriteLine($" {celsius} +40 \n
++ 35
++ 30
++ 25
++ 20
++ 15
++ 10
++ 5
++ 0
+- 5
+- 10
+- 15
+- 20
+- 25
+- 30
+- 35
+- 40;
+
+
 // b) Grafiškai atvaizduokite įvestą temperatūros stulpelį. 
 //<HINT> naudokite .ToString(), palyginimo reliacinius operatorius (==, >, < ir t.t.) ir.Replace().
 // if naudoti negalima, ternary operator (?) naudoti negalima.
@@ -73,3 +94,10 @@ bool vertimas2 = (farenheitas - 32) / 1.8 + 273.15 == vertimas0 == vertimas1;
 
 */
 
+//lygiavimas
+
+
+
+//var a= "123";
+//Console.WriteLine($" |---{a,4}---|"   );
+//Console.WriteLine($" |----------|");

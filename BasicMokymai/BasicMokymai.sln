@@ -23,9 +23,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P004_MatematiniaiOperatoria
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P004_uzduotys", "P004_uzduotys\P004_uzduotys.csproj", "{E31EF0AB-B11D-447F-9CE2-11B7D39461D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P005_operatoriai", "P005_operatoriai\P005_operatoriai.csproj", "{7550DB16-6DA0-4CC4-84F8-EDF820945861}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P005_operatoriai", "P005_operatoriai\P005_operatoriai.csproj", "{7550DB16-6DA0-4CC4-84F8-EDF820945861}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Termometras", "Termometras\Termometras.csproj", "{65815518-800B-4471-B78D-76A16594FF73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Termometras", "Termometras\Termometras.csproj", "{65815518-800B-4471-B78D-76A16594FF73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P006_Loginiai", "P006_Loginiai\P006_Loginiai.csproj", "{2287387D-FEF3-4D94-BDEE-2909B81D3253}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +83,10 @@ Global
 		{65815518-800B-4471-B78D-76A16594FF73}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65815518-800B-4471-B78D-76A16594FF73}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65815518-800B-4471-B78D-76A16594FF73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2287387D-FEF3-4D94-BDEE-2909B81D3253}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2287387D-FEF3-4D94-BDEE-2909B81D3253}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2287387D-FEF3-4D94-BDEE-2909B81D3253}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2287387D-FEF3-4D94-BDEE-2909B81D3253}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
