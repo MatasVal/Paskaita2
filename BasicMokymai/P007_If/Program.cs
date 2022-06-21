@@ -107,7 +107,7 @@
             JEI LYGIAI 160, PARODO, KAD IŠDIRBTAS PILNAS ETATAS, 
             JEI DAUGIAU PARODO KIEK YRA VIRŠVALANDŽIŲ.
             JEI VARTOTOJAS PADARO ĮVEDIMO KLAIDĄ PRANEŠTI IR UŽBAIGTI DARBĄ
-            */
+            
 
 
             Console.WriteLine("Iveskite isdirbtas valandas:");
@@ -130,7 +130,7 @@
             {
                 Console.WriteLine("Klaidingas ivedimas")
             }
-
+*/
 
         }
     }

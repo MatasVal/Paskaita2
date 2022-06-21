@@ -33,7 +33,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lygiavimas", "Lygiavimas\Ly
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kelias", "Kelias\Kelias.csproj", "{B2C78F2B-10E8-4494-9DA9-4061B71DD16B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P007_If", "P007_If\P007_If.csproj", "{2DF14C64-CA97-456C-9075-E3D20FB98099}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P007_If", "P007_If\P007_If.csproj", "{2DF14C64-CA97-456C-9075-E3D20FB98099}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P008_Switch", "P008_Switch\P008_Switch.csproj", "{5EF1D12C-B122-4ADC-B21B-32A79C00EAE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P008_uzduotys", "P008_uzduotys\P008_uzduotys.csproj", "{E61F52E0-4DE2-4FC7-82F6-E7B40333F5A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -105,6 +109,14 @@ Global
 		{2DF14C64-CA97-456C-9075-E3D20FB98099}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2DF14C64-CA97-456C-9075-E3D20FB98099}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2DF14C64-CA97-456C-9075-E3D20FB98099}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EF1D12C-B122-4ADC-B21B-32A79C00EAE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EF1D12C-B122-4ADC-B21B-32A79C00EAE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EF1D12C-B122-4ADC-B21B-32A79C00EAE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EF1D12C-B122-4ADC-B21B-32A79C00EAE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E61F52E0-4DE2-4FC7-82F6-E7B40333F5A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E61F52E0-4DE2-4FC7-82F6-E7B40333F5A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E61F52E0-4DE2-4FC7-82F6-E7B40333F5A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E61F52E0-4DE2-4FC7-82F6-E7B40333F5A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
