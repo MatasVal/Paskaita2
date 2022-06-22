@@ -258,16 +258,14 @@ Console.WriteLine("6 bandymas:");
 
 
 
-*SKAIČIUOTUVAS *
-Paprašykite naudotojo įvesti du skaičius ir matematinę operaciją ( +, -, * arba / )
--Parašykite programą kuri į ekraną išves skaičių rezultatą
-- naudokite if
-- naudokite switch
+//*SKAIČIUOTUVAS *
+//Paprašykite naudotojo įvesti du skaičius ir matematinę operaciją ( +, -, * arba / )
+//-Parašykite programą kuri į ekraną išves skaičių rezultatą
+//- naudokite if
+//- naudokite switch
 
 
     
-
-
 Console.WriteLine("Iveskite pirmaji skaiciu:");
 var skaicius1 = Convert.ToInt32 (Console.ReadLine());
 Console.WriteLine("Iveskite antraji skaiciu:");
@@ -275,12 +273,41 @@ var skaicius2 = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Iveskite matematine operacija:");
 string operacija = Console.ReadLine();
 
-switch ()
-    case 
+Console.WriteLine();
 
 if (operacija == "+")
 {
-    Console.WriteLine(skaicius1+ skaicius2);
+    Console.WriteLine(skaicius1 + skaicius2);
+}
+else if (operacija == "-")
+{
+    Console.WriteLine(skaicius1 - skaicius2);
+}
+else if (operacija == "*")
+{
+    Console.WriteLine(skaicius1 * skaicius2);
+}
+else if (operacija == "/")
+{
+    Console.WriteLine(skaicius1 / skaicius2);
+}
+
+Console.WriteLine();
+
+switch (operacija)
+{
+    case "+":
+        Console.WriteLine($"{skaicius1+skaicius2}");
+        break;
+    case "-":
+        Console.WriteLine($"{skaicius1-skaicius2}");
+        break;
+    case "*":
+        Console.WriteLine($"{skaicius1*skaicius2}");
+        break;
+    case "/":
+        Console.WriteLine($"{skaicius1/skaicius2}");
+        break;
 }
 
 
@@ -288,6 +315,8 @@ if (operacija == "+")
 
 
 
+
+/*
 
 *Trys draugai *
 -Sukurti metodą, kuris paprašytų vartotojo įvesti tris jo draugų vardus bei kiekvieno amžių.
@@ -298,7 +327,8 @@ if (operacija == "+")
 < Hint > ieškant jauniausio, seniausio naudoti if sąlygos sakinius ir naudoti tik elementus ir
 konstrukcijas kurias iki šiol išėjome.
 
-*/
+
+
 
 Console.WriteLine("Iveskite pirmojo draugo varda:");
 string vardas1 = Console.ReadLine();
@@ -353,4 +383,18 @@ else if (amzius3 > amzius1 && amzius3 > amzius2)
 {
     Console.WriteLine($"vyriausias draugas - {vardas3}, jam {amzius3}");
 }
+
+
+
+
+
+**Kalėdų sausainiai * *
+-Paprašykite vartotojo įvesti betkokias 4 datas (tarkim 2013-12-24, 2020-12-22, 3000-12-24, 2021-03-03)
+-Parašykite programą kuri nustato ar tarp įvestų datų yra kalėdos (gruodžio 24).
+-Ir jei yra kalėdų data, išveda - "Jums priklauso nemokami kalėdiniai sausainiai"
+- Jei nėra išveda - "Palaukite kalėdų"
+Pavyzdzio atsakymas: "Jums priklauso nemokami kalėdų sausainiai"
+< Hint > metodai data.Month ir data.Day
+*/
+
 
