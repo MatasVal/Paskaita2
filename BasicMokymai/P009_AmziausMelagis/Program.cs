@@ -67,6 +67,33 @@ Rezultatas gali atrodyti taip:
 
 Console.WriteLine("Prasome ivesti savo varda ir pavarde:");
 string vardasPavarde = Console.ReadLine();
-Console.WriteLine("Prasome ivesti savo asmens koda (11 simb.):");
-int asmensKodas = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine();
 
+Console.WriteLine("Prasome ivesti savo asmens koda (11 simb.):");
+long asmensKodas = Convert.ToInt64(Console.ReadLine());
+Console.WriteLine();
+
+ if (asmensKodas < 10000000000)
+{
+    Console.WriteLine("Ivesta per mazai skaitmenu");
+    Environment.Exit(0);
+}
+ else if (asmensKodas > 99999999999)
+{
+    Console.WriteLine("Ivesta per daug skaitmenu");
+    Environment.Exit(0);
+}
+Console.WriteLine();
+Console.WriteLine("Prasome ivesti savo amziu:");
+int amziusMetais = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Prasome ivesti savo gimimo data:");
+//DateTime gimimoData = DateTime.Parse("01 / 10 / 2015");
+
+//var gimimoData = Convert.ToDateTime(Console.ReadLine());
+
+var gimimoData = new DateOnly(2022,02,02);
+
+
+//DateOnly gimimoData = Convert.ToDateTime(Console.ReadLine());
+
+Console.WriteLine(gimimoData);
