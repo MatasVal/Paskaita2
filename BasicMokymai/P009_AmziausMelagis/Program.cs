@@ -70,30 +70,44 @@ string vardasPavarde = Console.ReadLine();
 Console.WriteLine();
 
 Console.WriteLine("Prasome ivesti savo asmens koda (11 simb.):");
-long asmensKodas = Convert.ToInt64(Console.ReadLine());
+var asmensKodoIvestis = Console.ReadLine();
+long asmensKodas;
+bool arAsmensKodasYraSkaicius = long.TryParse(asmensKodoIvestis, out asmensKodas);
+
+if (arAsmensKodasYraSkaicius)
+{
+        if (asmensKodas < 10000000000)
+        {
+        Console.WriteLine("Ivesta per mazai skaitmenu");
+        Environment.Exit(0);
+        }
+        else if (asmensKodas > 99999999999)
+        {
+        Console.WriteLine("Ivesta per daug skaitmenu");
+        Environment.Exit(0);
+        }
+}
+else
+{
+    Console.WriteLine("Asmens koda turi sudaryti vien skaitmenys");
+    Environment.Exit(0);
+}
 Console.WriteLine();
 
- if (asmensKodas < 10000000000)
-{
-    Console.WriteLine("Ivesta per mazai skaitmenu");
-    Environment.Exit(0);
-}
- else if (asmensKodas > 99999999999)
-{
-    Console.WriteLine("Ivesta per daug skaitmenu");
-    Environment.Exit(0);
-}
-Console.WriteLine();
+ 
+
 Console.WriteLine("Prasome ivesti savo amziu:");
 int amziusMetais = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine();
+
 Console.WriteLine("Prasome ivesti savo gimimo data:");
-//DateTime gimimoData = DateTime.Parse("01 / 10 / 2015");
 
-//var gimimoData = Convert.ToDateTime(Console.ReadLine());
+if (DateOnly.TryParse(Console.ReadLine(), out DateOnly gimimoData));
+{
+    Console.WriteLine();
+    Console.WriteLine($"Gimimo data: {gimimoData}");
+}
 
-var gimimoData = new DateOnly(2022,02,02);
+Console.WriteLine();
+Console.WriteLine(DateTime.Now.ToString("dd-MM-yyyy"));
 
-
-//DateOnly gimimoData = Convert.ToDateTime(Console.ReadLine());
-
-Console.WriteLine(gimimoData);
