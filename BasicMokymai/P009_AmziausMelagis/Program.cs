@@ -72,42 +72,67 @@ Console.WriteLine();
 Console.WriteLine("Prasome ivesti savo asmens koda (11 simb.):");
 var asmensKodoIvestis = Console.ReadLine();
 long asmensKodas;
-bool arAsmensKodasYraSkaicius = long.TryParse(asmensKodoIvestis, out asmensKodas);
+bool arAsmensKodasYraSkaicius = long.TryParse(asmensKodoIvestis, out asmensKodas); //patikrinu ar asmens kodas yra skaicius
 
-if (arAsmensKodasYraSkaicius)
+if (arAsmensKodasYraSkaicius) 
 {
         if (asmensKodas < 10000000000)
         {
-        Console.WriteLine("Ivesta per mazai skaitmenu");
+        Console.WriteLine("Ivestas per mazas skaitmuo");
         Environment.Exit(0);
         }
-        else if (asmensKodas > 99999999999)
+        else if (asmensKodas > 69999999999)
         {
-        Console.WriteLine("Ivesta per daug skaitmenu");
+        Console.WriteLine("Ivestas per didelis skaitmuo");   //jeigu asm. kodas yra skaicius tikrinu ar ji sudaro tinkamas kiekis skaitmenu
         Environment.Exit(0);
         }
 }
 else
 {
-    Console.WriteLine("Asmens koda turi sudaryti vien skaitmenys");
+    Console.WriteLine("Asmens koda turi sudaryti vien skaitmenys"); //jeigu asm kodas yra sudarytas ne is skaitmenu ar ne tik is skaitmenu, darbas nutraukiamas
     Environment.Exit(0);
 }
 Console.WriteLine();
 
- 
-
 Console.WriteLine("Prasome ivesti savo amziu:");
-int amziusMetais = Convert.ToInt32(Console.ReadLine());
+
+var amzius = Convert.ToInt32(Console.ReadLine());
+
 Console.WriteLine();
 
 Console.WriteLine("Prasome ivesti savo gimimo data:");
 
-if (DateOnly.TryParse(Console.ReadLine(), out DateOnly gimimoData));
-{
-    Console.WriteLine();
-    Console.WriteLine($"Gimimo data: {gimimoData}");
-}
+var gimimoDataIvesta = DateTime.Parse(Console.ReadLine());
+ 
+var gimimoDataSuformatuota = gimimoDataIvesta.ToString("yyyy-MM-dd"); //pasidarau kintamaji kuris yra suformatuota gimimo data
 
 Console.WriteLine();
-Console.WriteLine(DateTime.Now.ToString("dd-MM-yyyy"));
 
+var siandienosDataSuformatuota = DateTime.Now.ToString("yyyy-MM-dd");
+
+string lytis = (asmensKodas >= 10000000000 && asmensKodas <= 19999999999 || asmensKodas >= 30000000000 && asmensKodas <= 39999999999 || asmensKodas >= 50000000000 && asmensKodas <= 59999999999) ? "Vyras" : "Moteris";
+
+var gimimoMetaiIsskaiciuoti =
+if (amzius) 
+
+bool arAmziusYraIvestas = string.IsNullOrEmpty(amzius);
+
+
+Console.WriteLine($"▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓");
+Console.WriteLine($"▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ ATASKAITA APIE ASMENĮ ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓");
+Console.WriteLine($"▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓      {siandienosDataSuformatuota,10}       ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓");
+Console.WriteLine($"▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓");
+Console.WriteLine($"▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓");
+Console.WriteLine($"▓     Vardas, pavardė ▓ {vardasPavarde,-30}      ▓");
+Console.WriteLine($"▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓");
+Console.WriteLine($"▓               Lytis ▓ {lytis,-7}                               ▓");
+Console.WriteLine($"▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓");
+Console.WriteLine($"▓        Asmens kodas ▓ {asmensKodas,11}                         ▓");
+Console.WriteLine($"▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓");
+Console.WriteLine($"▓              Amžius ▓ {amzius,2}                                  ▓");
+Console.WriteLine($"▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓");
+Console.WriteLine($"▓         Gimimo data ▓ {gimimoDataSuformatuota,10}                          ▓");
+Console.WriteLine($"▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓");
+Console.WriteLine($"▓ Amžiaus patikimumas ▓ amžius nepatikimas                  ▓");
+Console.WriteLine($"▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓");
+Console.WriteLine($"▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓");
