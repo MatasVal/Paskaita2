@@ -39,9 +39,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P008_Switch", "P008_Switch\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P008_uzduotys", "P008_uzduotys\P008_uzduotys.csproj", "{E61F52E0-4DE2-4FC7-82F6-E7B40333F5A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P009_StringManipuliacijos", "P009_StringManipuliacijos\P009_StringManipuliacijos.csproj", "{9A50C0C3-3FB8-4D16-AAC4-0E69C91D3A02}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P009_StringManipuliacijos", "P009_StringManipuliacijos\P009_StringManipuliacijos.csproj", "{9A50C0C3-3FB8-4D16-AAC4-0E69C91D3A02}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P009_AmziausMelagis", "P009_AmziausMelagis\P009_AmziausMelagis.csproj", "{F597B67D-BBC2-4777-8F06-1D9B0105F088}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P009_AmziausMelagis", "P009_AmziausMelagis\P009_AmziausMelagis.csproj", "{F597B67D-BBC2-4777-8F06-1D9B0105F088}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P010_Methods", "P010_Methods\P010_Methods.csproj", "{8F831ADB-BCB5-4F20-8FAE-7DE6A0D45BA9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -129,6 +131,10 @@ Global
 		{F597B67D-BBC2-4777-8F06-1D9B0105F088}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F597B67D-BBC2-4777-8F06-1D9B0105F088}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F597B67D-BBC2-4777-8F06-1D9B0105F088}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F831ADB-BCB5-4F20-8FAE-7DE6A0D45BA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F831ADB-BCB5-4F20-8FAE-7DE6A0D45BA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F831ADB-BCB5-4F20-8FAE-7DE6A0D45BA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F831ADB-BCB5-4F20-8FAE-7DE6A0D45BA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
