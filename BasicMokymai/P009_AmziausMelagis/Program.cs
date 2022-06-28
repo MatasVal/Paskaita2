@@ -22,7 +22,7 @@ if (arAsmensKodasYraSkaicius)
         }
         else if (asmensKodas > 69999999999)
         {
-        Console.WriteLine("Ivestas per didelis skaitmuo");   //jeigu asm. kodas yra skaicius tikrinu ar ji sudaro tinkamas kiekis skaitmenu
+        Console.WriteLine("Ivestas per didelis skaitmuo");   //jeigu ivestas asm. kodas yra skaicius, tikrinu ar ji sudaro tinkamas kiekis skaitmenu ir, ar jis neiseina is asmens kodo ribu
         Environment.Exit(0);
         }
 }
@@ -39,7 +39,7 @@ Console.WriteLine("Prasome ivesti savo amziu:");
 
 string amziausIvestis = Console.ReadLine();
 
-bool arAmziusYraIvestas = int.TryParse(amziausIvestis, out int amzius);
+bool arAmziusYraIvestas = int.TryParse(amziausIvestis, out int amzius);// tikrinu ar amzius yra ivestas
 
 
 Console.WriteLine();
@@ -93,8 +93,8 @@ string issivestiGimimoMetai21amzius = issivestaGimimoData21amzius.Substring(0, 4
 string amziausPatikimumas= "";
 
 
-//jei amzius ivestas, ziurima koks pirmas skaicius ir nuo to priklausomai pridedamas amzius nepilnos prie gimimo datos,
-//Gauta papildyta  data lyginama su gauta data skaiciuojant nuo ivesto amziaus, priklausomai nuo to ar sutampa yra isvedamas patikimumas
+//jei amzius ivestas, ziurima koks pirmas skaicius ir nuo to priklausomai pridedamas amzius prie nepilnos gimimo datos issivestos is asmens kodo,
+//Gauta papildyta data lyginama su gauta data skaiciuojant nuo ivesto amziaus ir, priklausomai nuo to ar datos sutampa yra isvedamas patikimumas
 
 
 
