@@ -9,7 +9,8 @@ Console.WriteLine();
 Console.WriteLine("Prasome ivesti savo asmens koda (11 simb.):");
 var asmensKodoIvestis = Console.ReadLine();
 long asmensKodas;
-bool arAsmensKodasYraSkaicius = long.TryParse(asmensKodoIvestis, out asmensKodas); //patikrinu ar asmens kodas yra skaicius
+bool arAsmensKodasYraSkaicius = long.TryParse(asmensKodoIvestis, out asmensKodas); 
+//patikrinu ar asmens kodas yra skaicius
 
 
 

@@ -17,6 +17,11 @@
             Console.WriteLine($"Tarpu kiekis yra: {TarpuKiekis(tekstas)}");
             Console.WriteLine($"Teksto ilgis yra: {TekstoIlgis(tekstas)}");
             Console.WriteLine($"Zodziu kiekis yra: {ZodziuKiekis(tekstas)}");
+            Console.WriteLine($"Tarpu kiekis gale yra: {TarpuKiekisGale(tekstas)}");
+            Console.WriteLine($"Tarpu kiekis pradzioje yra: {TarpuKiekisPradzioje(tekstas)}");
+
+            //Console.WriteLine($"Pradzioje yra tarpu: {TarpuKiekisPradziojeIrGale(tarpuSkPradzioje)}, gale yra tarpu: {}");
+            Console.WriteLine($"Ar yra mokausi: {ArYraZodisMokausi(tekstas)}"); 
 
         }
 
@@ -96,7 +101,10 @@ _ ' as mokausi '
    > Gale yra tarpų: 6
         */
 
-
+        public static int TarpuKiekisGale(string tekstas)
+        {
+            return tekstas.Length - tekstas.TrimEnd().Length;
+        }
 
 
 
@@ -113,6 +121,11 @@ _ ' as mokausi '
        > Pradžioje yra tarpų: 1
             */
 
+        public static int TarpuKiekisPradzioje(string tekstas)
+        {
+            return tekstas.Length - tekstas.TrimStart().Length;
+        }
+
 
         // 9 Uzduotis
 
@@ -128,6 +141,14 @@ _ ' as mokausi '
   > Pradžioje yra tarpų: 1
   > Gale yra tarpų: 6
     */
+        public static int TarpuKiekisPradziojeIrGale(string tekstas, out int tarpuSkPradzioje)
+        {
+            tarpuSkPradzioje = tekstas.Length - tekstas.TrimStart().Length;
+            return tekstas.Length - tekstas.TrimEnd().Length;
+           
+        }                     //kodel viena reiksme vedama per return o kita kitaip?
+
+
 
 
         // 10 Uzduotis
@@ -143,6 +164,103 @@ _ ' as mokausi '
     > 'a' raidžių kiekis yra: 3
         */
 
+        public static int KiekYraRaidziuA(string tekstas)
+        {
+            return tekstas.Length - tekstas.Replace("a", "").Length;
+        }
+
+
+        //11 Uzduotis
+        /*
+         Parašykite programą kurioje vienas metodas.
+    - Naudotojo paprašome įvesti betkokį tekstą Main metode.
+    - Metodas grąžina žodžius Taip arba Ne ar tekste rado žodį 'mokausi'. N.B. grąžinama string, o ne bool.
+    -  Išvesti rezultatą Main metode.
+    Pvz:
+    > Iveskite teksta:
+    _ ' as labai mokausi programuoti     '
+    > Ar yra mokausi: Taip
+         */
+
+        public static string ArYraZodisMokausi(string tekstas)
+        {
+            var yraArNe = tekstas.Contains("mokausi");
+
+            string taipArNe = "";
+            
+             if (yraArNe)
+            {
+                taipArNe = "Taip";
+            }
+            else
+            {
+                taipArNe = "Ne";
+            }
+
+            return taipArNe;
+        }
+
+        /* 11A Uzduotis
+               
+          
+        Parašykite programą kurioje vienas metodas. 
+    - Naudotojo paprašome įvesti betkokį tekstą Main metode. 
+    - Metodas grąžina žodžius Taip arba Ne ar tekste rado žodį 'mokausi'. 
+        Bet tik tuo atveju jei žodis 'mokausi' nesulipęs su kitu žodžiu.
+        N.B. grąžinama string, o ne bool.
+    -  Išvesti rezultatą Main metode.
+    Pvz: 
+    > Iveskite teksta:
+    _ ' as labai mokausi programuoti     '
+    > Ar yra mokausi: Taip
+
+    Pvz: 
+    > Iveskite teksta:
+    _ ' as_labai_mokausi_programuoti     '
+    > Ar yra mokausi: Ne
+         */
+
+        public static string ArYraZodisMokausiAAA(string tekstas)
+        {
+            var yraArNe = tekstas.Contains("mokausi");
+
+            string taipArNe = "";
+
+            if (yraArNe)
+            {
+                taipArNe = "Taip";
+            }
+            else
+            {
+                taipArNe = "Ne";
+            }
+
+
+
+            return taipArNe;
+        }
+
+
+        //12 Uzduotis
+        /*          
+          
+         Parašykite programą kurioje yra vienas metodas.
+      - Main metode Naudotojo paprašome įvesti betkokį tekstą su tarpais
+      - Įvestas teikstas kaip argumentas perduodamas metodui. Metodas grąžina pirmos 'a' raidės vietą tekste.
+      - Main metode į ekraną išveskite metodo darbo rezultatą
+      Pvz:
+      > Iveskite teksta:
+      _ as mokausi programuoti
+      > 'a' raides vieta yra: 0
+
+         */
+
+        public static void ARaidesVieta();
+
+
 
     }
+
+
+
 }

@@ -11,5 +11,31 @@ namespace P011_Methods_Tests
             var actual = P011_SavarankiskosUzduotys.Program.TarpuKiekis(fake);
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void TekstoIlgis_Test1()
+        {
+            var fake = " as mokausi ";
+            var expected = 10;
+            var actual = P011_SavarankiskosUzduotys.Program.TekstoIlgis(fake);
+            Assert.AreEqual(expected, actual);
+        }
+       /* [TestMethod]
+        public void TekstoIlgis_Test1()
+        {
+            var fake = " as mokausi ";
+            var expected = 10;
+            var actual = P011_SavarankiskosUzduotys.Program.TekstoIlgis(fake);
+            Assert.AreEqual(expected, actual);
+        }
+       */
+        [TestMethod]
+        public void ArYraZodisMokausi_Test1()
+        {
+            var fake = " as labai mokausi programuoti     ";
+            var expected = "Taip";
+            var actual = P011_SavarankiskosUzduotys.Program.ArYraZodisMokausi(fake);
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

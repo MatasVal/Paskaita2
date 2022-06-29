@@ -266,8 +266,6 @@ _ as mokausi programuoti
             Console.WriteLine($"skaicius - {skaicius}, tekstas - {tekstas}");
         }
 
-
-
         public static double DaugintiSkaicius(double sk1d, double sk2d) //dar karta oveloadintas metodas, bet dabar jau pagal metodo tipa
         {
             return sk1d * sk2d;
@@ -292,7 +290,7 @@ _ as mokausi programuoti
         public static float GautiAtsitiktiniSkaiciu()
         {
             float a = 4;
-            return a + 4.6864655f;// jeigu yra nera void yra return
+            return a + 4.6864655f;// jeigu nera void yra return
         }
 
         public static void IsveskKazkaEkranan()
