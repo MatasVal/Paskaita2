@@ -19,10 +19,15 @@
             Console.WriteLine($"Zodziu kiekis yra: {ZodziuKiekis(tekstas)}");
             Console.WriteLine($"Tarpu kiekis gale yra: {TarpuKiekisGale(tekstas)}");
             Console.WriteLine($"Tarpu kiekis pradzioje yra: {TarpuKiekisPradzioje(tekstas)}");
-
-            //Console.WriteLine($"Pradzioje yra tarpu: {TarpuKiekisPradziojeIrGale(tarpuSkPradzioje)}, gale yra tarpu: {}");
-            Console.WriteLine($"Ar yra mokausi: {ArYraZodisMokausi(tekstas)}"); 
-
+            // 9 uzd
+            TarpuKiekisPradziojeIrGale(Console.ReadLine(), out int priekyje, out int gale);
+            Console.WriteLine($"Priekyje = {priekyje} gale ={gale}");
+            // 10 uzd
+            Console.WriteLine($"'a' raidžių kiekis yra: {KiekYraRaidziuA(tekstas)}");
+            // 11 uzd
+            Console.WriteLine($"Ar yra 'mokausi': {ArYraZodisMokausi(tekstas)}");
+            // 11A uzd
+            Console.WriteLine($"Ar yra 'mokausi' nesulipes su kitais zodziais: {ArYraZodisMokausiNesulipes(tekstas)}");
         }
 
         //private static void IsvestiIvestaTeksta()
@@ -141,12 +146,12 @@ _ ' as mokausi '
   > Pradžioje yra tarpų: 1
   > Gale yra tarpų: 6
     */
-        public static int TarpuKiekisPradziojeIrGale(string tekstas, out int tarpuSkPradzioje)
+        public static void TarpuKiekisPradziojeIrGale(string tekstas, out int priekyje, out int gale)
         {
-            tarpuSkPradzioje = tekstas.Length - tekstas.TrimStart().Length;
-            return tekstas.Length - tekstas.TrimEnd().Length;
+            priekyje = tekstas.Length - tekstas.TrimStart().Length;
+            gale = tekstas.Length - tekstas.TrimEnd().Length;
            
-        }                     //kodel viena reiksme vedama per return o kita kitaip?
+        }                     
 
 
 
@@ -182,6 +187,10 @@ _ ' as mokausi '
     > Ar yra mokausi: Taip
          */
 
+        /*
+        
+        //mano nekoks pavyzdys/budas
+
         public static string ArYraZodisMokausi(string tekstas)
         {
             var yraArNe = tekstas.Contains("mokausi");
@@ -199,10 +208,17 @@ _ ' as mokausi '
 
             return taipArNe;
         }
+        */
+
+
+        public static string ArYraZodisMokausi(string tekstas)
+        { 
+            return tekstas.ToLower().Contains("mokausi") ? "Taip" : "Ne";
+        }
 
         /* 11A Uzduotis
-               
-          
+
+
         Parašykite programą kurioje vienas metodas. 
     - Naudotojo paprašome įvesti betkokį tekstą Main metode. 
     - Metodas grąžina žodžius Taip arba Ne ar tekste rado žodį 'mokausi'. 
@@ -220,25 +236,11 @@ _ ' as mokausi '
     > Ar yra mokausi: Ne
          */
 
-        public static string ArYraZodisMokausiAAA(string tekstas)
+        public static string ArYraZodisMokausiNesulipes(string tekstas)
         {
-            var yraArNe = tekstas.Contains("mokausi");
-
-            string taipArNe = "";
-
-            if (yraArNe)
-            {
-                taipArNe = "Taip";
-            }
-            else
-            {
-                taipArNe = "Ne";
-            }
-
-
-
-            return taipArNe;
+            return (" " + tekstas + " ").ToLower().Contains("mokausi") ? "Taip" : "Ne";
         }
+
 
 
         //12 Uzduotis
@@ -255,7 +257,7 @@ _ ' as mokausi '
 
          */
 
-        public static void ARaidesVieta();
+        //public static void ARaidesVieta();
 
 
 
