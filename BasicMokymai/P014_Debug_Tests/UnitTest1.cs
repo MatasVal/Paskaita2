@@ -16,5 +16,18 @@ namespace P014_Debug_Tests
 
 
         }
+
+        [TestMethod]
+        public void TrikampioPlotas_Test()
+        {
+            //fake
+            var b = 1;
+            //expected
+            var expected = 1;
+            //actual
+            var actual = P014_Debug_Savarankiskos.Program.TrikampioPlotas(b, 2);
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
