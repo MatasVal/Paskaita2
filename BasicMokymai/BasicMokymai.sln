@@ -60,9 +60,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P014_Debug_Savarankiskos", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P014_Debug_Tests", "P014_Debug_Tests\P014_Debug_Tests.csproj", "{D7E32678-6937-4F64-B9A8-A984688F92FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Method_Test_Homework", "Method_Test_Homework\Method_Test_Homework.csproj", "{A72CC0DF-6E18-4513-863C-88CCAD649B49}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Method_Test_Homework", "Method_Test_Homework\Method_Test_Homework.csproj", "{A72CC0DF-6E18-4513-863C-88CCAD649B49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Debug_Homework", "Debug_Homework\Debug_Homework.csproj", "{20D11B38-0F72-4101-BC3E-BFE4ACB54DAD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Debug_Homework", "Debug_Homework\Debug_Homework.csproj", "{20D11B38-0F72-4101-BC3E-BFE4ACB54DAD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ciklai", "Ciklai\Ciklai.csproj", "{B11D0CC8-61F9-42DA-9A45-CDBF198A4C0C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -182,6 +184,10 @@ Global
 		{20D11B38-0F72-4101-BC3E-BFE4ACB54DAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20D11B38-0F72-4101-BC3E-BFE4ACB54DAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20D11B38-0F72-4101-BC3E-BFE4ACB54DAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B11D0CC8-61F9-42DA-9A45-CDBF198A4C0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B11D0CC8-61F9-42DA-9A45-CDBF198A4C0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B11D0CC8-61F9-42DA-9A45-CDBF198A4C0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B11D0CC8-61F9-42DA-9A45-CDBF198A4C0C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
