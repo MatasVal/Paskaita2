@@ -14,6 +14,12 @@
           2. Atlikti grandinės validaciją
              
           3. Atlikti veiksmus su DNR grandine (tik tuo atveju jei grandinė yra normalizuota ir validi)");
+            var pasirinkimas0 = Console.ReadLine();
+
+            Console.WriteLine();
+            Console.WriteLine($"Normalizuota grandine: {NormalizavimasGrandines(pradinisDNR)}");
+            Console.WriteLine();
+            Console.WriteLine($"Ar validi grandine: {ValidacijaGrandines(pradinisDNR)}");
         }
 
         /*
@@ -44,6 +50,16 @@
         Visoms operacijoms reikalingi testai.
         */
 
+        public static string NormalizavimasGrandines(string pradinisDNR)
+        {
+            return pradinisDNR.Replace(" ", "").ToUpper();
+        }
+        public static string ValidacijaGrandines(string pradinisDNR) //istrinti 'atcg' ir '-' ir paziureti ar ilgis yra 0
+        {
+           var ilgisPasalinusATCG = pradinisDNR.ToUpper().Replace(" ", "").Replace("A", "").Replace("T", "").Replace("C", "").Replace("G", "").Replace("-", "").Length;
+           Console.WriteLine($"ilgis: {ilgisPasalinusATCG}");
+           return ilgisPasalinusATCG == 0 ? "Validi" : "Nevalidi";
+        }
         public static void VeiksmaiSuGrandine()
         {
 
