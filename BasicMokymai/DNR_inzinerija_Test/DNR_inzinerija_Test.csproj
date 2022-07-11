@@ -15,4 +15,9 @@
     <PackageReference Include="coverlet.collector" Version="3.1.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DNR_inzinerija\DNR_inzinerija.csproj" />
+    <ProjectReference Include="..\P016_For\P016_For.csproj" />
+  </ItemGroup>
+
 </Project>

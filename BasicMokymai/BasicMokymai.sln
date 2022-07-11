@@ -66,9 +66,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Debug_Homework", "Debug_Hom
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ciklai", "Ciklai\Ciklai.csproj", "{B11D0CC8-61F9-42DA-9A45-CDBF198A4C0C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DNR_inzinerija", "DNR_inzinerija\DNR_inzinerija.csproj", "{CE0F805F-3598-48F2-9AFC-D51C50B0617B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DNR_inzinerija", "DNR_inzinerija\DNR_inzinerija.csproj", "{CE0F805F-3598-48F2-9AFC-D51C50B0617B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DNR_inzinerija_Test", "DNR_inzinerija_Test\DNR_inzinerija_Test.csproj", "{CFA2099D-E936-4CA2-B8D3-48D4617EEE9B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DNR_inzinerija_Test", "DNR_inzinerija_Test\DNR_inzinerija_Test.csproj", "{CFA2099D-E936-4CA2-B8D3-48D4617EEE9B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P016_For", "P016_For\P016_For.csproj", "{B3F6A1FC-A789-4000-8F34-753D5DE03AE3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -200,6 +202,10 @@ Global
 		{CFA2099D-E936-4CA2-B8D3-48D4617EEE9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CFA2099D-E936-4CA2-B8D3-48D4617EEE9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFA2099D-E936-4CA2-B8D3-48D4617EEE9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3F6A1FC-A789-4000-8F34-753D5DE03AE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3F6A1FC-A789-4000-8F34-753D5DE03AE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3F6A1FC-A789-4000-8F34-753D5DE03AE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3F6A1FC-A789-4000-8F34-753D5DE03AE3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
