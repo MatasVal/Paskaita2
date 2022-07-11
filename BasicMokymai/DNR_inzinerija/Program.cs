@@ -1,16 +1,18 @@
 ﻿namespace DNR_inzinerija
 {
     internal class Program
-    {
+    {      
         static void Main(string[] args)
         {            
             var pradinisDNR = " T CG-TAC- gaC-TAC-CGT-CAG-ACT-TAa-CcA-GTC-cAt-AGA-GCT    ";
+
+            var normalizuota = pradinisDNR.Replace(" ", "").ToUpper();
+
+            bool arNormalizuota = false;
+
             Console.WriteLine($"DNR grandinė: {pradinisDNR}");
             Console.WriteLine();
-            Meniu(pradinisDNR);
-            Console.WriteLine($"Normalizuota grandine: {NormalizavimasGrandines(pradinisDNR)}");
-            Console.WriteLine();
-            Console.WriteLine($"Ar validi grandine: {ValidacijaGrandines(pradinisDNR)}");
+            Meniu(pradinisDNR);            
         }
 
         /*
@@ -46,9 +48,11 @@
         Visoms operacijoms reikalingi testai.
         */
 
-        public static string NormalizavimasGrandines(string pradinisDNR)
+        public static bool NormalizavimasGrandines(bool arNormalizuota,string pradinisDNR)
         {
-            return pradinisDNR.Replace(" ", "").ToUpper();
+            
+            pradinisDNR.Replace(" ", "").ToUpper().Length ==
+            return true;
         }
         public static string ValidacijaGrandines(string pradinisDNR) //istrinti 'atcg' ir '-' ir paziureti ar ilgis yra 0
         {
@@ -66,9 +70,9 @@
              
           3. Atlikti veiksmus su DNR grandine (tik tuo atveju jei grandinė yra normalizuota ir validi)");
 
-            int.TryParse(Console.ReadLine(), out int pasirinkimas0);
+            int.TryParse(Console.ReadLine(), out int pasirinkimasMeniu);
 
-            switch (pasirinkimas0)
+            switch (pasirinkimasMeniu)
             {
                 case 1: 
                     pradinisDNR = NormalizavimasGrandines(pradinisDNR);
@@ -77,7 +81,7 @@
                     pradinisDNR = ValidacijaGrandines(pradinisDNR);
                     break;
                 case 3:
-                    SubMeniu(pradinisDNR);
+                    SubMeniu(pradinisDNR); // jei paspaudziama 3, ieinama i Sub Meniu
                     break;
                 default:
                     Console.Clear();
@@ -88,7 +92,49 @@
         }
         public static void SubMeniu(string pradinisDNR)
         {
+            
+            if (ValidacijaGrandines(pradinisDNR)=="Validi" && pradinisDNR.Replace("A", "").Replace("T", "").Replace("C", "").Replace("G", "").Replace("-", "").Length != 0) //Jei validi, bet nenormalizuota
+            {
+                Console.WriteLine(@"Prasome pasirinkti veiksma:
 
+              1) Normalizuoti grandine
+              2) Iseiti is programos");
+                int.TryParse(Console.ReadLine(), out int pasirinkimasSub1);
+
+                switch (pasirinkimasSub1)
+                {
+                    case 1:
+                        var SubPasirinktasNormalizavimas = NormalizavimasGrandines(pradinisDNR);
+
+                        break;
+                    case 2:
+                        Environment.Exit(0);
+                        break;
+                    default:
+                        Console.Clear();
+                        Console.WriteLine("Tokio pasirinkimo nera");
+                        break;
+                }                    
+            }
+            else if (ValidacijaGrandines(pradinisDNR) == "Nevalidi")
+            {
+                Environment.Exit(0);
+            }
+            else if (ValidacijaGrandines(pradinisDNR) == "Validi" && NormalizavimasGrandines(pradinisDNR) == 0)
+            {
+                Console.WriteLine(@"Prasome pasirinkti veiksma:
+
+              1) GCT pakeis į AGG
+              2) Išvesti ar yra tekste CAT
+              3) Išvesti trečia ir penktą grandinės segmentus 
+              4) Išvesti raidžių kiekį tekste 
+              5) Išvesti ar yra tekste ir kiek kartų pasikartoja iš klaviatūros įvestas segmento kodas
+              6) Prie grandinės galo pridėti iš klaviatūros įvesta segmentą  
+              7) Iš grandinės pašalinti pasirinką elementą  
+              8) Pakeisti pasirinkti segmentą įvestu iš klaviatūros  
+              9) Grįžti į ankstesnį meniu");
+                int.TryParse(Console.ReadLine(), out int pasirinkimasSub2);
+            }
         }
 
     }
