@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\P011_SavarankiskosUzduotys\P011_SavarankiskosUzduotys.csproj" />
+    <ProjectReference Include="..\P017_ForUzduotys\P017_ForUzduotys.csproj" />
   </ItemGroup>
 
 </Project>
