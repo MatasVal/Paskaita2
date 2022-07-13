@@ -7,4 +7,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DNR_inzinerija\DNR_inzinerija.csproj" />
+  </ItemGroup>
+
 </Project>

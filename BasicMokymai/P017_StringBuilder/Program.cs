@@ -33,7 +33,7 @@ namespace P017_StringBuilder
             Console.WriteLine(sb.ToString());
 
 
-            //Teskto pasalinimas
+            //Teksto pasalinimas
 
             sb.Remove(6, 2);
             Console.WriteLine(sb.ToString());
