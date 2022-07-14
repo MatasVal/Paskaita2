@@ -14,8 +14,9 @@ namespace P017_ForUzduotys
             //Console.WriteLine("iveskite laipsni:");
             //var laipsnis = Convert.ToInt32(Console.ReadLine());
             //Console.WriteLine("rezultatas" + PakeltiLaipsniu(skaicius, laipsnis));
-                                 
-            SkaiciuTrikampis();
+
+            //SkaiciuTrikampis();
+            SkaiciuotuvasMenu();
         }
         /*
         
@@ -297,7 +298,7 @@ naudokite for ir StringBuilder
         /*10 UZDUOTIS
     ----------------------
 
-    3. Sukurti skaiciuotuva. Ijungus programa mes turetume gauti pranesima “1. Nauja operacija 2. Testi su rezultatu 3. Iseiti”. Pasirinkus 1 turetu ismesti ”
+    Sukurti skaiciuotuva. Ijungus programa mes turetume gauti pranesima “1. Nauja operacija 2. Testi su rezultatu 3. Iseiti”. Pasirinkus 1 turetu ismesti ”
     1. Sudetis
     2. Atimtis
     3. Daugyba
@@ -317,15 +318,43 @@ naudokite for ir StringBuilder
     BONUS3: Parasyti unit testus uztikrinant operaciju veikima
     BONUS4: Parasyti laipsnio pakelimo ir saknies traukimo operacijas
          */
-        public static void Skaiciuotuvas()
+        public static void SkaiciuotuvasMenu()
         {
-            Console.WriteLine(@"1.Nauja operacija 
-2.Testi su rezultatu 
-3.Iseiti");
+            Console.WriteLine("1.Nauja operacija\n2.Testi su rezultatu\n3.Iseiti");
             var input = Console.ReadLine();
             var isNumber = int.TryParse(input, out int choice);
 
             switch (choice)
+            {
+                case 1:
+                    SubMenu();
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                default:
+                    while (choice > 3 || choice < 1)
+                    {
+                        Console.WriteLine("Nera tokio pasirinkimo, bandykite dar karta");
+                        input = Console.ReadLine();
+                        SkaiciuotuvasMenu();
+                    }
+                    break;
+            }        
+                       
+        }
+
+
+        public static void SubMenu()
+        {
+            Console.WriteLine();
+            Console.WriteLine("1. Sudetis\n2. Atimtis\n3. Daugyba\n4. Dalyba");
+
+            var input2 = Console.ReadLine();
+            var isNumber2 = int.TryParse(input2, out int choice2);
+
+            switch (choice2)
             {
                 case 1:
                     break;
@@ -333,23 +362,18 @@ naudokite for ir StringBuilder
                     break;
                 case 3:
                     break;
+                case 4:
+                    break;
                 default:
-                    Console.WriteLine("Nera tokio pasirinkimo");
+                    while (choice2 > 4 || choice2 < 1)
+                    {
+                        Console.WriteLine("Nera tokio pasirinkimo, bandykite dar karta");
+                        input2 = Console.ReadLine();
+                        SubMenu();
+                    }
+                    break;
             }
-            
-
-            if (choice>3 || choice <1)
-
-            if (choice = 1)
-            {
-                Console.WriteLine(@"1. Sudetis
-    2. Atimtis
-    3. Daugyba
-    4. Dalyba");
-            }
-
         }
-
 
         /*11 UZDUOTIS
          * Sukurti metodą SkaiciuPiramide, kuri paprašo vartotojo įvesti skaičių nuo 1 iki 9
@@ -387,6 +411,26 @@ naudokite for ir StringBuilder
 
 
 
+
+
+
+        /*
+         * 1.Parasykite programa, kuri atspausdintu sia figura pvz:
+            1
+            01
+            101
+            0101
+            10101
+         * */
+
+
+
+        /*2. 
+         * Parasykite programa, kuri paprasytu ivesti skaiciu ir ivesta skaiciu atspausdintu atvirkstine seka. Naudoti tik ciklus ir matematines operacijas.
+Visi kintamieji yra integer tipo. Pvz:
+            Ivedam- 12345 (int)
+            Rezultatas-54321 (int)
+         */
 
 
     }
