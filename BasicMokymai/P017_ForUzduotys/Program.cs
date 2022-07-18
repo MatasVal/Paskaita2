@@ -4,6 +4,11 @@ namespace P017_ForUzduotys
 {
     public class Program
     {
+        public static int number1;
+        public static int number2;
+        public static int result;
+
+
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, For uzduotys!");
@@ -16,7 +21,9 @@ namespace P017_ForUzduotys
             //Console.WriteLine("rezultatas" + PakeltiLaipsniu(skaicius, laipsnis));
 
             //SkaiciuTrikampis();
-            SkaiciuotuvasMenu();
+
+
+            CalculatorMenu();
         }
         /*
         
@@ -193,7 +200,7 @@ namespace P017_ForUzduotys
         //--------------------------------------------------------------------
         //gerai isspresta uzduotis
         private static int SkaiciausTikrinimas(string? txt) => int.TryParse(txt, out int num) == false ? 0 : num;
-               
+
         private static void PenktaUzduotis()
         {
             int skaicius = 0;
@@ -318,31 +325,33 @@ naudokite for ir StringBuilder
     BONUS3: Parasyti unit testus uztikrinant operaciju veikima
     BONUS4: Parasyti laipsnio pakelimo ir saknies traukimo operacijas
          */
-        public static void SkaiciuotuvasMenu()
+        public static void CalculatorMenu()
         {
             Console.WriteLine("1.Nauja operacija\n2.Testi su rezultatu\n3.Iseiti");
             var input = Console.ReadLine();
-            var isNumber = int.TryParse(input, out int choice);
+            var isInputNumber = int.TryParse(input, out int choice);
 
             switch (choice)
             {
                 case 1:
                     SubMenu();
                     break;
-                case 2:
+                case 2:                                  
+                    ContinueWithResult(number1, number2, out result);
                     break;
                 case 3:
+                    Environment.Exit(0);
                     break;
                 default:
                     while (choice > 3 || choice < 1)
                     {
                         Console.WriteLine("Nera tokio pasirinkimo, bandykite dar karta");
                         input = Console.ReadLine();
-                        SkaiciuotuvasMenu();
+                        CalculatorMenu();
                     }
                     break;
-            }        
-                       
+            }
+            
         }
 
 
@@ -352,17 +361,37 @@ naudokite for ir StringBuilder
             Console.WriteLine("1. Sudetis\n2. Atimtis\n3. Daugyba\n4. Dalyba");
 
             var input2 = Console.ReadLine();
-            var isNumber2 = int.TryParse(input2, out int choice2);
+            var isInput2Number = int.TryParse(input2, out int choice2);
 
             switch (choice2)
             {
                 case 1:
+                    Console.WriteLine("Iveskite pirmaji skaiciu:");
+                    int number1 = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Iveskite antraji skaiciu:");
+                    int number2 = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine($"Rezultatas: {Addition(number1, number2)}");
                     break;
                 case 2:
+                    Console.WriteLine("Iveskite pirmaji skaiciu:");
+                    number1 = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Iveskite antraji skaiciu:");
+                    number2 = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine($"Rezultatas: {Substraction(number1, number2)}");
                     break;
                 case 3:
+                    Console.WriteLine("Iveskite pirmaji skaiciu:");
+                    number1 = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Iveskite antraji skaiciu:");
+                    number2 = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine($"Rezultatas: {Multiplication(number1, number2)}");
                     break;
                 case 4:
+                    Console.WriteLine("Iveskite pirmaji skaiciu:");
+                    number1 = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Iveskite antraji skaiciu:");
+                    number2 = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine($"Rezultatas: {Division(number1, number2)}");
                     break;
                 default:
                     while (choice2 > 4 || choice2 < 1)
@@ -373,7 +402,88 @@ naudokite for ir StringBuilder
                     }
                     break;
             }
+
+            CalculatorMenu();
+
         }
+
+        public static int ContinueWithResult(int number1, int number2, out int result)
+        {
+            Console.WriteLine();
+            Console.WriteLine("1. Sudetis\n2. Atimtis\n3. Daugyba\n4. Dalyba");
+
+            var input2 = Console.ReadLine();
+            var isInput2Number = int.TryParse(input2, out int choice2);            
+            switch (choice2)
+            {
+                case 1:
+                    Console.WriteLine("Iveskite sekanti skaiciu:");
+                    int number3 = Convert.ToInt32(Console.ReadLine());                    
+                    result = Addition(number1, number2) + number3;
+                    Console.WriteLine($"Rezultatas: {result}");                    
+                    return result;
+                    
+                case 2:
+                    Console.WriteLine("Iveskite sekanti skaiciu:");
+                    number3 = Convert.ToInt32(Console.ReadLine());
+                    result = Substraction(number1, number2) - number3;
+                    Console.WriteLine($"Rezultatas: {result}");
+                    return result;
+                    
+                case 3:
+                    Console.WriteLine("Iveskite sekanti skaiciu:");
+                    number3 = Convert.ToInt32(Console.ReadLine());
+                    result = Multiplication(number1, number2) * number3;
+                    Console.WriteLine($"Rezultatas: {result}");
+                    return result;
+                    
+                case 4:
+                    Console.WriteLine("Iveskite sekanti skaiciu:");
+                    number3 = Convert.ToInt32(Console.ReadLine());                    
+                    result = Division(number1, number2) / number3;
+                    Console.WriteLine($"Rezultatas: {result}");
+                    return result;
+                    
+                default:
+                    while (choice2 > 4 || choice2 < 1)
+                    {
+                        Console.WriteLine("Nera tokio pasirinkimo, bandykite dar karta");
+                        input2 = Console.ReadLine();
+                        ContinueWithResult(number1, number2, out result);
+                    }
+                    return ContinueWithResult(number1, number2, out result);                   
+            }                    
+        }
+
+
+        public static int Addition(int number1, int number2)
+        {
+            return number1 + number2;           
+        }
+        public static int Substraction(int number1, int number2)
+        {
+            return number1 - number2;
+        }
+        public static int Multiplication(int number1, int number2)
+        {
+            return number1 * number2;
+        }
+        public static int Division(int number1, int number2)
+        {
+            return number1 / number2;
+        }
+
+
+
+
+        public static void InputTwoNumbers(out int number1, out int number2)
+        {
+            Console.WriteLine("Iveskite pirmaji skaiciu:");
+            number1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Iveskite antraji skaiciu:");
+            number2 = Convert.ToInt32(Console.ReadLine());
+        }
+
 
         /*11 UZDUOTIS
          * Sukurti metodą SkaiciuPiramide, kuri paprašo vartotojo įvesti skaičių nuo 1 iki 9
