@@ -9,18 +9,8 @@
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, For uzduotys!");
-
-            //ReadIntNumber();
-            //Console.WriteLine("iveskite skaiciu:");
-            //var skaicius = Convert.ToInt32(Console.ReadLine());
-            //Console.WriteLine("iveskite laipsni:");
-            //var laipsnis = Convert.ToInt32(Console.ReadLine());
-            //Console.WriteLine("rezultatas" + PakeltiLaipsniu(skaicius, laipsnis));
-
-            //SkaiciuTrikampis();
-
-
+            Console.WriteLine("Hello, For skaiciuotuvas!");
+                      
             CalculatorMenu();
         }
         
@@ -195,7 +185,7 @@
 
 
 
-
+        //---------------------------------------------------------------------------------
         public static void InputTwoNumbers(out int number1, out int number2)
         {
             Console.WriteLine("Iveskite pirmaji skaiciu:");
