@@ -79,7 +79,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P017_ForUzduotys", "P017_Fo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P017_StringBuilder", "P017_StringBuilder\P017_StringBuilder.csproj", "{6EBB4FD9-630C-4E80-BF55-88450E46037C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P019_Masyvai", "P019_Masyvai\P019_Masyvai.csproj", "{3E2E158C-5F82-4AE8-9324-390C290F3EA2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P019_Masyvai", "P019_Masyvai\P019_Masyvai.csproj", "{3E2E158C-5F82-4AE8-9324-390C290F3EA2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Skaiciuotuvas", "Skaiciuotuvas\Skaiciuotuvas.csproj", "{BBAE21E9-4E7A-4338-B447-B4DBCF7B3322}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -227,6 +229,10 @@ Global
 		{3E2E158C-5F82-4AE8-9324-390C290F3EA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E2E158C-5F82-4AE8-9324-390C290F3EA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E2E158C-5F82-4AE8-9324-390C290F3EA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBAE21E9-4E7A-4338-B447-B4DBCF7B3322}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBAE21E9-4E7A-4338-B447-B4DBCF7B3322}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBAE21E9-4E7A-4338-B447-B4DBCF7B3322}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBAE21E9-4E7A-4338-B447-B4DBCF7B3322}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
