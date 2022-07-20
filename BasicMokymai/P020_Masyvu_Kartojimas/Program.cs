@@ -82,33 +82,99 @@
         //  _ B
         //  >  B, C, D
 
-        public static char[] SurikiuotosRaides(char[] mas)
-        {
-            Console.WriteLine("Iveskite pirmaja raide:");
-            var char1 = Console.Read();            
-            Console.WriteLine("Iveskite antraja raide:");
-            var char2 = Console.Read();            
-            Console.WriteLine("Iveskite treciaja raide:");
-            var char3 = Console.Read();
+        //public static char[] SurikiuotosRaides(char[] mas)
+        //{
+        //    Console.WriteLine("Iveskite pirmaja raide:");
+        //    var char1 = Console.Read();            
+        //    Console.WriteLine("Iveskite antraja raide:");
+        //    var char2 = Console.Read();            
+        //    Console.WriteLine("Iveskite treciaja raide:");
+        //    var char3 = Console.Read();
                      
-            for (int i = 0; i < mas.Length; i++)
-            {
-                    for (int j = i + 1; j < mas.Length; j++)
-                    {
-                        if (mas[i] > mas[j])
-                        {
-                            int temp = mas[i];
-                            mas[i] = mas[j];
-                            mas[j] = temp;
-                        }
-                    }
-            }
+        //    for (int i = 0; i < mas.Length; i++)
+        //    {
+        //            for (int j = i + 1; j < mas.Length; j++)
+        //            {
+        //                if (mas[i] > mas[j])
+        //                {
+        //                    int temp = mas[i];
+        //                    mas[i] = mas[j];
+        //                    mas[j] = temp;
+        //                }
+        //            }
+        //    }
 
-                return mas;
+
+        //        return mas;
             
 
+        //}
+
+        public static char[] RikiuotiTrisRaides(char[] mas)
+        {
+            for (int i = 0; i < mas.Length; i++)
+            {
+                for (int j = i + 1; j < mas.Length; j++)
+                {
+                    if (mas[i] > mas[j])
+                    {
+                        char temp = mas[i];
+                        mas[i] = mas[j];
+                        mas[j] = temp;
+                    }
+                }
+            }
+            return mas;
+        }
+
+        //## RIKIUOTI KETURIAS RAIDES ##
+        //        Parašykite programą kurioje vienas metodas.
+        //            - Naudotojo paprašome įvesti 4 raides(atskirai).
+        //              Būtina validacija kad įvesta tik vienas simbolis.
+        //            - Metodas priima masyvą iš string (su prielaidai kad kiekvienas string yra tik 1 raide)
+        //              ir grąžina string (NB! ne masyvą) - surikiuotas raides pagal abecelę atskirtas -.
+        //            Pvz:
+        //            > Iveskite pirma raide:
+        //            _ C
+        //            > Iveskite antra raide:
+        //            _ A
+        //            > Iveskite trecia raide:
+        //            _ B
+        //            > Iveskite ketvirtą raide:
+        //            _ E
+        //            > A-B-C-E
+
+        public static string RikiuotiKeturiasRaides(string[] raides)
+        {
+            char[] charMas = new char[raides.Length];
+
+            for (int i = 0; i < raides.Length; i++)
+            {
+                charMas[i] = raides[i][0];
+            }
+
+
+            RikiuotiTrisRaides(charMas);
+            //charMas = RikiuotiTrisRaides(charMas);  //priskyrimas nebutinas -----tai nera primityvus tipas, tai yra reference tipas, tai referena pagal defaulta
+
+            //for (int i = 0; i < charMas.Length; i++)
+            //{
+            //    for (int j = i + 1; j < charMas.Length; j++)
+            //    {
+            //        if (charMas[i] > charMas[j])
+            //        {
+            //            char temp = charMas[i];
+            //            charMas[i] = charMas[j];
+            //            charMas[j] = temp;
+            //        }
+            //    }
+            //}
+
+            return String.Join("-", charMas);
         }
 
 
+
     }
+
 }

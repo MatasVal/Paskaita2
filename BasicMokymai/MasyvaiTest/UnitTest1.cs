@@ -28,5 +28,34 @@ namespace MasyvaiTest
             CollectionAssert.AreEqual(expected, actual);
         }
 
+        [TestMethod]
+        public void RikiuotiTrisRaides_Test()
+        {
+            char[] fake = new char[] { 'C', 'D', 'B' };
+            char[] expected = new char[] { 'B', 'C', 'D' };
+            var actual = P020_Masyvu_Kartojimas.Program.RikiuotiTrisRaides(fake);
+            CollectionAssert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void RikiuotiKeturiasRaides_Test()
+        {
+            string[] fake = new string[] { "C", "A", "B", "E" };
+            string expected = "A-B-C-E";
+            var actual = P020_Masyvu_Kartojimas.Program.RikiuotiKeturiasRaides(fake);
+            Assert.AreEqual(expected, actual);
+        }
+
+        
+        [TestMethod]
+        public void DidesnisUzDidziausia2_Test()
+        {
+            var fake = new List<int> { 5, 1, 6, 8, 7 };
+            var expected = new List<int> { 5, 1, 6, 8, 7, 9 };
+            var actual = P021_List.Program.DidesnisUzDidziausia2(fake);
+            CollectionAssert.AreEqual(expected, actual);
+        }
+
+
     }
 }

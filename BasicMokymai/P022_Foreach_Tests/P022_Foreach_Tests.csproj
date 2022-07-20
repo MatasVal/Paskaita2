@@ -16,8 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\P020_Masyvu_Kartojimas\P020_Masyvu_Kartojimas.csproj" />
-    <ProjectReference Include="..\P021_List\P021_List.csproj" />
+    <ProjectReference Include="..\P022_Foreach\P022_Foreach.csproj" />
   </ItemGroup>
 
 </Project>
