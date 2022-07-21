@@ -80,7 +80,7 @@
                     int number1 = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine("Iveskite antraji skaiciu:");
                     int number2 = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine($"Rezultatas: {Addition()}");
+                    Console.WriteLine($"Rezultatas: {Addition(number1, number2)}");
                     break;
                 case 2:
                     Console.WriteLine("Iveskite pirmaji skaiciu:");
@@ -128,29 +128,29 @@
             {
                 case 1:
                     Console.WriteLine("Iveskite sekanti skaiciu:");
-                    number1 = result;
-                    number2 = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine(result + number2);
-                    return number1 + number2;
+                    int number3 = Convert.ToInt32(Console.ReadLine());
+                    result = Addition(number1, number2) + number3;
+                    Console.WriteLine($"Rezultatas: {result}");
+                    return result;
 
                 case 2:
                     Console.WriteLine("Iveskite sekanti skaiciu:");
-                    number2 = Convert.ToInt32(Console.ReadLine());
-                    result = result - number2;
+                    number3 = Convert.ToInt32(Console.ReadLine());
+                    result = Substraction(number1, number2) - number3;
                     Console.WriteLine($"Rezultatas: {result}");
                     return result;
 
                 case 3:
                     Console.WriteLine("Iveskite sekanti skaiciu:");
-                    number2 = Convert.ToInt32(Console.ReadLine());
-                    result = result * number2;
+                    number3 = Convert.ToInt32(Console.ReadLine());
+                    result = Multiplication(number1, number2) * number3;
                     Console.WriteLine($"Rezultatas: {result}");
                     return result;
 
                 case 4:
                     Console.WriteLine("Iveskite sekanti skaiciu:");
-                    number2 = Convert.ToInt32(Console.ReadLine());
-                    result = result / number2;
+                    number3 = Convert.ToInt32(Console.ReadLine());
+                    result = Division(number1, number2) / number3;
                     Console.WriteLine($"Rezultatas: {result}");
                     return result;
 
@@ -166,7 +166,7 @@
         }
 
 
-        public static int Addition()
+        public static int Addition(int number1, int number2)
         {
             return number1 + number2;
         }
