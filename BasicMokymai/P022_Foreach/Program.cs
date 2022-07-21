@@ -219,13 +219,147 @@ namespace P022_Foreach
         private static int SkaiciausTikrinimas(string? tekstas) => int.TryParse(tekstas, out int skaicius) ? skaicius : 0;
         #endregion
 
-        /// <summary>
+        /// 2 UZDUOTIS
         ///  Parašyti metodą IsmetytiZodzius, kuris priima sakini, bet grazina nauja zodziu List sudaryta tik is zodziu, kurie ilgesni  arba lygus 5 raidems ir yra surikiuoti abeceles tvarka.
         ///  Tada parasykite metoda, kuris priima 2 zodziu sarasus, juos sujungia i viena kolekcija naudojant ciklus ir atspausdina ekrane.
         ///  PRIMINIMAS: Kad isskirti string i atskirus zodzius naudokite pavyzdinisString.Split(' ')
         ///  PVZ: Ivedame: "Labas as esu Kodelskis ir labai megstu programuoti". 
         ///  Programa be rusiavimo grazina mums: as esu ir Labas Kodelskis labai megstu programuoti
-        ///  Programa su rusiavimu grazina mums: as esu ir Kodelskis labai Labas megstu programuoti
-        /// </summary>
+        ///  Programa su rusiavimu grazina mums: as esu ir Kodelskis labai Labas megstu programuoti 
+        ///  
+
+        //public static List<string> IsmetytiZodzius(string sakinys)
+        //{
+        //    var zodziai = IstrauktiZodzius(sakinys);
+        //    var atrusiuotiSurikiuotiZodziai = new StringBuilder();
+
+        //    foreach (var zodis in sakinys)
+        //    {
+        //        if (char.IsDigit(simbolis))
+        //            atrusiuotiSurikiuotiZodziai.Append(zodis);
+        //    }
+
+        //    return List<string> { };
+        //}
+
+        //public static List<string> SurikiuotiZodzius(string sakinys)
+        //{
+            
+
+        //    foreach (var zodis in skaiciaiTekste)
+        //    {
+        //        skaiciai.Add(SkaiciausTikrinimas(skaicius.ToString()));
+        //    }
+
+        //    skaiciai.Sort();
+
+        //    return skaiciai;
+        //}
+
+        //public static void AtrinktiZodziusIs5ArDaugiauRaidziu(List<string> sakinys)
+        //{
+        //    foreach (var zodis in sakinys)
+        //    {
+        //        Console.Write(skaicius.ToString());
+        //    }
+        //}
+
+        public static string[] IstrauktiZodzius(string sakinys) => sakinys.Split(' ');
+        public static List<string> IsmetytiZodzius(string sakinys)
+        {
+            var zodziai = IstrauktiZodzius(sakinys);
+            var ilgiZodziai = SurikiuotiZodzius(IsgautiIlgusZodzius(zodziai));
+            var trumpiZodziai = IsvalytiIlgusZodzius(zodziai);
+            var galutinisSakinys = SujungtiSarasusZodziu(trumpiZodziai, ilgiZodziai);
+
+            return galutinisSakinys;
+        }
+
+        public static List<string> IsgautiIlgusZodzius(string[] zodziai, int ilgis = ilgoZodzioIlgis)
+        {
+            var ilgiZodziai = new List<string>();
+
+            foreach (string zodis in zodziai)
+            {
+                if (zodis.Length >= ilgis)
+                    ilgiZodziai.Add(zodis);
+            }
+
+            return ilgiZodziai;
+        }
+
+        public static List<string> SurikiuotiZodzius(List<string> zodziai)
+        {
+            zodziai.Sort();
+
+            return zodziai;
+        }
+
+        public static List<string> IsvalytiIlgusZodzius(string[] zodziai, int ilgis = ilgoZodzioIlgis)
+        {
+            var trumpiZodziai = new List<string>();
+
+            foreach (var zodis in zodziai)
+            {
+                if (zodis.Length < ilgis)
+                    trumpiZodziai.Add(zodis);
+            }
+
+            return trumpiZodziai;
+        }
+
+        public static List<string> SujungtiSarasusZodziu(List<string> trumpiZodziai, List<string> ilgiZodziai)
+        {
+            var sakinioKonstruktorius = new StringBuilder();
+            var zodziai = new List<string>();
+            zodziai.AddRange(trumpiZodziai);
+            zodziai.AddRange(ilgiZodziai);
+
+            foreach (var zodis in zodziai)
+            {
+                sakinioKonstruktorius.Append(zodis + " ");
+            }
+
+            Console.WriteLine(sakinioKonstruktorius);
+
+            return zodziai;
+        }
+        //Parašyti metodą SukonstruotiKalade(rusis, kortos). Sis metodas turi sukonstruoti kalade is duotu 2 string sarasu.
+        //Po to parasyti metoda, kuris surikiuoja jusu kalade pagal abeceles tvarka.
+        //Ir galiausiai parasyti, kad jusu visas kortas atspausdintu ekrane.
+        //PRIMINIMAS: 
+        //Kortu rusys
+
+        // "Sirdziu",
+        //        "Bugnu",
+        //        "Vynu",
+        //        "Kryziu",
+        // * 
+        // * Kortos
+        // * 
+        // * "Tuzas",
+        //        "Dviake",
+        //        "Triake",
+        //        "Keturake",
+        //        "Penkake",
+        //        "Sesake",
+        //        "Septynake",
+        //        "Astuonake",
+        //        "Devynakės",
+        //        "Desimtake",
+        //        "Valetas",
+        //        "Dama",
+        //        "Karalius",
+
+        //PVZ: Isvedimas - Bugnu Tuzas, Bugnu Dviake...Bugnu Dama, Bugnu Karalius... Kryziu Karalius
+
+        public static List<string> SukonstruotiKalade(string rusis, string kortos)
+        {
+
+        }
+        public static string SurikiuotiKalade()
+        {
+
+        }
     }
 }
