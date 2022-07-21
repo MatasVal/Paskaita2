@@ -2,9 +2,9 @@
 {
     internal class Program
     {
-        public static int number1;
-        public static int number2;
-        public static int result;
+        public static double number1;
+        public static double number2;
+        public static double result;
 
 
         static void Main(string[] args)
@@ -39,7 +39,7 @@
         {
             Console.WriteLine("1.Nauja operacija\n2.Testi su rezultatu\n3.Iseiti");
             var input = Console.ReadLine();
-            var isInputNumber = int.TryParse(input, out int choice);
+            var isInputNumber = double.TryParse(input, out double choice);
 
             switch (choice)
             {
@@ -71,36 +71,24 @@
             Console.WriteLine("1. Sudetis\n2. Atimtis\n3. Daugyba\n4. Dalyba");
 
             var input2 = Console.ReadLine();
-            var isInput2Number = int.TryParse(input2, out int choice2);
+            var isInput2Number = double.TryParse(input2, out double choice2);
 
             switch (choice2)
             {
                 case 1:
-                    Console.WriteLine("Iveskite pirmaji skaiciu:");
-                    int number1 = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine("Iveskite antraji skaiciu:");
-                    int number2 = Convert.ToInt32(Console.ReadLine());
+                    InputTwoNumbers(out number1, out number2);
                     Console.WriteLine($"Rezultatas: {Addition(number1, number2)}");
                     break;
                 case 2:
-                    Console.WriteLine("Iveskite pirmaji skaiciu:");
-                    number1 = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine("Iveskite antraji skaiciu:");
-                    number2 = Convert.ToInt32(Console.ReadLine());
+                    InputTwoNumbers(out number1, out number2);
                     Console.WriteLine($"Rezultatas: {Substraction(number1, number2)}");
                     break;
                 case 3:
-                    Console.WriteLine("Iveskite pirmaji skaiciu:");
-                    number1 = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine("Iveskite antraji skaiciu:");
-                    number2 = Convert.ToInt32(Console.ReadLine());
+                    InputTwoNumbers(out number1, out number2);
                     Console.WriteLine($"Rezultatas: {Multiplication(number1, number2)}");
                     break;
                 case 4:
-                    Console.WriteLine("Iveskite pirmaji skaiciu:");
-                    number1 = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine("Iveskite antraji skaiciu:");
-                    number2 = Convert.ToInt32(Console.ReadLine());
+                    InputTwoNumbers(out number1, out number2);
                     Console.WriteLine($"Rezultatas: {Division(number1, number2)}");
                     break;
                 default:
@@ -117,39 +105,35 @@
 
         }
 
-        public static int ContinueWithResult(int number1, int number2)
+        public static double ContinueWithResult(double number1, double number2)
         {
             Console.WriteLine();
             Console.WriteLine("1. Sudetis\n2. Atimtis\n3. Daugyba\n4. Dalyba");
 
             var input2 = Console.ReadLine();
-            var isInput2Number = int.TryParse(input2, out int choice2);
+            var isInput2Number = double.TryParse(input2, out double choice2);
             switch (choice2)
             {
                 case 1:
-                    Console.WriteLine("Iveskite sekanti skaiciu:");
-                    int number3 = Convert.ToInt32(Console.ReadLine());
+                    InputThirdNumber(out double number3);
                     result = Addition(number1, number2) + number3;
                     Console.WriteLine($"Rezultatas: {result}");
                     return result;
 
                 case 2:
-                    Console.WriteLine("Iveskite sekanti skaiciu:");
-                    number3 = Convert.ToInt32(Console.ReadLine());
+                    InputThirdNumber(out number3);
                     result = Substraction(number1, number2) - number3;
                     Console.WriteLine($"Rezultatas: {result}");
                     return result;
 
                 case 3:
-                    Console.WriteLine("Iveskite sekanti skaiciu:");
-                    number3 = Convert.ToInt32(Console.ReadLine());
+                    InputThirdNumber(out number3);
                     result = Multiplication(number1, number2) * number3;
                     Console.WriteLine($"Rezultatas: {result}");
                     return result;
 
                 case 4:
-                    Console.WriteLine("Iveskite sekanti skaiciu:");
-                    number3 = Convert.ToInt32(Console.ReadLine());
+                    InputThirdNumber(out number3);
                     result = Division(number1, number2) / number3;
                     Console.WriteLine($"Rezultatas: {result}");
                     return result;
@@ -166,19 +150,19 @@
         }
 
 
-        public static int Addition(int number1, int number2)
+        public static double Addition(double number1, double number2)
         {
             return number1 + number2;
         }
-        public static int Substraction(int number1, int number2)
+        public static double Substraction(double number1, double number2)
         {
             return number1 - number2;
         }
-        public static int Multiplication(int number1, int number2)
+        public static double Multiplication(double number1, double number2)
         {
             return number1 * number2;
         }
-        public static int Division(int number1, int number2)
+        public static double Division(double number1, double number2)
         {
             return number1 / number2;
         }
@@ -186,13 +170,20 @@
 
 
         //---------------------------------------------------------------------------------
-        public static void InputTwoNumbers(out int number1, out int number2)
+        public static double InputTwoNumbers(out double number1, out double number2)
         {
             Console.WriteLine("Iveskite pirmaji skaiciu:");
-            number1 = Convert.ToInt32(Console.ReadLine());
+            number1 = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("Iveskite antraji skaiciu:");
-            number2 = Convert.ToInt32(Console.ReadLine());
-        }
+            number2 = Convert.ToDouble(Console.ReadLine());
 
+            return 0;
+        }
+        public static double InputThirdNumber(out double number3)
+        {
+            Console.WriteLine("Iveskite sekanti skaiciu:");
+            number3 = Convert.ToDouble(Console.ReadLine());
+            return number3;
+        }
     }
 }
