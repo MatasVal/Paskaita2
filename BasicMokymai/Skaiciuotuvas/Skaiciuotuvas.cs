@@ -5,6 +5,7 @@
         public static double number1;
         public static double number2;
         public static double result;
+        static double? rezultatas = null;
 
 
         static void Main(string[] args)
@@ -161,6 +162,26 @@
         {
             double.TryParse(Console.ReadLine(), out double choice);
             return choice;
+        }
+
+
+
+
+
+
+        public static void SuperSkaiciuotuvas(string ivedimas)
+        {
+            //todo
+        }
+
+        public static double Rezultatas()
+        {
+            return rezultatas ?? 0;
+        }
+        public static void Reset()
+        {
+            //todo
+            rezultatas = null;
         }
     }
 }
