@@ -143,24 +143,23 @@
             return number1 / number2;
         }
         //---------------------------------------------------------------------------------
-        public static double InputTwoNumbers(out double number1, out double number2)
+        public static double? InputTwoNumbers(out double number1, out double number2)
         {
-            Console.WriteLine("Iveskite pirmaji skaiciu:");
-            number1 = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Iveskite pirmaji skaiciu:");            
+            double.TryParse(Console.ReadLine(), out number1);
             Console.WriteLine("Iveskite antraji skaiciu:");
-            number2 = Convert.ToDouble(Console.ReadLine());
-
-            return 0;
+            double.TryParse(Console.ReadLine(), out number2);
+            return null;
         }
         public static double InputThirdNumber(out double number3)
         {
             Console.WriteLine("Iveskite sekanti skaiciu:");
-            number3 = Convert.ToDouble(Console.ReadLine());
+            double.TryParse(Console.ReadLine(), out number3);
             return number3;
         }
         public static double InputValidated()
         {
-            var isInputNumber = double.TryParse(Console.ReadLine(), out double choice);
+            double.TryParse(Console.ReadLine(), out double choice);
             return choice;
         }
     }
