@@ -69,11 +69,7 @@
 
         static void Main(string[] args)
         {
-            var fake_moves = new string[] { "1", "1", "15", "45", "2", "2", "10", "1", "3", "2", "3", "3" };
-            foreach (var move in fake_moves)
-            {
-                SuperSkaiciuotuvas(move);
-            }
+            
         }
 
         public static void SuperSkaiciuotuvas(string ivedimas)
