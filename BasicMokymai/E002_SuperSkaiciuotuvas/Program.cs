@@ -59,67 +59,90 @@
        */
     public class Program
     {
-        public static double number1;
-        public static double number2;
-        public static double result;
-        static double? rezultatas = null;
-
+        static double number1;
+        static double number2;
+        static double? result = null;
+        static string input;
 
         static void Main(string[] args)
         {
-            CalculatorMenu();
+            SuperSkaiciuotuvas(input);
         }
 
 
-        public static void SuperSkaiciuotuvas(string ivedimas)
+        public static void SuperSkaiciuotuvas(string input)
         {
-            //todo
-        }
-                  
-        public static void CalculatorMenu()
-        {
-            Console.WriteLine();
-            Console.WriteLine("1.Nauja operacija\n2.Testi su rezultatu\n3.Iseiti");
-            switch (InputValidated())
+            
+            if (result == null || result == 0)
             {
-                case 1:
+                CalculatorMenu2Choices();
+            }
+            else
+            {
+                CalculatorMenu3Choices();
+            }
+        }
+
+        public static void CalculatorMenu2Choices()
+        {
+            Console.WriteLine("1. Nauja operacija\n2. Iseiti");
+            switch (Input())
+            {
+                case "1":
                     SubMenu();
                     break;
-                case 2:
-                    ContinueWithResult(number1, number2);
-                    break;
-                case 3:
+                case "2":
                     Environment.Exit(0);
                     break;
                 default:
                     Console.WriteLine("Nera tokio pasirinkimo, bandykite dar karta");
-                    CalculatorMenu();
+                    SuperSkaiciuotuvas(input);
                     break;
             }
         }
 
-
+        public static void CalculatorMenu3Choices()
+        {
+            Console.WriteLine();
+            Console.WriteLine("1.Nauja operacija\n2.Testi su rezultatu\n3.Iseiti");
+            switch (Input())
+            {
+                case "1":
+                    SubMenu();
+                    break;
+                case "2":
+                    ContinueWithResult(number1, number2);
+                    break;
+                case "3":
+                    Environment.Exit(0);
+                    break;
+                default:
+                    Console.WriteLine("Nera tokio pasirinkimo, bandykite dar karta");
+                    CalculatorMenu3Choices();
+                    break;
+            }
+        }
         public static void SubMenu()
         {
             Console.WriteLine();
             Console.WriteLine("1. Sudetis\n2. Atimtis\n3. Daugyba\n4. Dalyba");
 
-            switch (InputValidated())
+            switch (Input())
             {
-                case 1:
+                case "1":
                     InputTwoNumbers(out number1, out number2);
                     Console.WriteLine($"Rezultatas: {Addition(number1, number2)}");
                     break;
-                case 2:
+                case "2":
                     InputTwoNumbers(out number1, out number2);
                     Console.WriteLine($"Rezultatas: {Substraction(number1, number2)}");
                     break;
-                case 3:
+                case "3":
                     InputTwoNumbers(out number1, out number2);
                     Console.WriteLine($"Rezultatas: {Multiplication(number1, number2)}");
                     break;
-                case 4:
-                    InputTwoNumbers(out number1, out number2);
+                case "4":
+                    InputTwoNumbers(out number1,out number2);
                     Console.WriteLine($"Rezultatas: {Division(number1, number2)}");
                     break;
                 default:
@@ -127,42 +150,42 @@
                     SubMenu();
                     break;
             }
-            CalculatorMenu();
+            SuperSkaiciuotuvas(input);
         }
 
-        public static double ContinueWithResult(double number1, double number2)
+        public static double? ContinueWithResult(double number1, double number2)
         {
             Console.WriteLine();
             Console.WriteLine("1. Sudetis\n2. Atimtis\n3. Daugyba\n4. Dalyba");
 
-            switch (InputValidated())
+            switch (Input())
             {
-                case 1:
+                case "1":
                     InputThirdNumber(out double number3);
-                    result = Addition(number1, number2) + number3;
+                    result = result + number3;
                     Console.WriteLine($"Rezultatas: {result}");
-                    CalculatorMenu();
+                    CalculatorMenu3Choices();
                     return result;
 
-                case 2:
+                case "2":
                     InputThirdNumber(out number3);
-                    result = Substraction(number1, number2) - number3;
+                    result = result - number3;
                     Console.WriteLine($"Rezultatas: {result}");
-                    CalculatorMenu();
+                    CalculatorMenu3Choices();
                     return result;
 
-                case 3:
+                case "3":
                     InputThirdNumber(out number3);
-                    result = Multiplication(number1, number2) * number3;
+                    result = result * number3;
                     Console.WriteLine($"Rezultatas: {result}");
-                    CalculatorMenu();
+                    CalculatorMenu3Choices();
                     return result;
 
-                case 4:
+                case "4":
                     InputThirdNumber(out number3);
-                    result = Division(number1, number2) / number3;
+                    result = result / number3;
                     Console.WriteLine($"Rezultatas: {result}");
-                    CalculatorMenu();
+                    CalculatorMenu3Choices();
                     return result;
 
                 default:
@@ -172,21 +195,25 @@
 
         }
 
-        public static double Addition(double number1, double number2)
-        {
-            return number1 + number2;
+        public static double? Addition(double number1, double number2)
+        {                      
+            result = number1 + number2;            
+            return result;
         }
-        public static double Substraction(double number1, double number2)
+        public static double? Substraction(double number1, double number2)
         {
-            return number1 - number2;
+            result = number1 - number2;
+            return result;
         }
-        public static double Multiplication(double number1, double number2)
+        public static double? Multiplication(double number1, double number2)
         {
-            return number1 * number2;
+            result = number1 * number2;
+            return result;
         }
-        public static double Division(double number1, double number2)
+        public static double? Division(double number1, double number2)
         {
-            return number1 / number2;
+            result = number1 / number2;
+            return result;
         }
         //---------------------------------------------------------------------------------
         public static double? InputTwoNumbers(out double number1, out double number2)
@@ -203,26 +230,19 @@
             double.TryParse(Console.ReadLine(), out number3);
             return number3;
         }
-        public static double InputValidated()
+        public static string Input()
         {
-            double.TryParse(Console.ReadLine(), out double choice);
-            return choice;
+            string input = Console.ReadLine();
+            return input;
         }
 
-
-
-
-
-
-
-        public static double Rezultatas()
+        public static double Result()
         {
-            return rezultatas ?? 0;
+            return result ?? 0;
         }
         public static void Reset()
         {
-            //todo
-            rezultatas = null;
+            result = null;
         }
 
 
