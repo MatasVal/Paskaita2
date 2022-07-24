@@ -69,25 +69,13 @@
         {
             CalculatorMenu();
         }
-        //Sukurti skaiciuotuva. Ijungus programa mes turetume gauti pranesima “1. Nauja operacija 2. Testi su rezultatu 3. Iseiti”. Pasirinkus 1 turetu ismesti ”
-        //1. Sudetis
-        //2. Atimtis
-        //3. Daugyba
-        //4. Dalyba”
-        //Pasirinkus viena is operaciju programa turetu paprasyti naudotoja ivesti pirma ir antra skaicius,
-        //o gale isvesti rezultata ant ekrano ir uzklausti ar naudotojas nori atlikti nauja operacija ar testis u rezultatu. Sudeties pvz:
-        //“1
-        //15
-        //45
-        //Rezultatas: 60
-        //1. Nauja operacija 2. Testi su rezultatu 3. Iseiti”
-        //Pasirinkus 2 programa turetu paprasyti ivesti kokia operacija turetu buti atliekama ir paprasyti TIK SEKANCIO SKAITMENS. 
-        //Pasirinkus 3 programa turetu issijungti. Visa kita turetu veikti tokiu pat budu.
-        //BONUS1: Iskelkite operacijas i metodus
-        //BONUS2: Parasykite operacijoms validacijas pries ivestus neteisingus skaicius. 
-        //Pvz: dalyba is nulio, neteisingu ivesciu prevencija pvz kada tikimasi gauti skaiciu, bet gaunamas char arba string.
-        //BONUS3: Parasyti unit testus uztikrinant operaciju veikima
-        //BONUS4: Parasyti laipsnio pakelimo ir saknies traukimo operacijas             
+
+
+        public static void SuperSkaiciuotuvas(string ivedimas)
+        {
+            //todo
+        }
+                  
         public static void CalculatorMenu()
         {
             Console.WriteLine();
@@ -226,10 +214,6 @@
 
 
 
-        public static void SuperSkaiciuotuvas(string ivedimas)
-        {
-            //todo
-        }
 
         public static double Rezultatas()
         {
