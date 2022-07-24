@@ -1,12 +1,13 @@
+
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using E002_SuperSkaiciuotuvas;
+using SSSSSSSSSS;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace E002_SuperSkaiciuotuvas.Tests
+namespace SSSSSSSS_TESt
 {
     [TestClass()]
     public class ProgramTests
@@ -22,7 +23,7 @@ namespace E002_SuperSkaiciuotuvas.Tests
             {
                 Program.SuperSkaiciuotuvas(move);
             }
-            var actual = E002_SuperSkaiciuotuvas.Program.Rezultatas();
+            var actual = SSSSSSSSSS.Program.Result();
 
             Assert.AreEqual(expected, actual);
         }
@@ -32,12 +33,12 @@ namespace E002_SuperSkaiciuotuvas.Tests
         {
             var fake_moves = new string[] { "1", "1", "15", "45", "3" };
             var expected = 60d;
-            E002_SuperSkaiciuotuvas.Program.Reset();
+            SSSSSSSSSS.Program.Reset();
             foreach (var move in fake_moves)
             {
-                E002_SuperSkaiciuotuvas.Program.SuperSkaiciuotuvas(move);
+                SSSSSSSSSS.Program.SuperSkaiciuotuvas(move);
             }
-            var actual = E002_SuperSkaiciuotuvas.Program.Rezultatas();            
+            var actual = SSSSSSSSSS.Program.Result();
 
             Assert.AreEqual(expected, actual);
         }
@@ -48,12 +49,12 @@ namespace E002_SuperSkaiciuotuvas.Tests
             var fake_moves = new string[] { "1", "1", "15", "45", "2", "2", "10", "1", "3", "2", "3", "3" };
             var expected = 6d;
 
-            E002_SuperSkaiciuotuvas.Program.Reset();
+            SSSSSSSSSS.Program.Reset();
             foreach (var move in fake_moves)
             {
-                E002_SuperSkaiciuotuvas.Program.SuperSkaiciuotuvas(move);
+                SSSSSSSSSS.Program.SuperSkaiciuotuvas(move);
             }
-            var actual = E002_SuperSkaiciuotuvas.Program.Rezultatas();
+            var actual = SSSSSSSSSS.Program.Result();
 
             Assert.AreEqual(expected, actual);
         }

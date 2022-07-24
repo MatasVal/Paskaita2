@@ -1,3 +1,4 @@
+
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using E002_SuperSkaiciuotuvas;
 using System;
@@ -6,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace E002_SuperSkaiciuotuvas.Tests
+namespace E002_SuperSkaiciuotuvas_BeTestu
 {
     [TestClass()]
     public class ProgramTests
@@ -22,7 +23,7 @@ namespace E002_SuperSkaiciuotuvas.Tests
             {
                 Program.SuperSkaiciuotuvas(move);
             }
-            var actual = E002_SuperSkaiciuotuvas.Program.Rezultatas();
+            var actual = E002_SuperSkaiciuotuvas.Program.Result();
 
             Assert.AreEqual(expected, actual);
         }
@@ -37,7 +38,7 @@ namespace E002_SuperSkaiciuotuvas.Tests
             {
                 E002_SuperSkaiciuotuvas.Program.SuperSkaiciuotuvas(move);
             }
-            var actual = E002_SuperSkaiciuotuvas.Program.Rezultatas();            
+            var actual = E002_SuperSkaiciuotuvas.Program.Result();
 
             Assert.AreEqual(expected, actual);
         }
@@ -53,7 +54,7 @@ namespace E002_SuperSkaiciuotuvas.Tests
             {
                 E002_SuperSkaiciuotuvas.Program.SuperSkaiciuotuvas(move);
             }
-            var actual = E002_SuperSkaiciuotuvas.Program.Rezultatas();
+            var actual = E002_SuperSkaiciuotuvas.Program.Result();
 
             Assert.AreEqual(expected, actual);
         }

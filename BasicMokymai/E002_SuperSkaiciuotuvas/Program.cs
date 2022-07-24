@@ -1,252 +1,234 @@
-﻿namespace E002_SuperSkaiciuotuvas
+﻿namespace E002_SuperSkaiciuotuvas;
+
+public class Program
 {
-    /* ## Super Skaiciuotuvas ## 
-        Sukurti skaiciuotuva. Ijungus programa turetume gauti pranešimą “
-        1. Nauja operacija 2 Iseiti. 
-        
-        Pasirinkus 1 vada į submeniu:
-        1. Sudetis 2. Atimtis 3. Daugyba 4. Dalyba
-    
-        Pasirinkus viena is operaciju programa turetu paprasyti naudotoja ivesti pirma ir antra skaicius,
-        o gale isvesti rezultata į ekraną. Po rezultato parodymo naudotojui parodomas submeniu su klausimu ar naudotojas nori atlikti nauja operacija ar testi su rezultatu. 
-        1. Nauja operacija 2. Testi su rezultatu 3. Iseiti”
-        Pasirinkus 2 programa turetu paprasyti ivesti kokia operacija turetu buti atliekama ir paprasyti TIK SEKANCIO SKAITMENS. 
-        Pasirinkus 3 programa turetu issijungti. Visa kita turetu veikti tokiu pat budu.
-    
-    Pvz:
-    > 1. Nauja operacija 2 Iseiti. 
-    _1
-    > 1. Sudetis 2. Atimtis 3. Daugyba 4. Dalyba
-    _1
-    > pasirinktas veiksmas + 
-    > iveskite pirma skaiciu
-    _15
-    > iveskite antra skaiciu
-    _45
-    > Rezultatas: 60
-    > 1. Nauja operacija 2. Testi su rezultatu 3. Iseiti
-    _2
-    > 1. Sudetis 2. Atimtis 3. Daugyba 4. Dalyba
-    _2
-    > pasirinktas veiksmas - 
-    > Iveskite skaiciu
-    _10
-    > Rezultatas: 50
-    > 1. Nauja operacija 2. Testi su rezultatu 3. Iseiti
-    _1
-    > 1. Sudetis 2. Atimtis 3. Daugyba 4. Dalyba
-    _2
-    > pasirinktas veiksmas * 
-      > iveskite pirma skaiciu
-    _2
-    > iveskite antra skaiciu
-    _3
-    > Rezultatas: 6
-    > 1. Nauja operacija 2. Testi su rezultatu 3. Iseiti
-    _3
-    > Baigta
-     
-    
-    
-    BONUS1: Iskelkite operacijas i metodus
-    BONUS2: Parasykite operacijoms validacijas pries ivestus neteisingus skaicius. 
-            - dalyba is nulio, neteisingu ivesciu prevencija 
-            - kada tikimasi gauti skaiciu, bet gaunamas char arba string.
-            - neteisingas meniu punkto pasirinkimas
-    BONUS3: Parasyti unit testus uztikrinant operaciju veikima
-    BONUS4: Parasyti laipsnio pakelimo ir saknies traukimo operacijas
-    
-       */
-    public class Program
+    public static double? rezultatas = null;
+    public static double? sk1;
+    public static double? sk2;
+    public static List<string> simuliuotiVeiksmai = new List<string>();
+    public static int i = 0;
+
+
+    static void Main(string[] args)
     {
-        static double number1;
-        static double number2;
-        static double? result = null;
-        static string input;
+        Console.WriteLine("Hello, Skaiciuotuve!");
+        PirmasMainMeniu();
+    }
 
-        static void Main(string[] args)
+    public static void SuperSkaiciuotuvas(string ivedimas)
+    {
+        simuliuotiVeiksmai.Add(ivedimas);
+    }
+    static string FakeIvedimas()
+    {
+        if (simuliuotiVeiksmai.Count <= 0) { return Console.ReadLine(); }
+        if (simuliuotiVeiksmai.Count > i) { return simuliuotiVeiksmai[i++]; }
+        return "-1";
+    }
+
+
+
+    public static void SkaiciuIvedimoMetodas()
+    {
+        Console.WriteLine("Iveskite 1 skaiciu");
+        string sk1temp = FakeIvedimas();
+        double sk1t;
+        bool success1 = double.TryParse(sk1temp, out sk1t);
+        sk1 = sk1t;
+        if (!success1) Console.WriteLine("neskaicius ");
+
+        Console.WriteLine("Iveskite 2 skaiciu");
+        string sk2temp = FakeIvedimas();
+        double sk2t;
+        bool success2 = double.TryParse(sk2temp, out sk2t);
+        sk2 = sk2t;
+        if (!success2) Console.WriteLine("neskaicius ");
+    }
+    public static void PirmasMainMeniu()
+    {
+        Console.WriteLine(" 1. Nauja operacija \n 2. Testi su rezultatu \n 3. Iseiti. ");
+        string mainMeniu = Convert.ToString(FakeIvedimas());
+        switch (mainMeniu)
         {
-            SuperSkaiciuotuvas(input);
-        }
+            case "1":
+                // 1. Nauja operacija
+                AntrasSubMeniu();
+                break;
 
+            case "2":
+                //  2. Testi su rezultatu
+                Console.WriteLine($" 1. Sudetis \n 2. Atimtis \n 3. Daugyba \n 4. Dalyba \n 5. Laipsniu \n 6. Saknis");
+                string antrasSubmeniu = Convert.ToString(FakeIvedimas());
+                switch (antrasSubmeniu)
+                {
+                    case "1":
+                        Console.WriteLine("Iveskite 2 skaiciu");
+                        sk1 = rezultatas;
+                        sk2 = Convert.ToInt32(FakeIvedimas());
+                        Console.WriteLine(SudetiSkaicius());
+                        PirmasMainMeniu();
+                        break;
+                    case "2":
+                        Console.WriteLine("Iveskite 2 skaiciu");
+                        sk1 = rezultatas;
+                        sk2 = Convert.ToInt32(FakeIvedimas());
+                        Console.WriteLine(AtimtiSkaicius());
+                        PirmasMainMeniu();
+                        break;
+                    case "3":
+                        Console.WriteLine("Iveskite 2 skaiciu");
+                        sk1 = rezultatas;
+                        sk2 = Convert.ToInt32(FakeIvedimas());
+                        Console.WriteLine(DaugintiSkaicius());
+                        PirmasMainMeniu();
+                        break;
+                    case "4":
+                        Console.WriteLine("Iveskite 2 skaiciu");
+                        sk1 = rezultatas;
+                        sk2 = Convert.ToInt32(FakeIvedimas());
+                        Console.WriteLine(DalintiSkaicius());
+                        PirmasMainMeniu();
+                        break;
+                    case "5":
+                        sk1 = rezultatas;
+                        Console.WriteLine(LaipsniuKelimoSkaicius());
+                        PirmasMainMeniu();
+                        break;
+                    case "6":
+                        sk1 = rezultatas;
+                        Console.WriteLine(SakniesTraukimoSkaicius());
+                        PirmasMainMeniu();
+                        break;
 
-        public static void SuperSkaiciuotuvas(string input)
-        {
-            
-            if (result == null || result == 0)
-            {
-                CalculatorMenu2Choices();
-            }
-            else
-            {
-                CalculatorMenu3Choices();
-            }
-        }
+                    default:
+                        Console.WriteLine("Nera tokio meniu");
+                        break;
+                }
 
-        public static void CalculatorMenu2Choices()
-        {
-            Console.WriteLine("1. Nauja operacija\n2. Iseiti");
-            switch (Input())
-            {
-                case "1":
-                    SubMenu();
+                break;
+            case "3":
+                Console.WriteLine("Exit");
+                if (simuliuotiVeiksmai.Count <= 0)
+                {
+                    System.Environment.Exit(-1);
                     break;
-                case "2":
-                    Environment.Exit(0);
-                    break;
-                default:
-                    Console.WriteLine("Nera tokio pasirinkimo, bandykite dar karta");
-                    SuperSkaiciuotuvas(input);
-                    break;
-            }
-        }
+                }
+                else
+                {
+                    return;
+                }
+            default:
+                Console.WriteLine("Nera tokio meniu");
+                break;
 
-        public static void CalculatorMenu3Choices()
+
+
+        }
+    }
+    public static void AntrasSubMeniu()
+    {
+        Console.WriteLine($" 1. Sudetis \n 2. Atimtis \n 3. Daugyba \n 4. Dalyba \n 5. Laipsniu \n 6. Saknis");
+        string pirmasSubmeniu = Convert.ToString(FakeIvedimas());
+        switch (pirmasSubmeniu)
         {
-            Console.WriteLine();
-            Console.WriteLine("1.Nauja operacija\n2.Testi su rezultatu\n3.Iseiti");
-            switch (Input())
-            {
-                case "1":
-                    SubMenu();
-                    break;
-                case "2":
-                    ContinueWithResult(number1, number2);
-                    break;
-                case "3":
-                    Environment.Exit(0);
-                    break;
-                default:
-                    Console.WriteLine("Nera tokio pasirinkimo, bandykite dar karta");
-                    CalculatorMenu3Choices();
-                    break;
-            }
+            case "1":
+                SkaiciuIvedimoMetodas();
+                Console.WriteLine(SudetiSkaicius());
+                PirmasMainMeniu();
+                break;
+            case "2":
+                SkaiciuIvedimoMetodas();
+                Console.WriteLine(AtimtiSkaicius());
+                PirmasMainMeniu();
+                break;
+            case "3":
+                SkaiciuIvedimoMetodas();
+                Console.WriteLine(DaugintiSkaicius());
+                PirmasMainMeniu();
+                break;
+            case "4":
+                SkaiciuIvedimoMetodas();
+                Console.WriteLine(DalintiSkaicius());
+                PirmasMainMeniu();
+                break;
+            case "5":
+                Console.WriteLine("Iveskite 1 skaiciu");
+                sk1 = Convert.ToInt32(FakeIvedimas());
+                Console.WriteLine(LaipsniuKelimoSkaicius());
+                PirmasMainMeniu();
+                break;
+            case "6":
+                Console.WriteLine("Iveskite 1 skaiciu");
+                sk1 = Convert.ToInt32(FakeIvedimas());
+                Console.WriteLine(SakniesTraukimoSkaicius());
+                PirmasMainMeniu();
+                break;
+            default:
+                Console.WriteLine("Nera tokio meniu");
+                break;
         }
-        public static void SubMenu()
+    }
+
+    public static double? SudetiSkaicius()
+    {
+        rezultatas = sk1 + sk2;
+        return rezultatas;
+    }
+    public static double? AtimtiSkaicius()
+    {
+        rezultatas = sk1 - sk2;
+        return rezultatas;
+    }
+    public static double? DaugintiSkaicius()
+    {
+        rezultatas = sk1 * sk2;
+        return rezultatas;
+    }
+    public static double? DalintiSkaicius()
+    {
+        if (sk2 == 0)
         {
-            Console.WriteLine();
-            Console.WriteLine("1. Sudetis\n2. Atimtis\n3. Daugyba\n4. Dalyba");
-
-            switch (Input())
-            {
-                case "1":
-                    InputTwoNumbers(out number1, out number2);
-                    Console.WriteLine($"Rezultatas: {Addition(number1, number2)}");
-                    break;
-                case "2":
-                    InputTwoNumbers(out number1, out number2);
-                    Console.WriteLine($"Rezultatas: {Substraction(number1, number2)}");
-                    break;
-                case "3":
-                    InputTwoNumbers(out number1, out number2);
-                    Console.WriteLine($"Rezultatas: {Multiplication(number1, number2)}");
-                    break;
-                case "4":
-                    InputTwoNumbers(out number1,out number2);
-                    Console.WriteLine($"Rezultatas: {Division(number1, number2)}");
-                    break;
-                default:
-                    Console.WriteLine("Nera tokio pasirinkimo, bandykite dar karta");
-                    SubMenu();
-                    break;
-            }
-            SuperSkaiciuotuvas(input);
+            Console.WriteLine("negalima dalinti is nulio");
         }
+        rezultatas = sk1 / sk2;
+        return rezultatas;
+    }
+    public static double? LaipsniuKelimoSkaicius()
+    {
+        int valSqr = 0;
+        for (int i = 0, j = 1; i < sk1; i++, j += 2)
+            valSqr += j;
 
-        public static double? ContinueWithResult(double number1, double number2)
+        rezultatas = valSqr;
+        return rezultatas;
+    }
+    public static double? SakniesTraukimoSkaicius()
+    {
+        double root = 1;
+        int i = 0;
+        double sk1saknis = (double)sk1;
+        while (true)
         {
-            Console.WriteLine();
-            Console.WriteLine("1. Sudetis\n2. Atimtis\n3. Daugyba\n4. Dalyba");
-
-            switch (Input())
-            {
-                case "1":
-                    InputThirdNumber(out double number3);
-                    result = result + number3;
-                    Console.WriteLine($"Rezultatas: {result}");
-                    CalculatorMenu3Choices();
-                    return Result();
-
-                case "2":
-                    InputThirdNumber(out number3);
-                    result = result - number3;
-                    Console.WriteLine($"Rezultatas: {result}");
-                    CalculatorMenu3Choices();
-                    return Result();
-
-                case "3":
-                    InputThirdNumber(out number3);
-                    result = result * number3;
-                    Console.WriteLine($"Rezultatas: {result}");
-                    CalculatorMenu3Choices();
-                    return Result();
-
-                case "4":
-                    InputThirdNumber(out number3);
-                    result = result / number3;
-                    Console.WriteLine($"Rezultatas: {result}");
-                    CalculatorMenu3Choices();
-                    return Result();
-
-                default:
-                    Console.WriteLine("Nera tokio pasirinkimo, bandykite dar karta");
-                    return ContinueWithResult(number1, number2);
-            }
-
+            i = i + 1;
+            root = (sk1saknis / root + root) / 2;
+            if (i == sk1saknis + 1) { break; }
         }
+        rezultatas = root;
+        return rezultatas;
 
-        public static double? Addition(double number1, double number2)
-        {                      
-            result = number1 + number2;            
-            return Result();
-        }
-        public static double? Substraction(double number1, double number2)
-        {
-            result = number1 - number2;
-            return Result();
-        }
-        public static double? Multiplication(double number1, double number2)
-        {
-            result = number1 * number2;
-            return Result();
-        }
-        public static double? Division(double number1, double number2)
-        {
-            result = number1 / number2;
-            return Result();
-        }
-        //---------------------------------------------------------------------------------
-        public static double? InputTwoNumbers(out double number1, out double number2)
-        {
-            Console.WriteLine("Iveskite pirmaji skaiciu:");
-            double.TryParse(Console.ReadLine(), out number1);
-            Console.WriteLine("Iveskite antraji skaiciu:");
-            double.TryParse(Console.ReadLine(), out number2);
-            return null;
-        }
-        public static double InputThirdNumber(out double number3)
-        {
-            Console.WriteLine("Iveskite sekanti skaiciu:");
-            double.TryParse(Console.ReadLine(), out number3);
-            return number3;
-        }
-        public static string Input()
-        {
-            string input = Console.ReadLine();
-            return input;
-        }
-
-        public static double Result()
-        {
-            return result ?? 0;
-        }
-        public static void Reset()
-        {
-            result = null;
-        }
+    }
 
 
 
+
+    public static double Rezultatas()
+    {
+        PirmasMainMeniu();
+        return rezultatas ?? 0;
+    }
+    public static void Reset()
+    {
+        rezultatas = null;
     }
 
 
