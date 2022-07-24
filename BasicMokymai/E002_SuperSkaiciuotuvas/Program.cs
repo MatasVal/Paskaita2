@@ -165,28 +165,28 @@
                     result = result + number3;
                     Console.WriteLine($"Rezultatas: {result}");
                     CalculatorMenu3Choices();
-                    return result;
+                    return Result();
 
                 case "2":
                     InputThirdNumber(out number3);
                     result = result - number3;
                     Console.WriteLine($"Rezultatas: {result}");
                     CalculatorMenu3Choices();
-                    return result;
+                    return Result();
 
                 case "3":
                     InputThirdNumber(out number3);
                     result = result * number3;
                     Console.WriteLine($"Rezultatas: {result}");
                     CalculatorMenu3Choices();
-                    return result;
+                    return Result();
 
                 case "4":
                     InputThirdNumber(out number3);
                     result = result / number3;
                     Console.WriteLine($"Rezultatas: {result}");
                     CalculatorMenu3Choices();
-                    return result;
+                    return Result();
 
                 default:
                     Console.WriteLine("Nera tokio pasirinkimo, bandykite dar karta");
@@ -198,22 +198,22 @@
         public static double? Addition(double number1, double number2)
         {                      
             result = number1 + number2;            
-            return result;
+            return Result();
         }
         public static double? Substraction(double number1, double number2)
         {
             result = number1 - number2;
-            return result;
+            return Result();
         }
         public static double? Multiplication(double number1, double number2)
         {
             result = number1 * number2;
-            return result;
+            return Result();
         }
         public static double? Division(double number1, double number2)
         {
             result = number1 / number2;
-            return result;
+            return Result();
         }
         //---------------------------------------------------------------------------------
         public static double? InputTwoNumbers(out double number1, out double number2)
