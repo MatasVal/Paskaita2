@@ -101,7 +101,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E002_SuperSkaiciuotuvas_Tes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Skaiciuotuvas_Test", "Skaiciuotuvas_Test\Skaiciuotuvas_Test.csproj", "{85547D25-020C-49E9-ABD7-9C9DF0CA321C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E002_SuperSkaiciuotuvas_Be_Testu", "E002_SuperSkaiciuotuvas_Be_Testu\E002_SuperSkaiciuotuvas_Be_Testu.csproj", "{B7E3C3F0-B66C-44C5-852D-2F8575FBF065}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E002_SuperSkaiciuotuvas", "E002_SuperSkaiciuotuvas_Be_Testu\E002_SuperSkaiciuotuvas.csproj", "{B7E3C3F0-B66C-44C5-852D-2F8575FBF065}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E002_SuperSkaiciuotuvas_TaikymasTestams", "E002_SuperSkaiciuotuvas_TaikymasTestams\E002_SuperSkaiciuotuvas_TaikymasTestams.csproj", "{DE40A869-162C-44EB-8D0B-F6617ADFBFF4}"
 EndProject
