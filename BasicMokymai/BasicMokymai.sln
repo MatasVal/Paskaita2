@@ -97,25 +97,27 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P023_Dictionaries", "P023_D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P023_Dictionary_Uzduotys", "P023_Dictionary_Uzduotys\P023_Dictionary_Uzduotys.csproj", "{C701821F-2F30-4F93-BD34-BD2A16F09880}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E002_SuperSkaiciuotuvas_Tests", "E002_SuperSkaiciuotuvas_Tests\E002_SuperSkaiciuotuvas_Tests.csproj", "{12888C92-22E0-45C4-B4C5-F941E65C5EEB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "E002_SuperSkaiciuotuvas_Tests", "E002_SuperSkaiciuotuvas_Tests\E002_SuperSkaiciuotuvas_Tests.csproj", "{12888C92-22E0-45C4-B4C5-F941E65C5EEB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Skaiciuotuvas_Test", "Skaiciuotuvas_Test\Skaiciuotuvas_Test.csproj", "{85547D25-020C-49E9-ABD7-9C9DF0CA321C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Skaiciuotuvas_Test", "Skaiciuotuvas_Test\Skaiciuotuvas_Test.csproj", "{85547D25-020C-49E9-ABD7-9C9DF0CA321C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E002_SuperSkaiciuotuvas", "E002_SuperSkaiciuotuvas_Be_Testu\E002_SuperSkaiciuotuvas.csproj", "{B7E3C3F0-B66C-44C5-852D-2F8575FBF065}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "E002_SuperSkaiciuotuvas", "E002_SuperSkaiciuotuvas_Be_Testu\E002_SuperSkaiciuotuvas.csproj", "{B7E3C3F0-B66C-44C5-852D-2F8575FBF065}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E002_SuperSkaiciuotuvas_TaikymasTestams", "E002_SuperSkaiciuotuvas_TaikymasTestams\E002_SuperSkaiciuotuvas_TaikymasTestams.csproj", "{DE40A869-162C-44EB-8D0B-F6617ADFBFF4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "E002_SuperSkaiciuotuvas_TaikymasTestams", "E002_SuperSkaiciuotuvas_TaikymasTestams\E002_SuperSkaiciuotuvas_TaikymasTestams.csproj", "{DE40A869-162C-44EB-8D0B-F6617ADFBFF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E002_SuperSkaiciuotuvas_TestuBandymai", "E002_SuperSkaiciuotuvas_TestuBandymai\E002_SuperSkaiciuotuvas_TestuBandymai.csproj", "{286E64E5-FA9D-488D-A55E-CBC8B6394220}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "E002_SuperSkaiciuotuvas_TestuBandymai", "E002_SuperSkaiciuotuvas_TestuBandymai\E002_SuperSkaiciuotuvas_TestuBandymai.csproj", "{286E64E5-FA9D-488D-A55E-CBC8B6394220}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E002_SuperSkaiciuotuvas_BeTestu", "E002_SuperSkaiciuotuvas_BeTestu\E002_SuperSkaiciuotuvas_BeTestu.csproj", "{500EFCB6-0D97-4EDB-AA7F-EA35F377469F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "E002_SuperSkaiciuotuvas_BeTestu", "E002_SuperSkaiciuotuvas_BeTestu\E002_SuperSkaiciuotuvas_BeTestu.csproj", "{500EFCB6-0D97-4EDB-AA7F-EA35F377469F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SS", "SS\SS.csproj", "{0627EBBF-F6A2-41DB-867A-0E079C612B58}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SS", "SS\SS.csproj", "{0627EBBF-F6A2-41DB-867A-0E079C612B58}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SS_TEst", "SS_TEst\SS_TEst.csproj", "{0A1CE0E4-24E9-43AB-812C-E23925E0BE80}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SS_TEst", "SS_TEst\SS_TEst.csproj", "{0A1CE0E4-24E9-43AB-812C-E23925E0BE80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSSSSSSSSS", "SSSSSSSSSS\SSSSSSSSSS.csproj", "{F2AF54A4-4069-4934-8786-E597C0CA1A87}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SSSSSSSSSS", "SSSSSSSSSS\SSSSSSSSSS.csproj", "{F2AF54A4-4069-4934-8786-E597C0CA1A87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSSSSSSS_TESt", "SSSSSSSS_TESt\SSSSSSSS_TESt.csproj", "{81505A01-4840-43F6-9130-F487BB20FC9C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SSSSSSSS_TESt", "SSSSSSSS_TESt\SSSSSSSS_TESt.csproj", "{81505A01-4840-43F6-9130-F487BB20FC9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P024_Random", "P024_Random\P024_Random.csproj", "{F181D4CE-388A-4795-B97A-2381774BC4BC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -335,6 +337,10 @@ Global
 		{81505A01-4840-43F6-9130-F487BB20FC9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81505A01-4840-43F6-9130-F487BB20FC9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81505A01-4840-43F6-9130-F487BB20FC9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F181D4CE-388A-4795-B97A-2381774BC4BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F181D4CE-388A-4795-B97A-2381774BC4BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F181D4CE-388A-4795-B97A-2381774BC4BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F181D4CE-388A-4795-B97A-2381774BC4BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
