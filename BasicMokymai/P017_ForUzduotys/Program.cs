@@ -543,5 +543,11 @@ Visi kintamieji yra integer tipo. Pvz:
          */
 
 
+
+
+
+        /*
+         * 
+         * */
     }
 }

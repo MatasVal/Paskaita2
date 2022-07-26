@@ -7,28 +7,28 @@ namespace P022_Foreach_Tests
     [TestClass]
     public class ProgramTests
     {
-        [TestMethod]
+        [TestMethod()]
         public void ApskaiciuotiVidurki_Test()
         {
             var fake = new List<double> { 5, 1, 6, 8, 7 };
             var expected = 5.4;
-            var actual = P022_Foreach.Program.ApskaiciuotiVidurki(fake);
+            var actual = Program.ApskaiciuotiVidurki(fake);
             Assert.AreEqual(expected, actual);
         }
 
-        [TestMethod]
+        [TestMethod()]
         public void TikrintiSkaiciausTeigiamuma_Test()
         {
             var teigiamoTekstas = "Teigiamas";
             var neigiamoTekstas = "Neigiamas";
             var fake = new List<int> { 5, -1, 0, 8, -5 };
             var expected = new List<string> { teigiamoTekstas, neigiamoTekstas, teigiamoTekstas, teigiamoTekstas, neigiamoTekstas };
-            var actual = P022_Foreach.Program.TikrintiSkaiciausTeigiamuma(fake);
+            var actual = Program.TikrintiSkaiciausTeigiamuma(fake);
+
             CollectionAssert.AreEqual(expected, actual);
         }
-        
 
-        [TestMethod]
+        [TestMethod()]
         public void ApskaiciuotiGPM_Test()
         {
             var gpm = 15;
@@ -36,8 +36,9 @@ namespace P022_Foreach_Tests
             {
                 100,150,188.88,153.87,68.68
             };
-            var expected = 99,2145;
-            var actual = P022_Foreach.Program.ApskaiciuotiGPM(fake, gpm);
+            var expected = 99.2145;
+            var actual = Program.ApskaiciuotiGPM(fake, gpm);
+
             Assert.AreEqual(expected, actual);
         }
 
@@ -70,6 +71,7 @@ namespace P022_Foreach_Tests
 
             CollectionAssert.AreEqual(expected, actual);
         }
+
         [TestMethod()]
         public void IstrauktiZodzius_Test()
         {
@@ -107,6 +109,48 @@ namespace P022_Foreach_Tests
         }
 
         [TestMethod()]
+        public void IsvalytiIlgusZodzius_Test()
+        {
+            var fake = new string[]
+            {
+                "Labas",
+                "as",
+                "esu",
+                "Kodelskis"
+            };
+            var expected = new List<string>
+            {
+                "as",
+                "esu"
+            };
+            var actual = Program.IsvalytiIlgusZodzius(fake);
+
+            CollectionAssert.AreEqual(expected, actual);
+        }
+
+        [TestMethod()]
+        public void SurikiuotiZodzius_Test()
+        {
+            var fake = new List<string>
+            {
+                "Labas",
+                "as",
+                "esu",
+                "Kodelskis"
+            };
+            var expected = new List<string>
+            {
+                "as",
+                "esu",
+                "Kodelskis",
+                "Labas"
+            };
+            var actual = Program.SurikiuotiZodzius(fake);
+
+            CollectionAssert.AreEqual(expected, actual);
+        }
+
+        [TestMethod()]
         public void SujungtiSarasusZodziu_Test()
         {
             var fake1 = new List<string>
@@ -127,6 +171,22 @@ namespace P022_Foreach_Tests
                 "Kodelskis"
             };
             var actual = Program.SujungtiSarasusZodziu(fake1, fake2);
+
+            CollectionAssert.AreEqual(expected, actual);
+        }
+
+        [TestMethod()]
+        public void IsmetytiZodzius_Test()
+        {
+            var fake = "Labas as esu Kodelskis";
+            var expected = new string[]
+            {
+                "as",
+                "esu",
+                "Kodelskis",
+                "Labas"
+            };
+            var actual = Program.IsmetytiZodzius(fake);
 
             CollectionAssert.AreEqual(expected, actual);
         }

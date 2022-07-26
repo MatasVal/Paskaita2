@@ -199,6 +199,156 @@ namespace P011_Methods_Tests
             Assert.AreEqual(expected, actual);
         
         }
+
+
+        [TestMethod]
+        public void TekstoIlgisBeTarpu_Test()
+        {
+            var fake = " as mokausi      ";
+            var expected = 10;
+            var actual = P010_Methods.Program.TekstoIlgisBeTarpu(fake);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void TekstoIlgisBeTarpu_Test1()
+        {
+            var fake = " as  mokausi      ";
+            var expected = 11;
+            var actual = P010_Methods.Program.TekstoIlgisBeTarpu(fake);
+            Assert.AreEqual(expected, actual);
+        }
+
+
+
+        [TestMethod]
+        public void TarpuGaleKiekis_Test()
+        {
+            var fake = " as mokausi      ";
+            var expected = 6;
+            var actual = P010_Methods.Program.TarpuGaleKiekis(fake);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void TarpuPriekyjeKiekis_Test()
+        {
+            var fake = " as mokausi      ";
+            var expected = 1;
+            var actual = P010_Methods.Program.TarpuPriekyjeKiekis(fake);
+            Assert.AreEqual(expected, actual);
+        }
+
+
+
+        [TestMethod]
+        public void KiekYraZodziu_Test1()
+        {
+            var fake = "as mokausi programuoti";
+            var expected = 3;
+            var actual = P010_Methods.Program.KiekYraZodziu(fake);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void KiekYraZodziu_Test2()
+        {
+            var fake = "as mokausi programuoti       ";
+            var expected = 3;
+            var actual = P010_Methods.Program.KiekYraZodziu(fake);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void KiekYraZodziu_Test3()
+        {
+            var fake = "as mokausi      programuoti       ";
+            var expected = 3;
+            var actual = P010_Methods.Program.KiekYraZodziu(fake);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void KiekYraTarpuPriekyjeIrGale()
+        {
+            var fake = " as mokausi      ";
+            var expectedPriekyje = 1;
+            var expectedGale = 6;
+
+            P010_Methods.Program.KiekYraTarpuPriekyjeIrGale(
+                fake,
+                out int actualPriekyje,
+                out int actualGale);
+
+            Assert.AreEqual(expectedPriekyje, actualPriekyje);
+            Assert.AreEqual(expectedGale, actualGale);
+            
+        }
+
+
+        [TestMethod]
+        public void KiekYraRaidziuA_Test()
+        {
+            var fake = "as mokausi A programuoti";
+            var expected = 3;
+            var actual = P010_Methods.Program.KiekYraRaidziuA(fake);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void ArYraZodisMokausi_Test()
+        {
+            var fake = " as labai mokausi programuoti     ";
+            var expected = "Taip";
+            var actual = P010_Methods.Program.ArYraZodisMokausi(fake);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void ArYraZodisMokausi_Test1()
+        {
+            var fake = " as_labai_mokausi_programuoti     ";
+            var expected = "Taip";
+            var actual = P010_Methods.Program.ArYraZodisMokausi(fake);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void ArYraZodisMokausi_Test2()
+        {
+            var fake = " as_labai_MOKAUSI_programuoti     ";
+            var expected = "Taip";
+            var actual = P010_Methods.Program.ArYraZodisMokausi(fake);
+            Assert.AreEqual(expected, actual);
+        }
+
+
+        [TestMethod]
+        public void ArYraNesulipesZodisMokausi_Test()
+        {
+            var fake = " as_labai_mokausi_programuoti     ";
+            var expected = "Ne";
+            var actual = P010_Methods.Program.ArYraNesulipesZodisMokausi(fake);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void ArYraNesulipesZodisMokausi_Test1()
+        {
+            var fake = "mokausi programuoti labai         ";
+            var expected = "Taip";
+            var actual = P010_Methods.Program.ArYraNesulipesZodisMokausi(fake);
+            Assert.AreEqual(expected, actual);
+        }
+        
+        [TestMethod]
+        public void ArYraNesulipesZodisMokausi_Test2()
+        {
+            var fake = "";
+            var expected = "Ne";
+            var actual = P010_Methods.Program.ArYraNesulipesZodisMokausi(fake);
+            Assert.AreEqual(expected, actual);
+        }
         */
 
 

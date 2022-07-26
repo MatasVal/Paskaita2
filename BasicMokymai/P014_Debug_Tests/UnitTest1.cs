@@ -1,33 +1,76 @@
-namespace P014_Debug_Tests
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace P011_Methods_Tests
 {
     [TestClass]
-    public class UnitTest1
+    public class P014_Debug_Tests
     {
+        [TestMethod]
+        public void DecimalHour_Test()
+        {
+            var fake = "30.30";
+            var expected = "Decimal hour: 30,5000";
+            var actual = P014_Debug.Program.DecimalHour(fake);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void DecimalHour_Test1()
+        {
+            var fake = "20.30.30";
+            var expected = "Decimal hour: 20,5083";
+            var actual = P014_Debug.Program.DecimalHour(fake);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void DecimalHour_Test2()
+        {
+            var fake = "20";
+            var expected = "Invalid time";
+            var actual = P014_Debug.Program.DecimalHour(fake);
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void DecimalHour_Test3()
+        {
+            var fake = "-20.50";
+            var expected = "Invalid hours";
+            var actual = P014_Debug.Program.DecimalHour(fake);
+            Assert.AreEqual(expected, actual);
+        }
+
         [TestMethod]
         public void Skaiciuotuvas_Test()
         {
-            //fake
-            var sk1 = 3;
-            var sk2 = 2;
+            //fakes
+            var a = 3;
+            var b = 2;
             //expected
             var expected = 1.5;
             //actual
-            var actual = P014_Debug_Savarankiskos.Program.Skaiciuotuvas(sk1, sk2, "/");
+            var actual = P014_Debug.Program.Skaiciuotuvas(a, b, "/");
 
-
+            Assert.AreEqual(expected, actual);
         }
+
 
         [TestMethod]
         public void TrikampioPlotas_Test()
         {
-            //fake
+            //fakes
             var b = 1;
             //expected
             var expected = 1;
             //actual
-            var actual = P014_Debug_Savarankiskos.Program.TrikampioPlotas(b, 2);
+            var actual = P014_Debug.Program.TrikampioPlotas(b, 2);
 
             Assert.AreEqual(expected, actual);
         }
+
     }
 }
