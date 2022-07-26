@@ -74,7 +74,7 @@
 
             if (Result() == 0)
             {
-                CalculatorMenu2Choices();
+                CalculatorMenu2Choices(); 
             }
             else
             {
