@@ -1,4 +1,4 @@
-﻿namespace P_004_tipuKonversijos
+﻿namespace P004_tipuKonversijos
 {
     internal class Program
     {
