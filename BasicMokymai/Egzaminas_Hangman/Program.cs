@@ -2,10 +2,10 @@
 {
     internal class Program
     {
-        public static string[] vardai = { "Giedrius", "Mantas", "Domantas", "Lukas", "Eglė", "Liepa", "Margarita", "Viktorija", "Karolis", "Aušra" };
-        public static string[] lietuvosMiestai = { "Kaunas", "Klaipėda", "Vilnius", "Šiauliai", "Panevėžys", "Vilkija", "Kelmė", "Plungė", "Tauragė", "Ukmergė", "Utena", "Ignalina", "Zarasai" };
-        public static string[] valstybes = { "Graikija", "Švedija", "Nyderlandai", "Danija", "Lenkija", "Vokietija", "Belgija", "Norvegija", "Suomija", "Kanada", "Ispanija", "Portugalija" };
-        public static string[] kita = { "Kompiuteris", "Pelė", "Klaviatūra", "Monitorius", "Kabelis", "Pakrovėjas", "Kamera", "Garsiakalbis", "Ausinės", "Mikrofonas" };
+        public static string[] names = { "Giedrius", "Mantas", "Domantas", "Lukas", "Eglė", "Liepa", "Margarita", "Viktorija", "Karolis", "Aušra" };
+        public static string[] cities = { "Kaunas", "Klaipėda", "Vilnius", "Šiauliai", "Panevėžys", "Vilkija", "Kelmė", "Plungė", "Tauragė", "Ukmergė", "Utena", "Ignalina", "Zarasai" };
+        public static string[] countries = { "Graikija", "Švedija", "Nyderlandai", "Danija", "Lenkija", "Vokietija", "Belgija", "Norvegija", "Suomija", "Kanada", "Ispanija", "Portugalija" };
+        public static string[] other = { "Kompiuteris", "Pelė", "Klaviatūra", "Monitorius", "Kabelis", "Pakrovėjas", "Kamera", "Garsiakalbis", "Ausinės", "Mikrofonas" };
 
         public static bool headBool;
         public static bool torsoBool;
@@ -31,35 +31,45 @@
             //- Kodą skaidyti į metodus.
             //- negalima naudoti OOP ir LINQ
 
-            
+            AvailableChoices();
             Menu();            
         }
         public static void Menu()
-        {           
-
-                switch (MenuChoice())
-                {
-                    case 1:                                        
-                        Picture();
-                        Console.WriteLine("1 pasirinkimas");
-                        break;
-                    case 2:
-                        Console.WriteLine("2 pasirinkimas");
-                        break;
-                    case 3:
-                        Console.WriteLine("3 pasirinkimas");
-                        break;
-                    case 4:
-                        Console.WriteLine("4 pasirinkimas");
-                        break;
-                    default:
-                        Menu();
-                        break;
+        {
+            switch (MenuChoice())
+            {
+                case 1:
+                    Console.WriteLine("Tema: Vardai");
+                    Console.WriteLine();
+                    Picture();
+                    Console.WriteLine(RandomName(names));
+                    break;
+                case 2:
+                    Console.WriteLine("Tema: Lietuvos miestai");
+                    Console.WriteLine();
+                    Picture();
+                    Console.WriteLine(RandomCity(cities));
+                    break;
+                case 3:
+                    Console.WriteLine("Tema: Valstybės");
+                    Console.WriteLine();
+                    Picture();
+                    Console.WriteLine(RandomCountry(countries));
+                    break;
+                case 4:
+                    Console.WriteLine("Tema: Kita");
+                    Console.WriteLine();
+                    Picture();
+                    Console.WriteLine(RandomOther(other));
+                    break;
+                default:
+                    Menu();
+                    break;
                 }
             
         }
 
-        public static void Pasirinkimai()
+        public static void AvailableChoices()
         {
             Console.WriteLine("Pasirinkite temą:");
             Console.WriteLine();
@@ -70,8 +80,7 @@
         }
 
         public static int MenuChoice()
-        {
-            Pasirinkimai();
+        {            
             int.TryParse(Console.ReadLine(), out int menuChoice);            
 
             if (menuChoice >= 1 && menuChoice <= 4)
@@ -82,7 +91,7 @@
             else
                 {
                 Console.Clear();
-                Pasirinkimai();
+                AvailableChoices();
                 Console.WriteLine();
                 Console.WriteLine("Netinkamas pasirinkimas, bandykite dar kartą");
                 Console.WriteLine();                    
@@ -90,6 +99,77 @@
                 }
             
         }
+        //public static string WhichTopic()
+        //{
+        //    //if (MenuChoice() == 1 || MenuChoice() == 2 || MenuChoice() == 3 || MenuChoice() == 4)
+        //    //{
+        //    //    switch (MenuChoice())
+        //    //    {
+        //    //        case 1:
+        //    //            string topic = "Vardai";
+        //    //            return topic;
+        //    //        case 2:
+        //    //            topic = "Lietuvos miestai";
+        //    //            return topic;
+        //    //        case 3:
+        //    //            topic = "Valstybės";
+        //    //            return topic;
+        //    //        case 4:
+        //    //            topic = "Kita";
+        //    //            return topic;
+        //    //    }
+        //    //}
+        //    if (MenuChoice() == 1)
+        //    {
+        //        string topic = "Vardai";
+        //        return topic;
+        //    }
+        //    else if (MenuChoice() == 2)
+        //    {
+        //        string topic = "Lietuvos miestai";
+        //        return topic;
+        //    }
+        //    else if (MenuChoice() == 3)
+        //    {
+        //        string topic = "Valstybės";
+        //        return topic;
+        //    }
+        //    else if (MenuChoice() == 4)
+        //    {
+        //        string topic = "Kita";
+        //        return topic;
+        //    }
+
+        //}
+        //public static void GuessingPage()
+        //{
+        //    Console.WriteLine($"Tema: {WhichTopic()}");
+        //}
+        public static string RandomName(string[] names)
+        {            
+            Random rnd = new Random();
+            int index = rnd.Next(names.Length);
+            return names[index];
+        }
+        public static string RandomCity(string[] cities)
+        {
+            Random rnd = new Random();
+            int index = rnd.Next(cities.Length);
+            return cities[index];
+        }
+        public static string RandomCountry(string[] countries)
+        {
+            Random rnd = new Random();
+            int index = rnd.Next(countries.Length);
+            return countries[index];
+        }
+        public static string RandomOther(string[] other)
+        {
+            Random rnd = new Random();
+            int index = rnd.Next(other.Length);
+            return other[index];
+        }
+
         public static void Picture()
         {
             FullHangman();
