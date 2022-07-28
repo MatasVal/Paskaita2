@@ -55,7 +55,7 @@ namespace Egzaminas_Hangman
             AvailableChoices();
             Menu();
             Console.WriteLine($"Zodis:{randomWord}");
-            Console.WriteLine($"raide:{randomWordConvertedToListOfChars[0]}");
+            Console.WriteLine($"raide:{randomWordConvertedToListOfChars[1]}");
         }
         public static void Menu()
         {
@@ -194,31 +194,7 @@ namespace Egzaminas_Hangman
             {
                 return null;
             }
-        }
-        //public static string RandomName(string[] names)
-        //{            
-        //    Random rnd = new Random();
-        //    int index = rnd.Next(names.Length);
-        //    return names[index];
-        //}
-        //public static string RandomCity(string[] cities)
-        //{
-        //    Random rnd = new Random();
-        //    int index = rnd.Next(cities.Length);
-        //    return cities[index];
-        //}
-        //public static string RandomCountry(string[] countries)
-        //{
-        //    Random rnd = new Random();
-        //    int index = rnd.Next(countries.Length);
-        //    return countries[index];
-        //}
-        //public static string RandomOther(string[] other)
-        //{
-        //    Random rnd = new Random();
-        //    int index = rnd.Next(other.Length);
-        //    return other[index];
-        //}
+        }        
         #endregion 
 
 
