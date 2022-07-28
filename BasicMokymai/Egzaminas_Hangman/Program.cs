@@ -1,4 +1,6 @@
-﻿namespace Egzaminas_Hangman
+﻿using System.Text;
+
+namespace Egzaminas_Hangman
 {
     internal class Program
     {
@@ -6,6 +8,21 @@
         public static string[] cities = { "Kaunas", "Klaipėda", "Vilnius", "Šiauliai", "Panevėžys", "Vilkija", "Kelmė", "Plungė", "Tauragė", "Ukmergė", "Utena", "Ignalina", "Zarasai" };
         public static string[] countries = { "Graikija", "Švedija", "Nyderlandai", "Danija", "Lenkija", "Vokietija", "Belgija", "Norvegija", "Suomija", "Kanada", "Ispanija", "Portugalija" };
         public static string[] other = { "Kompiuteris", "Pelė", "Klaviatūra", "Monitorius", "Kabelis", "Pakrovėjas", "Kamera", "Garsiakalbis", "Ausinės", "Mikrofonas" };
+        public static string randomWord;
+        public static List<char> randomWordConvertedToListOfChars = new List<char> { };
+
+        //Dictionary<string, string> names = new Dictionary<string, string>
+        //{   { "Giedrius", "_ _ _ _ _ _"} 
+        //    {"Mantas",} 
+        //    {"Domantas",} 
+        //    {"Lukas",}
+        //    {"Eglė",}
+        //    {"Liepa",} 
+        //    {"Margarita",} 
+        //    {"Viktorija",} 
+        //    {"Karolis",} 
+        //    {"Aušra"}
+        //};
 
         public static bool headBool;
         public static bool torsoBool;
@@ -14,53 +31,47 @@
         public static bool rightLegBool;
         public static bool leftLegBool;
 
+        public static int menuChoice;
+
+        //- Naudotojas pasirenka iš temų: VARDAI, LIETUVOS MIESTAI, VALSTYBES, KITA. 
+        //  (ne mažiau kaip 10 žodžių kiekvienoje grupėje)
+        //- Žodis iš pasirinktos grupės parenkamas atsitiktine tvarka.
+        //- Užtikrinti kad nebūtu duodamas tas pat žodis daugiau kaip 1 kartą per žaidimą
+        //- Užtikrinti, kad programą nenulūžtu jei vartotojas įveda ne tai ko prašoma
+        //- Ėjimas skaitomas tik jei spėjama dar nespėta raidė
+        //- Jei spėjamas visas žodis ir neatspėjama - iškarto pralaimima
+        //- Parodoma atspėtos raidės vieta žodyje
+        //- Parodomos spėtos, bet neatspėtos raidės
+
+        //Apribojimai:
+        //- Žodžius saugoti masyvuose arba žodyne.
+        //- Kodą skaidyti į metodus.
+        //- negalima naudoti OOP ir LINQ
         static void Main(string[] args)
         {
-            //- Naudotojas pasirenka iš temų: VARDAI, LIETUVOS MIESTAI, VALSTYBES, KITA. 
-            //  (ne mažiau kaip 10 žodžių kiekvienoje grupėje)
-            //- Žodis iš pasirinktos grupės parenkamas atsitiktine tvarka.
-            //- Užtikrinti kad nebūtu duodamas tas pat žodis daugiau kaip 1 kartą per žaidimą
-            //- Užtikrinti, kad programą nenulūžtu jei vartotojas įveda ne tai ko prašoma
-            //- Ėjimas skaitomas tik jei spėjama dar nespėta raidė
-            //- Jei spėjamas visas žodis ir neatspėjama - iškarto pralaimima
-            //- Parodoma atspėtos raidės vieta žodyje
-            //- Parodomos spėtos, bet neatspėtos raidės
-
-            //Apribojimai:
-            //- Žodžius saugoti masyvuose arba žodyne.
-            //- Kodą skaidyti į metodus.
-            //- negalima naudoti OOP ir LINQ
+            Console.OutputEncoding = Encoding.GetEncoding(1200);
+            Console.InputEncoding = Encoding.GetEncoding(1200);
 
             AvailableChoices();
-            Menu();            
+            Menu();
+            Console.WriteLine($"Zodis:{randomWord}");
+            Console.WriteLine($"raide:{randomWordConvertedToListOfChars[0]}");
         }
         public static void Menu()
         {
             switch (MenuChoice())
             {
                 case 1:
-                    Console.WriteLine("Tema: Vardai");
-                    Console.WriteLine();
-                    Picture();
-                    Console.WriteLine(RandomName(names));
+                    Name();
                     break;
                 case 2:
-                    Console.WriteLine("Tema: Lietuvos miestai");
-                    Console.WriteLine();
-                    Picture();
-                    Console.WriteLine(RandomCity(cities));
+                    City();
                     break;
                 case 3:
-                    Console.WriteLine("Tema: Valstybės");
-                    Console.WriteLine();
-                    Picture();
-                    Console.WriteLine(RandomCountry(countries));
+                    Country();
                     break;
                 case 4:
-                    Console.WriteLine("Tema: Kita");
-                    Console.WriteLine();
-                    Picture();
-                    Console.WriteLine(RandomOther(other));
+                    Other();
                     break;
                 default:
                     Menu();
@@ -81,7 +92,7 @@
 
         public static int MenuChoice()
         {            
-            int.TryParse(Console.ReadLine(), out int menuChoice);            
+            int.TryParse(Console.ReadLine(), out menuChoice);            
 
             if (menuChoice >= 1 && menuChoice <= 4)
                 {
@@ -145,34 +156,143 @@
         //{
         //    Console.WriteLine($"Tema: {WhichTopic()}");
         //}
-        public static string RandomName(string[] names)
-        {            
-            Random rnd = new Random();
-            int index = rnd.Next(names.Length);
-            return names[index];
-        }
-        public static string RandomCity(string[] cities)
-        {
-            Random rnd = new Random();
-            int index = rnd.Next(cities.Length);
-            return cities[index];
-        }
-        public static string RandomCountry(string[] countries)
-        {
-            Random rnd = new Random();
-            int index = rnd.Next(countries.Length);
-            return countries[index];
-        }
-        public static string RandomOther(string[] other)
-        {
-            Random rnd = new Random();
-            int index = rnd.Next(other.Length);
-            return other[index];
-        }
 
+
+        #region Random
+
+        public static string Random()
+        {
+            if (menuChoice == 1)
+            {
+                Random rnd = new Random();
+                int index = rnd.Next(names.Length);
+                randomWord = names[index];
+                return randomWord;
+            }
+            else if (menuChoice == 2)
+            {
+                Random rnd = new Random();
+                int index = rnd.Next(cities.Length);
+                randomWord = cities[index];
+                return randomWord;
+            }
+            else if (menuChoice == 3)
+            {
+                Random rnd = new Random();
+                int index = rnd.Next(countries.Length);
+                randomWord = countries[index];
+                return randomWord;
+            }
+            else if (menuChoice == 4)
+            {
+                Random rnd = new Random();
+                int index = rnd.Next(other.Length);
+                randomWord = other[index];
+                return randomWord;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        //public static string RandomName(string[] names)
+        //{            
+        //    Random rnd = new Random();
+        //    int index = rnd.Next(names.Length);
+        //    return names[index];
+        //}
+        //public static string RandomCity(string[] cities)
+        //{
+        //    Random rnd = new Random();
+        //    int index = rnd.Next(cities.Length);
+        //    return cities[index];
+        //}
+        //public static string RandomCountry(string[] countries)
+        //{
+        //    Random rnd = new Random();
+        //    int index = rnd.Next(countries.Length);
+        //    return countries[index];
+        //}
+        //public static string RandomOther(string[] other)
+        //{
+        //    Random rnd = new Random();
+        //    int index = rnd.Next(other.Length);
+        //    return other[index];
+        //}
+        #endregion 
+
+
+        #region Topics
+        public static void Name()
+        {
+            Console.WriteLine("Tema: Vardai");
+            Console.WriteLine();
+            Picture();
+            RandomWordToCharList();
+            //List<string> name = new List<string> {};
+
+            //Console.WriteLine($"Žodis: {ReplaceCharsWithSpaces(names, cities, countries, other)}");
+        }
+        public static void City()
+        {
+            Console.WriteLine("Tema: Lietuvos miestai");
+            Console.WriteLine();
+            Picture();
+            //Console.WriteLine(ReplaceCharsWithSpaces(names, cities, countries, other));
+        }
+        public static void Country()
+        {
+            Console.WriteLine("Tema: Valstybės");
+            Console.WriteLine();
+            Picture();
+            //Console.WriteLine(ReplaceCharsWithSpaces(names, cities, countries, other));
+        }
+        public static void Other()
+        {
+            Console.WriteLine("Tema: Kita");
+            Console.WriteLine();
+            Picture();
+            //Console.WriteLine(ReplaceCharsWithSpaces(names, cities, countries, other));
+        }
+        #endregion
+
+        //public static string ReplaceCharsWithSpaces(string[] names, string[] cities, string[] countries, string[] other) 
+        //{ 
+        //    if (menuChoice == 1)
+        //    {
+        //        return Convert.ToString(Random(names, cities, countries, other)).Replace("", " _");
+        //    }
+        //    else if (menuChoice == 2)
+        //    {
+        //        return Convert.ToString(Random(names, cities, countries, other).Length).Replace("", " _");
+        //    }
+        //    else if (menuChoice == 3)
+        //    {
+        //        return Convert.ToString(Random(names, cities, countries, other).Length).Replace("", " _");// turbut nereikia to length nes grazina ilgi-skaiciu
+        //    }
+        //    else if (menuChoice == 4)
+        //    {
+        //        return Convert.ToString(Random(names, cities, countries, other).Length).Replace("", " _");
+        //    }
+        //    else
+        //    {
+        //        return null;
+        //    }
+        //}
+        public static string RandomWordToCharList()
+        {
+            randomWordConvertedToListOfChars = Random().ToList();
+            //randomWordConvertedToListOfChars.AddRange(Random(names, cities, countries, other));
+            return null;
+        }
+        public static int RandomWordLength()
+        {
+            int randomWordLength = Random().Length;
+            return randomWordLength;
+        }
         public static void Picture()
         {
-            FullHangman();
+            //FullHangman();
 
             string head = headBool == false ? "" : "O";            //pridedame kuno dalis i paveiksliuka jeigu true
             string torso = torsoBool == false ? "" : "|";            

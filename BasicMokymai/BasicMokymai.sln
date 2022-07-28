@@ -139,7 +139,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SavarankiskosUzduotys", "Sa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P025_BasicKartojimas", "P025_BasicKartojimas\P025_BasicKartojimas.csproj", "{F688AB19-2F66-4912-811E-E73A1E7F838E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P014_Debug_v2", "P014_Debug_v2\P014_Debug_v2.csproj", "{C64177BA-6080-49B1-B2CD-8304D1BDEC7C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P014_Debug_v2", "P014_Debug_v2\P014_Debug_v2.csproj", "{C64177BA-6080-49B1-B2CD-8304D1BDEC7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HangmanJuodrastis", "HangmanJuodrastis\HangmanJuodrastis.csproj", "{84C8115F-15B9-4BE1-AA31-5E32FB065C73}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -399,6 +401,10 @@ Global
 		{C64177BA-6080-49B1-B2CD-8304D1BDEC7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C64177BA-6080-49B1-B2CD-8304D1BDEC7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C64177BA-6080-49B1-B2CD-8304D1BDEC7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84C8115F-15B9-4BE1-AA31-5E32FB065C73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84C8115F-15B9-4BE1-AA31-5E32FB065C73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84C8115F-15B9-4BE1-AA31-5E32FB065C73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84C8115F-15B9-4BE1-AA31-5E32FB065C73}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
