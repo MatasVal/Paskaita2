@@ -12,7 +12,7 @@ namespace Egzaminas_Hangman
         //public static Dictionary<char, char> randomWordCharDictionary = new Dictionary<char, char> {};
 
         public static List<char> randomWordConvertedToListOfChars = new List<char> { };
-        public static List<char> guessList = new List<char> { };
+        public static List<char> guessListWithUnderscores = new List<char> { };
         public static List<char> MistakeList = new List<char> { }; 
         public static int mistakeCount;
 
@@ -245,11 +245,11 @@ namespace Egzaminas_Hangman
         }
         #endregion
 
-        public static void ReplaceCharsWithSpaces()//uz kiekviena raide liste isveda po bruksneli, bruksnelius joinina per tarpa
+        public static void ReplaceCharsWithSpaces()//uz kiekviena raide liste isveda po bruksneli
         {
             foreach (var letter in randomWordConvertedToListOfChars)
             {
-                guessList.Add('_');                
+                guessListWithUnderscores.Add('_');                
             }                        
         }
 
@@ -329,8 +329,8 @@ namespace Egzaminas_Hangman
             ReplaceCharsWithSpaces();
             foreach (var index in indices)
             {
-                guessList.RemoveAt(index);
-                guessList.Insert(index, guessInputChar);
+                guessListWithUnderscores.RemoveAt(index);
+                guessListWithUnderscores.Insert(index, guessInputChar);
             }            
         }
         public static void UnderscoreToChar()
@@ -342,7 +342,7 @@ namespace Egzaminas_Hangman
         //List<T>.IndexOf()
         public static void IsGuessedListCorrect()
         {
-            if (guessList == randomWordConvertedToListOfChars)
+            if (guessListWithUnderscores == randomWordConvertedToListOfChars)
             {
                 Congratulations();
             }
@@ -375,7 +375,9 @@ namespace Egzaminas_Hangman
             {
                 RandomWordToCharList();
                 ReplaceCharsWithSpaces();
-                Console.WriteLine($"Žodis: {guessList}");
+                Console.WriteLine();
+                Console.WriteLine($"Žodis: {string.Join(" ", guessListWithUnderscores)}");
+                Console.WriteLine();
                 Console.WriteLine("Spėkite raidę ar žodį:");
                 guessInput = Console.ReadLine();
                 
