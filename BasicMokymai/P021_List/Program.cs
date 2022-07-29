@@ -93,6 +93,8 @@ namespace P021_List
 
             string pirmasKurYraV = automobiliai.Find(x => x.Contains("V"));
             Console.WriteLine("Pirmas automobilis kur yra V " + pirmasKurYraV);
+
+
             List<string> visiKurYraV = automobiliai.FindAll(x => x.Contains("V"));
             Console.WriteLine(string.Join(", ", visiKurYraV));
 

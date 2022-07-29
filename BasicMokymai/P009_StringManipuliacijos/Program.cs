@@ -189,7 +189,7 @@ var netvarkingasTekstas = " Kazkoks NEtvarkingAS Tekstas Su tarPais ir 155 0051 
 }
 //-----------------------
 {
-    Console.WriteLine("******** Remove() pašalna simbolius  ********");
+    Console.WriteLine("******** Remove() pašalina simbolius  ********");
     Console.WriteLine(vardas.Remove(2)); //iki galo
 
     Console.WriteLine(vardas.Remove(0, 1)); //kiek nurodyta

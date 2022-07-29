@@ -144,7 +144,7 @@ namespace P025_BasicKartojimas // <-- Namespace declaration
 
         #region Metodo shorthand sintaksė
         public static int TrumpasMetodas(int a) => a + a; //lambda function
-        public static int TrumpasMetodasPailginas(int a)
+        public static int TrumpasMetodasPailgintas(int a)
         {
             var b = a == 0 ? "nulis" : "ne nulis"; //ternary operator
 
