@@ -403,19 +403,13 @@ namespace Egzaminas_Hangman
             }
             
         }
-
-
-        public static char GuessInputChar() 
-        {
-            if (guessInput == null)
-            {
-                guessInput = Console.ReadLine();
-                return guessInputChar;
-            }
-            else
-            {
-                return guessInputChar;
-            }
+        /// <summary>
+        /// ////CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+        /// </summary>
+        public static void GuessInputChar() 
+        {            
+            guessInputChar = Convert.ToChar(guessInput);
+            IsCharPresentInList();
         }
         public static void GuessInputWord() //jei naudotojas iveda zodi, mums netinka charu listas ir turime lyginti random zodi su ivedimu
         {
