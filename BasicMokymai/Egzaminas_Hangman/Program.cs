@@ -144,7 +144,7 @@ namespace Egzaminas_Hangman
                 int index = rnd.Next(names.Length);
                 randomWord = names[index];
                 
-                return randomWord;
+                return randomWord.ToLower();
             }
             else if (menuChoice == 2)
             {
@@ -152,7 +152,7 @@ namespace Egzaminas_Hangman
                 int index = rnd.Next(cities.Length);
                 randomWord = cities[index];
                 
-                return randomWord;
+                return randomWord.ToLower();
             }
             else if (menuChoice == 3)
             {
@@ -160,7 +160,7 @@ namespace Egzaminas_Hangman
                 int index = rnd.Next(countries.Length);
                 randomWord = countries[index];
                
-                return randomWord;
+                return randomWord.ToLower();
             }
             else if (menuChoice == 4)
             {
@@ -168,7 +168,7 @@ namespace Egzaminas_Hangman
                 int index = rnd.Next(other.Length);
                 randomWord = other[index];
                 
-                return randomWord;
+                return randomWord.ToLower();
             }
             else
             {
@@ -217,8 +217,7 @@ namespace Egzaminas_Hangman
                 {
                     MistakeCounting();
                 }                
-                Console.Clear();
-                
+                Console.Clear();                
             }            
         }
 
@@ -266,15 +265,21 @@ namespace Egzaminas_Hangman
         public static string GuessInput()
         {
             guessInput = Console.ReadLine();
-            return guessInput;
+            guessInput = guessInput.ToLower();
+            return guessInput; //ToLower, nes reikia kad ivestis butu lowercase - nereiktu ir case'o spelioti
         }
 
         public static void GuessPageStandart()
         {
+            
             if (guessInput == null)
             {
                 RandomWordToCharList();
                 ReplaceCharsWithSpaces();
+            }
+            if (guessListWithUnderscores.Contains('_') == false)
+            {
+                Congratulations();  
             }
             Console.Clear();
             Console.WriteLine($"Tema: {topic}");
@@ -286,15 +291,11 @@ namespace Egzaminas_Hangman
             Console.WriteLine();
             Console.WriteLine("Spėkite raidę ar žodį:");
             GuessInput();
-            IsGuessInputCharOrWord();        
+            IsGuessInputCharOrWord();
 
-        }
+                      
 
-        
-
-
-
-
+        }        
 
         //public static void NewGuess()
         //{
@@ -372,7 +373,7 @@ namespace Egzaminas_Hangman
 
         public static List<int> IndexOfCharFromList()
         {
-
+            indices.Clear();
             for (int i = 0; i < randomWordConvertedToListOfChars.Count; i++)
             {
                 if (randomWordConvertedToListOfChars[i] == guessInputChar)
@@ -382,7 +383,6 @@ namespace Egzaminas_Hangman
             }
             return indices;
         }
-
 
         public static void ReplaceElementAt()
         {            
@@ -485,8 +485,7 @@ namespace Egzaminas_Hangman
         {
             Console.WriteLine("!!!SVEIKINIMAI!!!");
             Console.WriteLine(":) ZODIS TEISINGAS :)");
-            Console.WriteLine($" Zodis buvo: {randomWord}");
-            Console.WriteLine("Pakartoti zaidima T/ N ?");
+            Console.WriteLine($" Zodis buvo: {randomWord}");            
             ExitOrContinue();
         }
 
@@ -500,6 +499,7 @@ namespace Egzaminas_Hangman
         }
         public static string ExitOrContinue()
         {
+
             while (choiceExitOrContinue != "t" || choiceExitOrContinue != "n")
             {
                 Console.WriteLine("Pakartoti zaidima T/ N ?");
