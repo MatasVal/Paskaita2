@@ -4,12 +4,10 @@ namespace Egzaminas_Hangman
 {
     internal class Program
     {
-        public static string[] names = { "Giedrius", "Mantas", "Domantas", "Lukas", "Eglė", "Liepa", "Margarita", "Viktorija", "Karolis", "Aušra" };
+        public static string[] names = { "Giedrius", "Mantas", "Domantas", "Lukas", "Eglė", "Liepa", "Margarita", "Viktorija", "Karolis", "Aušra", "Salomėja" };
         public static string[] cities = { "Kaunas", "Klaipėda", "Vilnius", "Šiauliai", "Panevėžys", "Vilkija", "Kelmė", "Plungė", "Tauragė", "Ukmergė", "Utena", "Ignalina", "Zarasai" };
         public static string[] countries = { "Graikija", "Švedija", "Nyderlandai", "Danija", "Lenkija", "Vokietija", "Belgija", "Norvegija", "Suomija", "Kanada", "Ispanija", "Portugalija" };
-        public static string[] other = { "Kompiuteris", "Pelė", "Klaviatūra", "Monitorius", "Kabelis", "Pakrovėjas", "Kamera", "Garsiakalbis", "Ausinės", "Mikrofonas" };
-
-        //public static Dictionary<char, char> randomWordCharDictionary = new Dictionary<char, char> {};
+        public static string[] other = { "Kompiuteris", "Pelė", "Klaviatūra", "Monitorius", "Kabelis", "Pakrovėjas", "Kamera", "Garsiakalbis", "Ausinės", "Mikrofonas" };        
 
         public static List<char> randomWordConvertedToListOfChars = new List<char> { };
         public static List<char> guessListWithUnderscores = new List<char> { };
@@ -35,19 +33,7 @@ namespace Egzaminas_Hangman
 
         public static bool isCharCorrect;
 
-        //Dictionary<string, string> names = new Dictionary<string, string>
-        //{   { "Giedrius", "_ _ _ _ _ _"} 
-        //    {"Mantas",} 
-        //    {"Domantas",} 
-        //    {"Lukas",}
-        //    {"Eglė",}
-        //    {"Liepa",} 
-        //    {"Margarita",} 
-        //    {"Viktorija",} 
-        //    {"Karolis",} 
-        //    {"Aušra"}
-        //};
-
+        
         //- Naudotojas pasirenka iš temų: VARDAI, LIETUVOS MIESTAI, VALSTYBES, KITA. 
         //  (ne mažiau kaip 10 žodžių kiekvienoje grupėje)
         //- Žodis iš pasirinktos grupės parenkamas atsitiktine tvarka.
@@ -65,13 +51,12 @@ namespace Egzaminas_Hangman
         static void Main(string[] args)
         {
             Console.OutputEncoding = Encoding.GetEncoding(1200);
-            Console.InputEncoding = Encoding.GetEncoding(1200);                       
-            Menu();
-            //Console.WriteLine($"Zodis:{randomWord}");
-            //Console.WriteLine($"raide:{randomWordConvertedToListOfChars[1]}");
-            //ReplaceCharsWithSpaces();
-            //RandomWordToCharDictionary();
+            Console.InputEncoding = Encoding.GetEncoding(1200); //kad konsole isvedinetu lietuviskas raides
+                                                                
+            Menu();            
         }
+
+
         #region Menu and Choices
         public static void Menu()
         {
@@ -199,14 +184,7 @@ namespace Egzaminas_Hangman
         public static void GuessingPage()
         {            
             while (guessListWithUnderscores.Contains('_') || mistakeCount != 6)
-            {
-                //Console.WriteLine($"Tema: {topic}");
-                //Console.WriteLine();
-                //Picture();
-                //RandomWordToCharList();
-                //ReplaceCharsWithSpaces();
-                //IsGuessInputCharOrWord();
-
+            {                
                 GuessPageStandart();
 
                 if (isCharCorrect == true)
