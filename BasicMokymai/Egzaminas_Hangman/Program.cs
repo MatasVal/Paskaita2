@@ -65,9 +65,7 @@ namespace Egzaminas_Hangman
         static void Main(string[] args)
         {
             Console.OutputEncoding = Encoding.GetEncoding(1200);
-            Console.InputEncoding = Encoding.GetEncoding(1200);
-
-            AvailableChoices();
+            Console.InputEncoding = Encoding.GetEncoding(1200);                       
             Menu();
             //Console.WriteLine($"Zodis:{randomWord}");
             //Console.WriteLine($"raide:{randomWordConvertedToListOfChars[1]}");
@@ -77,6 +75,8 @@ namespace Egzaminas_Hangman
         #region Menu and Choices
         public static void Menu()
         {
+            Console.Clear();
+            AvailableChoices();
             switch (MenuChoice())
             {
                 case 1:
@@ -484,44 +484,44 @@ namespace Egzaminas_Hangman
         public static void Congratulations()
         {
             Console.WriteLine("!!!SVEIKINIMAI!!!");
-            Console.WriteLine(":) ZODIS TEISINGAS :)");
-            Console.WriteLine($" Zodis buvo: {randomWord}");            
+            Console.WriteLine(":) ŽODIS TEISINGAS :)");
+            Console.WriteLine($"Žodis buvo: {randomWord}");            
             ExitOrContinue();
         }
 
         public static void BetterLuckNextTime()
         {
+            Console.Clear();
             FullHangman();
             Picture();
-            Console.WriteLine(":( PRALAIMEJOTE :(");
-            Console.WriteLine($" Zodis buvo: {randomWord}");
+            Console.WriteLine(":( PRALAIMĖJOTE :(");
+            Console.WriteLine($"Žodis buvo: {randomWord}");
             ExitOrContinue();
         }
         public static string ExitOrContinue()
-        {
+        {            
+            Console.WriteLine("Pakartoti zaidima T/N ?");
 
-            while (choiceExitOrContinue != "t" || choiceExitOrContinue != "n")
-            {
-                Console.WriteLine("Pakartoti zaidima T/ N ?");
-                choiceExitOrContinue = Console.ReadLine();           
-            }
+            choiceExitOrContinue = Console.ReadLine().ToLower();
 
             if (choiceExitOrContinue == "t")
             {
                 Menu();
             }
-            else
+            else if (choiceExitOrContinue == "n")
             {
                 Environment.Exit(0);
             }
+            else
+            {
+                ExitOrContinue();
+            }                     
             return null;
         }
         #endregion
                 
         public static void Picture()
-        {
-            //FullHangman();
-
+        {          
             string head = headBool == false ? "" : "O";            //pridedame kuno dalis i paveiksliuka jeigu true
             string torso = torsoBool == false ? "" : "|";            
             string rightHand = rightHandBool == false ? "" : "/";            
