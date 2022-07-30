@@ -200,13 +200,15 @@ namespace Egzaminas_Hangman
         {            
             while (guessListWithUnderscores.Contains('_') || mistakeCount != 6)
             {
-                Console.WriteLine($"Tema: {topic}");
-                Console.WriteLine();
-                Picture(); 
-                RandomWordToCharList();
-                ReplaceCharsWithSpaces();
-                IsGuessInputCharOrWord();                
-                
+                //Console.WriteLine($"Tema: {topic}");
+                //Console.WriteLine();
+                //Picture();
+                //RandomWordToCharList();
+                //ReplaceCharsWithSpaces();
+                //IsGuessInputCharOrWord();
+
+                GuessPageStandart();
+
                 if (isCharCorrect == true)
                 {
                     UnderscoreToChar();
@@ -216,7 +218,7 @@ namespace Egzaminas_Hangman
                     MistakeCounting();
                 }                
                 Console.Clear();
-                GuessPageStandart();
+                
             }            
         }
 
@@ -261,8 +263,20 @@ namespace Egzaminas_Hangman
             }            
         }
 
+        public static string GuessInput()
+        {
+            guessInput = Console.ReadLine();
+            return guessInput;
+        }
+
         public static void GuessPageStandart()
         {
+            if (guessInput == null)
+            {
+                RandomWordToCharList();
+                ReplaceCharsWithSpaces();
+            }
+            Console.Clear();
             Console.WriteLine($"Tema: {topic}");
             Console.WriteLine();
             Picture();
@@ -271,24 +285,33 @@ namespace Egzaminas_Hangman
             Console.WriteLine($"Žodis: {string.Join(" ", guessListWithUnderscores)}");
             Console.WriteLine();
             Console.WriteLine("Spėkite raidę ar žodį:");
-            guessInput = Console.ReadLine();
-        }
-        //public static void NewGuess()
-        //{                       
-        //    Console.WriteLine();
+            GuessInput();
+            IsGuessInputCharOrWord();        
 
-        //    if (isCharCorrect==true)
+        }
+
+        
+
+
+
+
+
+        //public static void NewGuess()
+        //{
+        //    Console.WriteLine();
+        //    //Console.WriteLine($"Žodis: {string.Join(" ", guessListWithUnderscores)}");
+        //    //Console.WriteLine();
+        //    //Console.WriteLine("Spėkite raidę ar žodį:");
+
+        //    if (isCharCorrect == true)
         //    {
-        //        Console.WriteLine($"Žodis: {string.Join(" ", guessListWithUnderscores)}");
-        //        Console.WriteLine();
-        //        Console.WriteLine("Spėkite raidę ar žodį:");
-        //        guessInput = Console.ReadLine();
+        //        NewGuess();
         //    }
         //    else
         //    {
-        //        MistakeCounting();                
+        //        MistakeCounting();
         //    }
-            
+
         //    MistakeDisplay();
         //    Console.WriteLine($"Žodis: {string.Join(" ", guessListWithUnderscores)}");
         //    Console.WriteLine();
@@ -371,12 +394,25 @@ namespace Egzaminas_Hangman
         }
         public static void UnderscoreToChar()
         {
-            IndexOfCharFromList();
-            ReplaceElementAt();
+            if (guessListWithUnderscores.Contains(guessInputChar))
+            {
+                GuessPageStandart();
+            }
+            else
+            {
+                IndexOfCharFromList();
+                ReplaceElementAt();
+            }
+        }
 
-        }      
-        
-        
+        //public static void dfsdf()
+        //{
+        //    if guessListWithUnderscores.contains (guessInput)
+
+        //            //prideda i lista tik tada kai tokio liste nera
+
+        //}
+
         #region Mistakes
         //public static void MistakeOrNot()
         //{
@@ -389,15 +425,24 @@ namespace Egzaminas_Hangman
         //        MistakeCounting();
         //    }
         //}
-         public static void MistakeCounting()
+        public static void MistakeCounting()
         {
-            MistakeList.Add(guessInputChar);
-
-            foreach (var mistake in MistakeList)
+            if (MistakeList.Contains(guessInputChar))
             {
-                mistakeCount = mistakeCount + 1;
-                AddPartForEachMistake();
+                GuessPageStandart();
             }
+            else
+            {
+                MistakeList.Add(guessInputChar);
+                mistakeCount = Convert.ToInt32(MistakeList.Count());
+                AddPartForEachMistake();
+
+                //foreach (var mistake in MistakeList)//kiek yra raidziu liste tike kievkiena karta pri prideda, reikia kad pridetu po viena
+                //{
+                //    mistakeCount = mistakeCount + 1;
+                //    AddPartForEachMistake();
+                //}
+            }           
             
         }
 
@@ -414,11 +459,11 @@ namespace Egzaminas_Hangman
             }
             else if (mistakeCount == 2)
             {
-                torsoBool = true;
+                rightHandBool = true;
             }
             else if (mistakeCount == 3)
             {
-                rightHandBool = true;
+                torsoBool = true;
             }
             else if (mistakeCount == 4)
             {
