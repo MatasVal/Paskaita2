@@ -47,6 +47,91 @@
         {
             List<string> stringSarasas = new List<string> { };
         }
-        
+
+        //public static void RandomWordToCharDictionary()//gal random worda keisti i dictionary ir vienoj puse priskirti raide o value priskirti "_"
+        //{
+        //    foreach (char letter in randomWordConvertedToListOfChars)
+        //    {
+        //        randomWordCharDictionary.Add(letter, '_');                
+        //    }
+
+        //    //foreach (char letter2.Key in randomWordCharDictionary)
+        //    //    {
+        //    //    Console.WriteLine("Raktas = {0}, Reiksme = {1}", letter2.Key, miestas.Value);
+        //    //}
+
+        //    Console.WriteLine("Raktas = {0}, Reiksme = {1}", randomWordCharDictionary);
+
+        //}
+
+
+        //foreach letter in char prideti raide o jeigu ne prideti __
+        //su foreach tikrinama kiekviena raide ir jeigu tinka isveda ta raide kur reikia
+        //vartotojas pildo lista ir jeigu jo listas yra lygus random word listui, jis laimejo
+
+        //myList.ElementAt(0)
+        //List<T>.IndexOf()
+
+        //public static List<char> GuessList()
+        //{
+        //    if (randomWordConvertedToListOfChars.)
+        //        foreach (var letter in guessList)
+        //        {
+
+        //        }
+
+        //}
+
+
+
+
+
+        //public static string WhichTopic()
+        //{
+        //    //if (MenuChoice() == 1 || MenuChoice() == 2 || MenuChoice() == 3 || MenuChoice() == 4)
+        //    //{
+        //    //    switch (MenuChoice())
+        //    //    {
+        //    //        case 1:
+        //    //            string topic = "Vardai";
+        //    //            return topic;
+        //    //        case 2:
+        //    //            topic = "Lietuvos miestai";
+        //    //            return topic;
+        //    //        case 3:
+        //    //            topic = "Valstybės";
+        //    //            return topic;
+        //    //        case 4:
+        //    //            topic = "Kita";
+        //    //            return topic;
+        //    //    }
+        //    //}
+        //    if (MenuChoice() == 1)
+        //    {
+        //        string topic = "Vardai";
+        //        return topic;
+        //    }
+        //    else if (MenuChoice() == 2)
+        //    {
+        //        string topic = "Lietuvos miestai";
+        //        return topic;
+        //    }
+        //    else if (MenuChoice() == 3)
+        //    {
+        //        string topic = "Valstybės";
+        //        return topic;
+        //    }
+        //    else if (MenuChoice() == 4)
+        //    {
+        //        string topic = "Kita";
+        //        return topic;
+        //    }
+
+        //}
+        //public static void GuessingPage()
+        //{
+        //    Console.WriteLine($"Tema: {WhichTopic()}");
+        //}
+
     }
 }

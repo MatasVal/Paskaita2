@@ -18,6 +18,7 @@ namespace Egzaminas_Hangman
 
         public static string randomWord;
         public static string guessInput;
+        public static string topic;
         public static char guessInputChar;
 
         public static List<int> indices = new List<int> { };
@@ -32,7 +33,7 @@ namespace Egzaminas_Hangman
         public static bool rightLegBool;
         public static bool leftLegBool;
 
-        public static bool IsCharPresentInHiddenWord;
+        public static bool isCharCorrect;
 
         //Dictionary<string, string> names = new Dictionary<string, string>
         //{   { "Giedrius", "_ _ _ _ _ _"} 
@@ -70,24 +71,29 @@ namespace Egzaminas_Hangman
             Menu();
             //Console.WriteLine($"Zodis:{randomWord}");
             //Console.WriteLine($"raide:{randomWordConvertedToListOfChars[1]}");
-            ReplaceCharsWithSpaces();
+            //ReplaceCharsWithSpaces();
             //RandomWordToCharDictionary();
         }
+        #region Menu and Choices
         public static void Menu()
         {
             switch (MenuChoice())
             {
                 case 1:
-                    Name();
+                    topic = "Vardai";
+                    GuessingPage();
                     break;
                 case 2:
-                    City();
+                    topic = "Lietuvos miestai";
+                    GuessingPage();
                     break;
                 case 3:
-                    Country();
+                    topic = "Valstybės";
+                    GuessingPage();
                     break;
                 case 4:
-                    Other();
+                    topic = "Kita";
+                    GuessingPage();
                     break;
                 default:
                     Menu();
@@ -126,53 +132,7 @@ namespace Egzaminas_Hangman
             }
 
         }
-        //public static string WhichTopic()
-        //{
-        //    //if (MenuChoice() == 1 || MenuChoice() == 2 || MenuChoice() == 3 || MenuChoice() == 4)
-        //    //{
-        //    //    switch (MenuChoice())
-        //    //    {
-        //    //        case 1:
-        //    //            string topic = "Vardai";
-        //    //            return topic;
-        //    //        case 2:
-        //    //            topic = "Lietuvos miestai";
-        //    //            return topic;
-        //    //        case 3:
-        //    //            topic = "Valstybės";
-        //    //            return topic;
-        //    //        case 4:
-        //    //            topic = "Kita";
-        //    //            return topic;
-        //    //    }
-        //    //}
-        //    if (MenuChoice() == 1)
-        //    {
-        //        string topic = "Vardai";
-        //        return topic;
-        //    }
-        //    else if (MenuChoice() == 2)
-        //    {
-        //        string topic = "Lietuvos miestai";
-        //        return topic;
-        //    }
-        //    else if (MenuChoice() == 3)
-        //    {
-        //        string topic = "Valstybės";
-        //        return topic;
-        //    }
-        //    else if (MenuChoice() == 4)
-        //    {
-        //        string topic = "Kita";
-        //        return topic;
-        //    }
-
-        //}
-        //public static void GuessingPage()
-        //{
-        //    Console.WriteLine($"Tema: {WhichTopic()}");
-        //}
-
+        #endregion
 
         #region Random
 
@@ -183,6 +143,7 @@ namespace Egzaminas_Hangman
                 Random rnd = new Random();
                 int index = rnd.Next(names.Length);
                 randomWord = names[index];
+                
                 return randomWord;
             }
             else if (menuChoice == 2)
@@ -190,6 +151,7 @@ namespace Egzaminas_Hangman
                 Random rnd = new Random();
                 int index = rnd.Next(cities.Length);
                 randomWord = cities[index];
+                
                 return randomWord;
             }
             else if (menuChoice == 3)
@@ -197,6 +159,7 @@ namespace Egzaminas_Hangman
                 Random rnd = new Random();
                 int index = rnd.Next(countries.Length);
                 randomWord = countries[index];
+               
                 return randomWord;
             }
             else if (menuChoice == 4)
@@ -204,6 +167,7 @@ namespace Egzaminas_Hangman
                 Random rnd = new Random();
                 int index = rnd.Next(other.Length);
                 randomWord = other[index];
+                
                 return randomWord;
             }
             else
@@ -213,94 +177,240 @@ namespace Egzaminas_Hangman
         }
         #endregion
 
+        //#region Topics
+        //public static void Name()
+        //{
+        //    GuessingPage();
+        //}
+        //public static void City()
+        //{
+        //    GuessingPage();
+        //}
+        //public static void Country()
+        //{
+        //    GuessingPage();
+        //}
+        //public static void Other()
+        //{
+        //    GuessingPage();
+        //}
+        //#endregion       
 
-        #region Topics
-        public static void Name()
-        {
-            Console.WriteLine("Tema: Vardai");
-            Console.WriteLine();
-            Picture();
-            IsGuessInputCharOrWord();            
+        public static void GuessingPage()
+        {            
+            while (guessListWithUnderscores.Contains('_') || mistakeCount != 6)
+            {
+                Console.WriteLine($"Tema: {topic}");
+                Console.WriteLine();
+                Picture(); 
+                RandomWordToCharList();
+                ReplaceCharsWithSpaces();
+                IsGuessInputCharOrWord();                
+                
+                if (isCharCorrect == true)
+                {
+                    UnderscoreToChar();
+                }
+                else
+                {
+                    MistakeCounting();
+                }                
+                Console.Clear();
+                GuessPageStandart();
+            }            
         }
-        public static void City()
-        {
-            Console.WriteLine("Tema: Lietuvos miestai");
-            Console.WriteLine();
-            Picture();
-            IsGuessInputCharOrWord();
-        }
-        public static void Country()
-        {
-            Console.WriteLine("Tema: Valstybės");
-            Console.WriteLine();
-            Picture();
-            IsGuessInputCharOrWord();
-        }
-        public static void Other()
-        {
-            Console.WriteLine("Tema: Kita");
-            Console.WriteLine();
-            Picture();
-            IsGuessInputCharOrWord();
-        }
-        #endregion
 
-        public static void ReplaceCharsWithSpaces()//uz kiekviena raide liste isveda po bruksneli
+        public static void RandomWordToCharList()
+        {
+            randomWordConvertedToListOfChars = Random().ToList();            
+        }
+        public static List<char> ReplaceCharsWithSpaces()//uz kiekviena raide liste isveda po bruksneli
         {
             foreach (var letter in randomWordConvertedToListOfChars)
             {
-                guessListWithUnderscores.Add('_');                
-            }                        
+                guessListWithUnderscores.Add('_');
+            }return guessListWithUnderscores;
         }
 
-        //foreach letter in char prideti raide o jeigu ne prideti __
-        //su foreach tikrinama kiekviena raide ir jeigu tinka isveda ta raide kur reikia
-        //vartotojas pildo lista ir jeigu jo listas yra lygus random word listui, jis laimejo
+        #region Char or Word
+        public static void IsGuessInputCharOrWord()
+        {
+            if(guessInput == null) //jeigu guess input yra default reiksme ir testas nepadave jos, prasome naudotojo ivesti reiksme
+            {
+                GuessPageStandart();
 
-        public static bool IsCharPresentInList()
+                    if (guessInput.Length == 1) // nustatome ar naudotojas ivede spejama raide ar visa zodi
+                    {
+                    GuessInputChar();
+                    }
+                    else
+                    {
+                    GuessInputWord();
+                    }
+            }
+            else
+            {
+                if (guessInput.Length == 1)
+                {
+                    GuessInputChar();
+                }
+                else
+                {
+                    GuessInputWord();
+                }
+            }            
+        }
+
+        public static void GuessPageStandart()
+        {
+            Console.WriteLine($"Tema: {topic}");
+            Console.WriteLine();
+            Picture();
+            Console.WriteLine();
+            MistakeDisplay();
+            Console.WriteLine($"Žodis: {string.Join(" ", guessListWithUnderscores)}");
+            Console.WriteLine();
+            Console.WriteLine("Spėkite raidę ar žodį:");
+            guessInput = Console.ReadLine();
+        }
+        //public static void NewGuess()
+        //{                       
+        //    Console.WriteLine();
+
+        //    if (isCharCorrect==true)
+        //    {
+        //        Console.WriteLine($"Žodis: {string.Join(" ", guessListWithUnderscores)}");
+        //        Console.WriteLine();
+        //        Console.WriteLine("Spėkite raidę ar žodį:");
+        //        guessInput = Console.ReadLine();
+        //    }
+        //    else
+        //    {
+        //        MistakeCounting();                
+        //    }
+            
+        //    MistakeDisplay();
+        //    Console.WriteLine($"Žodis: {string.Join(" ", guessListWithUnderscores)}");
+        //    Console.WriteLine();
+        //    Console.WriteLine("Spėkite raidę ar žodį:");
+        //    guessInput = Console.ReadLine();
+        //}
+
+        public static void GuessInputChar() 
+        {            
+            guessInputChar = Convert.ToChar(guessInput);
+            IsCharCorrect();
+        }
+        public static bool IsCharCorrect()
         {
             if (randomWordConvertedToListOfChars.Contains(guessInputChar) == true)
             {
-                return IsCharPresentInHiddenWord = true; 
+                return isCharCorrect = true;
             }
             else
             {
-                return IsCharPresentInHiddenWord = false;                
+                return isCharCorrect = false;
             }
         }
+        #endregion
+
+
+        #region Is Word/List Correct
+        public static void GuessInputWord() //jei naudotojas iveda zodi, mums netinka charu listas ir turime lyginti random zodi su ivedimu
+        {
+            if (guessInput == randomWord)
+            {
+                Congratulations();
+            }
+            else
+            {
+                BetterLuckNextTime();
+            }
+        }
+        public static void IsGuessedListCorrect()
+        {
+            if (guessListWithUnderscores == randomWordConvertedToListOfChars)
+            {
+                Congratulations();
+            }
+            else
+            {
+                BetterLuckNextTime();
+            }
+        }
+
+        public static int RandomWordLength()
+        {
+            int randomWordLength = Random().Length;
+            return randomWordLength;
+        }
+
+        #endregion
 
         public static List<int> IndexOfCharFromList()
         {
-            var indices = new List<int>();
 
             for (int i = 0; i < randomWordConvertedToListOfChars.Count; i++)
             {
-                if (randomWordConvertedToListOfChars[i]== guessInputChar)
+                if (randomWordConvertedToListOfChars[i] == guessInputChar)
                 {
-                    indices.Add(i); 
+                    indices.Add(i);
                 }
             }
             return indices;
-        }        
-        public static void MistakeCounting()
-        {
-            if(IsCharPresentInHiddenWord == true)
+        }
+
+
+        public static void ReplaceElementAt()
+        {            
+            foreach (var index in indices)
             {
-                IndexOfCharFromList();
-            }
-            else
-            {
-                foreach(var mistake in MistakeList)
-                {
-                    mistakeCount = mistakeCount + 1;
-                }
+                guessListWithUnderscores.RemoveAt(index);
+                guessListWithUnderscores.Insert(index, guessInputChar);
             }
         }
+        public static void UnderscoreToChar()
+        {
+            IndexOfCharFromList();
+            ReplaceElementAt();
+
+        }      
+        
+        
+        #region Mistakes
+        //public static void MistakeOrNot()
+        //{
+        //    if (isCharCorrect == true)
+        //    {
+        //        IndexOfCharFromList();
+        //    }
+        //    else
+        //    {
+        //        MistakeCounting();
+        //    }
+        //}
+         public static void MistakeCounting()
+        {
+            MistakeList.Add(guessInputChar);
+
+            foreach (var mistake in MistakeList)
+            {
+                mistakeCount = mistakeCount + 1;
+                AddPartForEachMistake();
+            }
+            
+        }
+
+        public static void MistakeDisplay()
+        {
+            Console.WriteLine($"Spėtos raidės: {string.Join(" ", MistakeList)}");            
+        }
+
         public static void AddPartForEachMistake()
         {
             if (mistakeCount == 1)
             {
-                headBool = true;  
+                headBool = true;
             }
             else if (mistakeCount == 2)
             {
@@ -323,124 +433,9 @@ namespace Egzaminas_Hangman
                 BetterLuckNextTime();
             }
         }
-        
-        public static void ReplaceElementAt()
-        {
-            ReplaceCharsWithSpaces();
-            foreach (var index in indices)
-            {
-                guessListWithUnderscores.RemoveAt(index);
-                guessListWithUnderscores.Insert(index, guessInputChar);
-            }            
-        }
-        public static void UnderscoreToChar()
-        {
-            IndexOfCharFromList();
-            ReplaceElementAt();
-        }
-        //myList.ElementAt(0)
-        //List<T>.IndexOf()
-        public static void IsGuessedListCorrect()
-        {
-            if (guessListWithUnderscores == randomWordConvertedToListOfChars)
-            {
-                Congratulations();
-            }
-            else
-            {
-                BetterLuckNextTime();
-            }
-        }
-              
-
-        //public static List<char> GuessList()
-        //{
-        //    if (randomWordConvertedToListOfChars.)
-        //        foreach (var letter in guessList)
-        //        {
-
-        //        }
-
-        //}
-        
-        public static void RandomWordToCharList()
-        {
-            randomWordConvertedToListOfChars = Random().ToList();            
-        }
-
-        #region Char or Word
-        public static void IsGuessInputCharOrWord()
-        {
-            if(guessInput == null) //jeigu guess input yra default reiksme ir testas nepadave jos, prasome naudotojo ivesti reiksme
-            {
-                RandomWordToCharList();
-                ReplaceCharsWithSpaces();
-                Console.WriteLine();
-                Console.WriteLine($"Žodis: {string.Join(" ", guessListWithUnderscores)}");
-                Console.WriteLine();
-                Console.WriteLine("Spėkite raidę ar žodį:");
-                guessInput = Console.ReadLine();
-                
-                    if (guessInput.Length == 1) // nustatome ar naudotojas ivede spejama raide ar visa zodi
-                    {
-                    GuessInputChar();
-                    }
-                    else
-                    {
-                    GuessInputWord();
-                    }
-            }
-            else
-            {
-                if (guessInput.Length == 1)
-                {
-                    GuessInputChar();
-                }
-                else
-                {
-                    GuessInputWord();
-                }
-            }
-            
-        }
-        /// <summary>
-        /// ////CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
-        /// </summary>
-        public static void GuessInputChar() 
-        {            
-            guessInputChar = Convert.ToChar(guessInput);
-            IsCharPresentInList();
-        }
-        public static void GuessInputWord() //jei naudotojas iveda zodi, mums netinka charu listas ir turime lyginti random zodi su ivedimu
-        {
-            if (guessInput == randomWord)
-            {
-                Congratulations();
-            }
-            else
-            {
-                BetterLuckNextTime();
-            }
-        }
         #endregion
 
-        //public static void RandomWordToCharDictionary()//gal random worda keisti i dictionary ir vienoj puse priskirti raide o value priskirti "_"
-        //{
-        //    foreach (char letter in randomWordConvertedToListOfChars)
-        //    {
-        //        randomWordCharDictionary.Add(letter, '_');                
-        //    }
-
-        //    //foreach (char letter2.Key in randomWordCharDictionary)
-        //    //    {
-        //    //    Console.WriteLine("Raktas = {0}, Reiksme = {1}", letter2.Key, miestas.Value);
-        //    //}
-
-        //    Console.WriteLine("Raktas = {0}, Reiksme = {1}", randomWordCharDictionary);
-
-        //}
-
-
+        #region Ending
         public static void Congratulations()
         {
             Console.WriteLine("!!!SVEIKINIMAI!!!");
@@ -476,13 +471,8 @@ namespace Egzaminas_Hangman
             }
             return null;
         }
-
-                 
-        public static int RandomWordLength()
-        {
-            int randomWordLength = Random().Length;
-            return randomWordLength;
-        }
+        #endregion
+                
         public static void Picture()
         {
             //FullHangman();
