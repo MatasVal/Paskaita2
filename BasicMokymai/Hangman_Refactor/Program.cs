@@ -4,6 +4,7 @@ namespace Hangman_Refactor
 {
     internal class Program
     {
+        #region Global Vars, Arrays and Lists
         public static string[] names = { "Giedrius", "Mantas", "Domantas", "Lukas", "Eglė", "Liepa", "Margarita", "Viktorija", "Karolis", "Aušra", "Salomėja" };
         public static string[] cities = { "Kaunas", "Klaipėda", "Vilnius", "Šiauliai", "Panevėžys", "Vilkija", "Kelmė", "Plungė", "Tauragė", "Ukmergė", "Utena", "Ignalina", "Zarasai" };
         public static string[] countries = { "Graikija", "Švedija", "Nyderlandai", "Danija", "Lenkija", "Vokietija", "Belgija", "Norvegija", "Suomija", "Kanada", "Ispanija", "Portugalija" };
@@ -33,7 +34,7 @@ namespace Hangman_Refactor
         public static bool leftLegBool;
 
         public static bool isCharCorrect;
-        
+        #endregion
         static void Main(string[] args)
         {
             Console.OutputEncoding = Encoding.GetEncoding(1200);
@@ -140,6 +141,20 @@ namespace Hangman_Refactor
                 return null;
             }
         }
+
+        public static void RandomWordToCharList() //random zodi isskaido po raide ir is siu raidziu sukuria lista 
+        {
+            randomWordConvertedToListOfChars = Random().ToList();
+        }
+
+        public static List<char> ReplaceCharsWithSpaces()//uz kiekviena raide liste isveda po bruksneli
+        {
+            foreach (var letter in randomWordConvertedToListOfChars)
+            {
+                guessListWithUnderscores.Add('_');
+            }
+            return guessListWithUnderscores;
+        }
         #endregion
 
         #region Retry if Word Is Used
@@ -208,6 +223,8 @@ namespace Hangman_Refactor
             }
         }
         #endregion
+
+        #region Guessing
         public static void GuessingPage()
         {
             while (guessListWithUnderscores.Contains('_') || mistakeCount != 6)
@@ -226,18 +243,7 @@ namespace Hangman_Refactor
             }
         }
 
-        public static void RandomWordToCharList()
-        {
-            randomWordConvertedToListOfChars = Random().ToList();
-        }
-        public static List<char> ReplaceCharsWithSpaces()//uz kiekviena raide liste isveda po bruksneli
-        {
-            foreach (var letter in randomWordConvertedToListOfChars)
-            {
-                guessListWithUnderscores.Add('_');
-            }
-            return guessListWithUnderscores;
-        }
+       
 
         public static string GuessInput()
         {           
@@ -276,6 +282,8 @@ namespace Hangman_Refactor
             IsGuessInputCharOrWord();
 
         }
+        #endregion
+
         #region Char or Word
         public static void IsGuessInputCharOrWord()
         {
@@ -325,39 +333,7 @@ namespace Hangman_Refactor
         }
         #endregion
 
-        #region Is Word/List Correct
-        public static void GuessInputWord() //jei naudotojas iveda zodi, mums netinka charu listas ir turime lyginti random zodi su ivedimu
-        {
-            if (guessInput == randomWord.ToLower())
-            {
-                Console.Clear();
-                Congratulations();
-            }
-            else
-            {
-                BetterLuckNextTime();
-            }
-        }
-        public static void IsGuessedListCorrect()
-        {
-            if (guessListWithUnderscores == randomWordConvertedToListOfChars)
-            {
-                Congratulations();
-            }
-            else
-            {
-                BetterLuckNextTime();
-            }
-        }
-
-        public static int RandomWordLength()
-        {
-            int randomWordLength = Random().Length;
-            return randomWordLength;
-        }
-
-        #endregion
-
+        #region Finding matching chars and replacing underscores "_" with them
         public static List<int> IndexOfCharFromList()
         {
             indexes.Clear();
@@ -391,6 +367,41 @@ namespace Hangman_Refactor
                 ReplaceElementAt();
             }
         }
+        #endregion
+
+        #region Is Word/List Correct
+        public static void GuessInputWord() //jei naudotojas iveda zodi, mums netinka charu listas ir turime lyginti random zodi su ivedimu
+        {
+            if (guessInput == randomWord.ToLower())
+            {
+                Console.Clear();
+                Congratulations();
+            }
+            else
+            {
+                BetterLuckNextTime();
+            }
+        }
+        public static void IsGuessedListCorrect()
+        {
+            if (guessListWithUnderscores == randomWordConvertedToListOfChars)
+            {
+                Congratulations();
+            }
+            else
+            {
+                BetterLuckNextTime();
+            }
+        }
+
+        public static int RandomWordLength()
+        {
+            int randomWordLength = Random().Length;
+            return randomWordLength;
+        }
+
+        #endregion        
+
         #region Mistakes
 
         public static void MistakeCounting()
@@ -407,7 +418,6 @@ namespace Hangman_Refactor
             }
 
         }
-
         public static void MistakeDisplay()
         {
             Console.WriteLine($"Spėtos raidės: {string.Join(" ", mistakeList)}");
@@ -447,7 +457,7 @@ namespace Hangman_Refactor
         {
             Console.WriteLine("!!!SVEIKINIMAI!!!");
             Console.WriteLine(":) ŽODIS TEISINGAS :)");
-            Console.WriteLine($"Žodis buvo: {randomWord}");//po to kai buves random zodis yra parodomas zaidejui, jis irtraukiamas i panaudotu zodziu sarasa ir randomWord reiksme nunulinama
+            Console.WriteLine($"Žodis buvo: {randomWord}");//po to kai buves random zodis yra parodomas zaidejui, jis itraukiamas i panaudotu zodziu sarasa ir randomWord reiksme nunulinama
             usedRandomWordList.Add(randomWord);
             randomWord = null;
             ExitOrContinue();
@@ -487,31 +497,8 @@ namespace Hangman_Refactor
             return null;
         }
         #endregion
-        public static void Reset()
-        {
-            randomWordConvertedToListOfChars.Clear();
-            guessListWithUnderscores.Clear();
-            mistakeList.Clear();
-            indexes.Clear();
 
-            menuChoice = 0;
-            mistakeCount = 0;
-
-            guessInput = null;
-            topic = null;
-            choiceExitOrContinue = null;
-
-            guessInputChar = '\0';
-
-            headBool = false;
-            torsoBool = false;
-            rightHandBool = false;
-            leftHandBool = false;
-            rightLegBool = false;
-            leftLegBool = false;
-
-            isCharCorrect = false;
-        }
+        #region Picture
         public static void Picture()
         {
             string head = headBool == false ? "" : "O";            //pridedame kuno dalis i paveiksliuka jeigu true
@@ -545,6 +532,36 @@ namespace Hangman_Refactor
             rightLegBool = true;
             leftLegBool = true;
         }
+        #endregion
+
+        #region Reset
+        public static void Reset()
+        {
+            randomWordConvertedToListOfChars.Clear();
+            guessListWithUnderscores.Clear();
+            mistakeList.Clear();
+            indexes.Clear();
+
+            menuChoice = 0;
+            mistakeCount = 0;
+
+            guessInput = null;
+            topic = null;
+            choiceExitOrContinue = null;
+
+            guessInputChar = '\0';
+
+            headBool = false;
+            torsoBool = false;
+            rightHandBool = false;
+            leftHandBool = false;
+            rightLegBool = false;
+            leftLegBool = false;
+
+            isCharCorrect = false;
+        }
+        #endregion
+
     }
 
 }
