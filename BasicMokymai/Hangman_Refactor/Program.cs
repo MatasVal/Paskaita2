@@ -405,8 +405,8 @@ namespace Hangman_Refactor
 
         }
         public static void MistakeDisplay()//is klaidu listo sudarinejam konsoleje neteisingai spetu raidziu sarasa
-        {
-            Console.WriteLine($"Neteisingai spėtos raidės: {string.Join(" ", mistakeList)}");
+        {            
+            Console.WriteLine($"Spėtos raidės: {string.Join(" ", mistakeList)}");
         }
 
         public static void AddPartForEachMistake()//uz kiekviena klaida pridedame po kuno dali
