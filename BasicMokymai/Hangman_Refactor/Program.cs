@@ -153,9 +153,11 @@ namespace Hangman_Refactor
         }
         #endregion
 
-        #region Random Word generation and Checking if Used Already
+        #region Random Word Generation and Checking if Used Already
 
-        public static string RandomName(string[] names, List<string> usedRandomWordList)//metodas kurtis isrenka random zodi ir pries paduodamas patikrina ar jis dar nebuvo panaudotas
+        //metodai kurie isrenka random zodi ir pries paduodami patikrina ar jis dar nebuvo panaudotas
+        //sie keturi metodai veikia taip pat, testuojamas tik pirmasis
+        public static string RandomName(string[] names, List<string> usedRandomWordList)
         {
             Random rnd = new Random();
             int index = rnd.Next(names.Length);
