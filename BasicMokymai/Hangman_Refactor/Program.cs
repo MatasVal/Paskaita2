@@ -68,19 +68,19 @@ namespace Hangman_Refactor
             {
                 case 1:
                     topic = "Vardai";
-                    AreAnyGuessesLeft();
+                    AreAnyGuessesLeft(guessListWithUnderscores, mistakeCount);
                     break;
                 case 2:
                     topic = "Lietuvos miestai";
-                    AreAnyGuessesLeft();
+                    AreAnyGuessesLeft(guessListWithUnderscores, mistakeCount);
                     break;
                 case 3:
                     topic = "Valstybės";
-                    AreAnyGuessesLeft();
+                    AreAnyGuessesLeft(guessListWithUnderscores, mistakeCount);
                     break;
                 case 4:
                     topic = "Kita";
-                    AreAnyGuessesLeft();
+                    AreAnyGuessesLeft(guessListWithUnderscores, mistakeCount);
                     break;
                 default:
                     Console.Clear();
@@ -135,7 +135,7 @@ namespace Hangman_Refactor
             return randomWordConvertedToListOfChars = ChoiceToRandomWord(names, menuChoice).ToList();
         }
 
-        public static List<char> ReplaceCharsWithSpaces()//uz kiekviena raide liste isveda po bruksneli
+        public static List<char> ReplaceCharsWithSpaces(List <char> randomWordConvertedToListOfChars)//uz kiekviena raide liste isveda po bruksneli
         {
             foreach (var letter in randomWordConvertedToListOfChars)
             {
@@ -145,7 +145,8 @@ namespace Hangman_Refactor
         }
         #endregion
 
-        #region Retry if Word Is Used
+        #region Random Word generation and Checking if Used Already
+
         public static string RandomName(string[] names)//metodas kurtis isrenka random zodi ir pries paduodamas patikrina ar jis dar nebuvo panaudotas
         {
             Random rnd = new Random();
@@ -213,7 +214,7 @@ namespace Hangman_Refactor
         #endregion
 
         #region Guessing
-        public static void AreAnyGuessesLeft()
+        public static string AreAnyGuessesLeft(List<char> guessListWithUnderscores, int mistakeCount)
         {
             while (guessListWithUnderscores.Contains('_') || mistakeCount != 6)// jeigu spejamas zodis dar turi pasleptu raidziu (bruksniuku) arba jei dar nera is viso padaryta 6 klaidu, yra leidziama speti dar
             {
@@ -221,14 +222,14 @@ namespace Hangman_Refactor
 
                 if (isCharCorrect == true)
                 {
-                    IsCharAlreadyGuessed();
+                    IsCharAlreadyGuessed();                    
                 }
                 else
                 {
-                    MistakeCounting();
+                    MistakeCounting();                    
                 }
                 Console.Clear();
-            }
+            } return null; 
         }              
 
         public static string GuessInput()
@@ -248,7 +249,7 @@ namespace Hangman_Refactor
             if (guessInput == null)
             {
                 RandomWordToCharList(randomWord);
-                ReplaceCharsWithSpaces();
+                ReplaceCharsWithSpaces(randomWordConvertedToListOfChars);
             }
             if (guessListWithUnderscores.Contains('_') == false)
             {

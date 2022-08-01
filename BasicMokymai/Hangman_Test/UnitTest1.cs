@@ -51,13 +51,30 @@
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void Random_Test1()
-        {
-            string[] fakeArray = new string[] { "Giedrius" };
+        public void RandomWordToCharList_Test()
+        {            
             var fake = "Giedrius";
-            var expected = "giedrius";
+            var expected = new List<char> { 'G', 'i', 'e', 'd', 'r', 'i', 'u', 's' };
             var actual = Hangman_Refactor.Program.RandomWordToCharList(fake);
-            Assert.AreEqual(expected, actual);
+            CollectionAssert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void ReplaceCharsWithSpaces_Test()
+        {
+            List<char> fakeList = new List<char> { 'G', 'i', 'e', 'd', 'r', 'i', 'u', 's' };
+            //var fake = "Giedrius";
+            var expected = new List<char> { '_', '_', '_', '_', '_', '_', '_', '_' };
+            var actual = Hangman_Refactor.Program.ReplaceCharsWithSpaces(fakeList);
+            CollectionAssert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void AreAnyGuessesLeft_Test()
+        {
+            var fake = "Giedrius";
+            var expected = new List<char> { 'G', 'i', 'e', 'd', 'r', 'i', 'u', 's' };
+            var actual = Hangman_Refactor.Program.AreAnyGuessesLeft(fake);
+            CollectionAssert.AreEqual(expected, actual);
         }
     }
 }
