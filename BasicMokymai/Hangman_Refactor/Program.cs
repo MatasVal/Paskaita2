@@ -2,7 +2,7 @@
 
 namespace Hangman_Refactor
 {
-    internal class Program
+    public class Program
     {
         #region Global Vars, Arrays and Lists
         public static string[] names = { "Giedrius", "Mantas", "Domantas", "Lukas", "Eglė", "Liepa", "Margarita", "Viktorija", "Karolis", "Aušra", "Salomėja" };
@@ -102,38 +102,26 @@ namespace Hangman_Refactor
 
         #region Random
 
-        public static string Random()
+        public static string ChoiceToRandomWord(string[] names, int menuChoice)
         {
             if (menuChoice == 1)
             {
-                Random rnd = new Random();
-                int index = rnd.Next(names.Length);
-                randomWord = names[index];//isrenkame random zodi
-                RetryIfUsedName();
+                RandomName(names);
                 return randomWord.ToLower();
             }
             else if (menuChoice == 2)
             {
-                Random rnd = new Random();
-                int index = rnd.Next(cities.Length);
-                randomWord = cities[index];
-                RetryIfUsedCity();
+                RandomCity();
                 return randomWord.ToLower();
             }
             else if (menuChoice == 3)
-            {
-                Random rnd = new Random();
-                int index = rnd.Next(countries.Length);
-                randomWord = countries[index];
-                RetryIfUsedCountry();
+            {               
+                RandomCountry();
                 return randomWord.ToLower();
             }
             else if (menuChoice == 4)
-            {
-                Random rnd = new Random();
-                int index = rnd.Next(other.Length);
-                randomWord = other[index];
-                RetryIfUsedOther();
+            {                
+                RandomOther();
                 return randomWord.ToLower();
             }
             else
@@ -142,9 +130,9 @@ namespace Hangman_Refactor
             }
         }
 
-        public static void RandomWordToCharList() //random zodi isskaido po raide ir is siu raidziu sukuria lista 
+        public static List<char> RandomWordToCharList(string randomWord) //random zodi isskaido po raide ir is siu raidziu sukuria lista 
         {
-            randomWordConvertedToListOfChars = Random().ToList();
+            return randomWordConvertedToListOfChars = ChoiceToRandomWord(names, menuChoice).ToList();
         }
 
         public static List<char> ReplaceCharsWithSpaces()//uz kiekviena raide liste isveda po bruksneli
@@ -158,7 +146,7 @@ namespace Hangman_Refactor
         #endregion
 
         #region Retry if Word Is Used
-        public static string RetryIfUsedName()//kvieciame metoda kuris tikrina ar zodis jau yra panaudotu zodziu sarase, jeigu ne - atiduoda ji atgal, jeigu zodis surandamas tarp panaudotu zodziu, metodas ima kita random zodi ir ji vel tikrina
+        public static string RandomName(string[] names)//metodas kurtis isrenka random zodi ir pries paduodamas patikrina ar jis dar nebuvo panaudotas
         {
             Random rnd = new Random();
             int index = rnd.Next(names.Length);
@@ -166,7 +154,7 @@ namespace Hangman_Refactor
 
             if (usedRandomWordList.Contains(randomWord))
             {
-                RetryIfUsedName();
+                RandomName(names);
                 return null;
             }
             else
@@ -174,7 +162,7 @@ namespace Hangman_Refactor
                 return randomWord;
             }
         }
-        public static string RetryIfUsedCity()
+        public static string RandomCity()
         {
             Random rnd = new Random();
             int index = rnd.Next(cities.Length);
@@ -182,7 +170,7 @@ namespace Hangman_Refactor
 
             if (usedRandomWordList.Contains(randomWord))
             {
-                RetryIfUsedCity();
+                RandomCity();
                 return null;
             }
             else
@@ -190,7 +178,7 @@ namespace Hangman_Refactor
                 return randomWord;
             }
         }
-        public static string RetryIfUsedCountry()
+        public static string RandomCountry()
         {
             Random rnd = new Random();
             int index = rnd.Next(countries.Length);
@@ -198,7 +186,7 @@ namespace Hangman_Refactor
 
             if (usedRandomWordList.Contains(randomWord))
             {
-                RetryIfUsedCountry();
+                RandomCountry();
                 return null;
             }
             else
@@ -206,7 +194,7 @@ namespace Hangman_Refactor
                 return randomWord;
             }
         }
-        public static string RetryIfUsedOther()
+        public static string RandomOther()
         {
             Random rnd = new Random();
             int index = rnd.Next(other.Length);
@@ -214,7 +202,7 @@ namespace Hangman_Refactor
 
             if (usedRandomWordList.Contains(randomWord))
             {
-                RetryIfUsedOther();
+                RandomOther();
                 return null;
             }
             else
@@ -259,7 +247,7 @@ namespace Hangman_Refactor
         {
             if (guessInput == null)
             {
-                RandomWordToCharList();
+                RandomWordToCharList(randomWord);
                 ReplaceCharsWithSpaces();
             }
             if (guessListWithUnderscores.Contains('_') == false)
