@@ -13,19 +13,19 @@ namespace Hangman_Refactor
         public static List<char> randomWordConvertedToListOfChars = new List<char> { };
         public static List<char> guessListWithUnderscores = new List<char> { };
         public static List<char> mistakeList = new List<char> { };
-        public static int mistakeCount;
+        public static List<int> indexes = new List<int> { };
+        public static List<string> usedRandomWordList = new List<string> { };        
 
         public static string? testWord;
         public static string? randomWord;
         public static string? guessInput;
         public static string? topic;
+        public static string? choiceExitOrContinue;
+
         public static char guessInputChar;
 
-        public static List<int> indexes = new List<int> { };
-        public static List<string> usedRandomWordList = new List<string> { };
-
-        public static int menuChoice;
-        public static string? choiceExitOrContinue;
+        public static int mistakeCount;
+        public static int menuChoice;        
 
         public static bool headBool;
         public static bool torsoBool;
@@ -83,7 +83,7 @@ namespace Hangman_Refactor
                     topic = "Kita";
                     AreAnyGuessesLeft(mistakeCount);
                     break;
-                default:
+                default://jei pasirenkama bet kas kitas, prašome rinktis iš naujo
                     Console.Clear();
                     AvailableChoices();
                     Console.WriteLine();
@@ -101,11 +101,11 @@ namespace Hangman_Refactor
         }
         #endregion
 
-        #region Random
+        #region Choosing Random Topic
 
         public static string ChoiceToRandomWord(string[] names, int menuChoice)
         {
-            if (menuChoice == 1)
+            if (menuChoice == 1)//pagal pasirinkimą nukreipiama is kokios temos reikia isrinkti random zodi
             {
                 RandomName(names, usedRandomWordList);
                 return randomWord.ToLower();
@@ -133,9 +133,9 @@ namespace Hangman_Refactor
 
         public static List<char> RandomWordToCharList(int menuChoice, string testWord) //random zodi isskaido po raide ir is siu raidziu sukuria lista 
         {
-            if (testWord!=null)
+            if (testWord!=null)//tik testavimui, kitaip metodas lenda i kita metoda kuris isrenka random zodi - testas nepraeina
             {
-            return randomWordConvertedToListOfChars = testWord.ToList(); //tik testavimui, kitaip metodas lenda i kita metoda kuris isrenka random zodi - testas nepraeina
+            return randomWordConvertedToListOfChars = testWord.ToList(); 
             }
             else 
             {
@@ -143,7 +143,7 @@ namespace Hangman_Refactor
             }
         }
 
-        public static List<char> ReplaceCharsWithSpaces(List <char> randomWordConvertedToListOfChars)//uz kiekviena raide liste isveda po bruksneli
+        public static List<char> ReplaceCharsWithSpaces(List <char> randomWordConvertedToListOfChars)//uz kiekviena raide liste metodas prideda po bruksneli i lista kuris bus naudojamas speliojimui
         {
             foreach (var letter in randomWordConvertedToListOfChars)
             {
@@ -192,6 +192,12 @@ namespace Hangman_Refactor
             {
                 return randomWord;
             }
+        }
+        public static void AddWordToUsedWordList()//po to kai panaudotas random zodis yra parodomas zaidejui, jis itraukiamas i panaudotu zodziu sarasa ir randomWord reiksme nunulinama
+        {
+            Console.WriteLine($"Žodis buvo: {randomWord}");
+            usedRandomWordList.Add(randomWord);
+            randomWord = null;
         }
         public static string RandomCountry()
         {
@@ -257,7 +263,7 @@ namespace Hangman_Refactor
 
             if (guessInput.Length == 0)
             {
-                GuessInput();
+                GuessInput();//metodas sukasi kol bus kazkas ivesta
             }
             return guessInput; 
         }
@@ -320,7 +326,7 @@ namespace Hangman_Refactor
         }
         public static bool IsCharCorrect(List<char> randomWordConvertedToListOfChars,char guessInputChar)
         {
-            if (randomWordConvertedToListOfChars.Contains(guessInputChar) == true)//priklausomai nuo to ar ivestas char'as yra is random zodzio sudarytame char'u liste isvedame true arba false
+            if (randomWordConvertedToListOfChars.Contains(guessInputChar) == true)//priklausomai nuo to ar ivestas char'as yra randamas is random zodzio sudarytame char'u liste isvedame true arba false
             {
                 return isCharCorrect = true;
             }
@@ -335,7 +341,7 @@ namespace Hangman_Refactor
         public static List<int> IndexOfCharFromList(List<char> randomWordConvertedToListOfChars, char guessInputChar)
         {
             indexes.Clear();//isvalome index lista kad nebutu pries tai uzsilikusiu indexu
-            for (int i = 0; i < randomWordConvertedToListOfChars.Count; i++)//jei ivestas charas sutampa su bent vienu charu is listo, isvedame tu charu indexus
+            for (int i = 0; i < randomWordConvertedToListOfChars.Count; i++)//jei ivestas charas sutampa su bent vienu charu is listo, isvedame to/tų charu indexus
             {
                 if (randomWordConvertedToListOfChars[i] == guessInputChar)
                 {
@@ -368,7 +374,7 @@ namespace Hangman_Refactor
         #endregion
 
         #region Is Word/List Correct
-        public static void GuessInputWord() //jei naudotojas iveda zodi, mes is karto lyginame ji su random zodziu
+        public static void GuessInputWord() //jei naudotojas is karto iveda spejama zodi, mes lyginame ji su random zodziu
         {
             if (guessInput == randomWord.ToLower())
             {
@@ -398,14 +404,14 @@ namespace Hangman_Refactor
                 GuessPageStandart();
                 
             }
-            else//jei tokios raides mistake liste nera, ji yra pridedama
+            else
             {
-                AddToMistakeList(mistakeList, guessInputChar);
-                MistakeCount(mistakeList);
-                AddPartForEachMistake();                
+                AddToMistakeList(mistakeList, guessInputChar);//jei tokios raides mistake liste nera, ji yra pridedama
+                MistakeCount(mistakeList);//suskaiciuojamos visos klaidos
+                AddPartForEachMistake(); //uz kiekviena klaida isvedama po kuno dali               
             }
         }
-        public static List<char> AddToMistakeList(List<char> mistakeList, char guessInputChar)//pridedama raide i mistake lista kaip elementas
+        public static List<char> AddToMistakeList(List<char> mistakeList, char guessInputChar)//pridedame raide i mistake lista kaip elementa
         {
             mistakeList.Add(guessInputChar);
             return mistakeList;
@@ -466,13 +472,7 @@ namespace Hangman_Refactor
             Console.WriteLine(":( PRALAIMĖJOTE :(");
             AddWordToUsedWordList();
             ExitOrContinue();
-        }
-        public static void AddWordToUsedWordList()//po to kai panaudotas random zodis yra parodomas zaidejui, jis itraukiamas i panaudotu zodziu sarasa ir randomWord reiksme nunulinama
-        {
-            Console.WriteLine($"Žodis buvo: {randomWord}");
-            usedRandomWordList.Add(randomWord);
-            randomWord = null;
-        }
+        }        
         public static string ExitOrContinue()
         {
             Reset();//nunulinam dauguma globaliu reiksmiu - kad zaidima butu galima testi, bet jau su kitais random zodziais
@@ -571,7 +571,7 @@ namespace Hangman_Refactor
                     count++;
                 }
             }
-            if(count == names.Length)//jei counterio reiksme lygi elementu masyve kiekiui, nukreipiame i Meniu
+            if(count == names.Length)//jei counterio reiksme lygi elementu masyve kiekiui - masyve zodziai pasibaige - nukreipiame i Meniu
             {                
                 Menu();
             } 

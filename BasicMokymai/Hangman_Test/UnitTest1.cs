@@ -22,7 +22,7 @@
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void RandomWordToCharList_Test() 
+        public void RandomWordToCharList_Test() //testuojam ar zodis paverciamas listu po viena raide
         {            
             var fake = "Giedrius";
             var fakeMenuChoice = 1;
@@ -32,7 +32,7 @@
         }
 
         [TestMethod]
-        public void ReplaceCharsWithSpaces_Test()
+        public void ReplaceCharsWithSpaces_Test()//testuojam ar visos raides yra 'paslepiamos' po underscore'ais
         {
             List<char> fakeList = new List<char> { 'G', 'i', 'e', 'd', 'r', 'i', 'u', 's' };            
             var expected = new List<char> { '_', '_', '_', '_', '_', '_', '_', '_' };
@@ -40,7 +40,7 @@
             CollectionAssert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void AreAnyGuessesLeft_Test() //testuojam ar grazina null jeigu susirenka 6 klaidos
+        public void AreAnyGuessesLeft_Test() //testuojam ar grazina null jeigu susirenka 6 klaidos - jeigu grazinamas null- pralaimima
         {
             var fake = 6;            
             string expected = null;
@@ -59,7 +59,7 @@
         }
 
         [TestMethod]
-        public void IndexOfCharFromList_Test() //testuojam teisingai isvedami indexai paduodant raide esancia liste
+        public void IndexOfCharFromList_Test() //testuojam ar teisingai isvedami indexai paduodant raide esancia liste
         {
             List<char> fakeList = new List<char> { 'G', 'i', 'e', 'd', 'r', 'i', 'u', 's' };
             var fake = 'i';
