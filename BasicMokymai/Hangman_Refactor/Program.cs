@@ -5,7 +5,7 @@ namespace Hangman_Refactor
     public class Program
     {
         #region Global Vars, Arrays and Lists
-        public static string[] names = { "Giedrius", "Mantas", "Domantas", "Lukas", "Eglė", "Liepa", "Margarita", "Viktorija", "Karolis", "Aušra", "Salomėja" };
+        public static string[] names = { "Giedrius", "Mantas", "Domantas", "Lukas", "Eglė", "Liepa", "Margarita", "Viktorija", "Karolis", "Aušra", "Salomėja" };//11
         public static string[] cities = { "Kaunas", "Klaipėda", "Vilnius", "Šiauliai", "Panevėžys", "Vilkija", "Kelmė", "Plungė", "Tauragė", "Ukmergė", "Utena", "Ignalina", "Zarasai" };
         public static string[] countries = { "Graikija", "Švedija", "Nyderlandai", "Danija", "Lenkija", "Vokietija", "Belgija", "Norvegija", "Suomija", "Kanada", "Ispanija", "Portugalija" };
         public static string[] other = { "Kompiuteris", "Pelė", "Klaviatūra", "Monitorius", "Kabelis", "Pakrovėjas", "Kamera", "Garsiakalbis", "Ausinės", "Mikrofonas" };               
@@ -159,6 +159,8 @@ namespace Hangman_Refactor
         //sie keturi metodai veikia taip pat, testuojamas tik pirmasis
         public static string RandomName(string[] names, List<string> usedRandomWordList)
         {
+            AreThereAnyWordsLeft();
+            IsNameTopicExhausted();
             Random rnd = new Random();
             int index = rnd.Next(names.Length);
             randomWord = names[index];
@@ -175,6 +177,8 @@ namespace Hangman_Refactor
         }
         public static string RandomCity()
         {
+            AreThereAnyWordsLeft();
+            IsCityTopicExhausted();
             Random rnd = new Random();
             int index = rnd.Next(cities.Length);
             randomWord = cities[index];
@@ -191,6 +195,8 @@ namespace Hangman_Refactor
         }
         public static string RandomCountry()
         {
+            AreThereAnyWordsLeft();
+            IsCountryTopicExhausted();
             Random rnd = new Random();
             int index = rnd.Next(countries.Length);
             randomWord = countries[index];
@@ -207,6 +213,8 @@ namespace Hangman_Refactor
         }
         public static string RandomOther()
         {
+            AreThereAnyWordsLeft();
+            IsOtherTopicExhausted();
             Random rnd = new Random();
             int index = rnd.Next(other.Length);
             randomWord = other[index];
@@ -551,6 +559,79 @@ namespace Hangman_Refactor
         }
         #endregion
 
+        #region Any Words Left to Guess? //Tikrinimai, kad pasibaigus zodziams neuzsisuktu amzinas ciklas
+        
+        public static void IsNameTopicExhausted()//jei temoje nebėra likusių nepanaudotų žodžių, nukreipiama į meniu
+        {
+            int count = 0;
+            foreach (var name in names)//uz kiekviena panaudotu zodziu liste surasta zodi is 'name' masyvo vedam counteri
+            {
+                if (usedRandomWordList.Contains(name))
+                {
+                    count++;
+                }
+            }
+            if(count == names.Length)//jei counterio reiksme lygi elementu masyve kiekiui, nukreipiame i Meniu
+            {                
+                Menu();
+            } 
+        }
+        public static void IsCityTopicExhausted()
+        {
+            int count = 0;
+            foreach (var city in cities)
+            {
+                if (usedRandomWordList.Contains(city))
+                {
+                    count++;
+                }
+            }
+            if (count == cities.Length)
+            {
+                Menu();
+            }
+        }
+        public static void IsCountryTopicExhausted()
+        {
+            int count = 0;
+            foreach (var country in countries)
+            {
+                if (usedRandomWordList.Contains(country))
+                {
+                    count++;
+                }
+            }
+            if (count == countries.Length)
+            {
+                Menu();
+            }
+        }
+        public static void IsOtherTopicExhausted()
+        {
+            int count = 0;
+            foreach (var othr in other)
+            {
+                if (usedRandomWordList.Contains(othr))
+                {
+                    count++;
+                }
+            }
+            if (count == other.Length)
+            {
+                Menu();
+            }
+        }
+        public static void AreThereAnyWordsLeft()//jeigu visi žaidimo žodžiai panaudoti, programa stabdoma
+        {
+
+            if (usedRandomWordList.Count == 46)
+            {
+                Console.WriteLine("Nebeliko spėjamų žodžių, ačiū už žaidimą");
+                Environment.Exit(0);
+            }
+        }     
+
+        #endregion
     }
 
 }
